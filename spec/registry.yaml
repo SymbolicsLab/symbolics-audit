@@ -818,28 +818,31 @@ specs:
       A configuration is admissible iff fold(Phi) = Phi. Admissibility
       is fold-closure at scope.
     tier: T2
-    status: definition
+    claim: definition
+    proof: verified
     theory:
-      status: definition
       notes_ref: 01_concepts/Admissible State.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      status: conjecture
-      pointer: null
+      pointer: Mechanics.FixedPoint.Admissible
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
+      relation: exact
       rationale: >
-        Follows from idempotence. If idempotence is proven, admissibility
-        becomes definable as fixed-point.
+        Admissible is defined as Stable (fold-closure): a context is admissible
+        iff applying the fold operation produces no change (aggregate equality).
+        This captures the theory's "fold(Phi) = Phi" via extensional equality on
+        aggregates. Existence of non-trivial admissible states is a separate claim.
     gap:
-      owner: agda
-      action: Define Admissible predicate once idempotence is proven
-      justification: Blocked by SPEC-FOLD-002.
+      owner: intentional
+      action: none
+      justification: >
+        Definition is exact. The definition doesn't require idempotence - only
+        the existence proof of non-trivial admissible states would.
 
   # ============================================================
   # CONFIGURATION (T1)
