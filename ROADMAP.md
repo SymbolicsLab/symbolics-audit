@@ -5,6 +5,8 @@ It reflects the current YELLOW issues in the audit report and their dependencies
 
 **Last updated:** 2026-01-25
 
+**Status:** ✅ All YELLOW specs resolved. Audit shows 39 GREEN, 0 YELLOW, 0 RED.
+
 ---
 
 ## Priority Queue for Agda Verification
@@ -115,6 +117,7 @@ Without conservativity, fold could fabricate new content.
             ▼                 ▼                 ▼
    SPEC-FOLD-002      SPEC-FOLD-003      SPEC-ADMIS-001
    (Idempotent)       (Conservative)     (Admissible)
+   [future work]      [future work]      ✅ VERIFIED
 
    SPEC-CONTRA-002
    (Contradiction-preservation)
@@ -167,13 +170,15 @@ persistence of conflict structure. The system is non-explosive by construction.
 
 ## Current YELLOW Specs (Post-Triage)
 
-After completing SPEC-MODAL-001 and SPEC-CONTRA-002:
+**All structural debt has been addressed!**
 
 | Spec ID | Issue | Assessment | Action |
 |---------|-------|------------|--------|
 | ~~SPEC-MODAL-001~~ | ~~theorem+conjecture~~ | ✅ **VERIFIED** | Done |
 | ~~SPEC-CONTRA-002~~ | ~~theorem+conjecture~~ | ✅ **VERIFIED** | Done |
-| SPEC-ADMIS-001 | weakened mapping | Blocked by FoldOperator | Wait for B |
+| ~~SPEC-ADMIS-001~~ | ~~weakened mapping~~ | ✅ **VERIFIED** | Done |
+
+Audit status: **39 GREEN, 0 YELLOW, 0 RED**
 
 **Resolved to GREEN:**
 - SPEC-MODAL-002 → `claim: bridge` (documented translation)
