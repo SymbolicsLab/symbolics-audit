@@ -1,0 +1,1212 @@
+# Symbolics Spec Registry
+# Cross-layer compatibility contract
+# Generated: 2026-01-25
+#
+# Tiers:
+#   T1 - Foundational: primitives, definitions, core axioms
+#   T2 - Derived: theorems following from T1
+#   T3 - Conjecture: unverified claims, exploration
+#
+# Mapping relations:
+#   exact - layers express identical content
+#   weakened - Agda proves less than theory claims
+#   strengthened - Agda proves more than theory claims
+#   different - distinct formalizations of same intuition
+#   partial - partial overlap
+
+specs:
+
+  # ============================================================
+  # PRIMITIVES & DEFINITIONS (T1)
+  # ============================================================
+
+  - id: SPEC-DIST-001
+    title: Distinction is Atomic
+    statement: >
+      Distinction is the minimal form-bearing token produced by Cut.
+      It has polarity (phi / not-phi) and is the Level 1 primitive.
+      Nothing simpler than a cut produces form; relation is secondary at Level 2+.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Distinction.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.Side
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda's Side type (In/Out/Rem) directly encodes polarity distinction.
+        The trichotomy is a refinement capturing resolution state.
+    gap:
+      owner: intentional
+      action: none
+      justification: Theory and Agda align on this primitive.
+
+  - id: SPEC-DIST-002
+    title: Distinction is Atomic (Claim)
+    statement: >
+      The minimal token is polarity; relation is secondary at Level 2+.
+    tier: T1
+    theory:
+      status: theorem
+      notes_ref: 04_claims/Distinction is atomic.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.Cut
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda's Cut type is parameterized by universe U but always yields
+        polarity (Side) for each element. No sub-cut structure exists.
+    gap:
+      owner: intentional
+      action: none
+      justification: Atomic by construction in both layers.
+
+  - id: SPEC-FOLD-001
+    title: Fold Operator Definition
+    statement: >
+      Fold re-partitions the status of distinctions. It is the
+      stabilizing closure operator that produces admissible states.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.Fold
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda's Fold type (U -> Cut U -> Cut U) matches the theory's
+        description of fold as operating on configurations.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition alignment is exact.
+
+  - id: SPEC-FOLD-002
+    title: Fold is Idempotent
+    statement: >
+      fold(fold(Phi)) = fold(Phi) for any configuration Phi.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Theory asserts idempotence universally. Agda has not formalized
+        idempotence as a general theorem, though specific folds may satisfy it.
+    gap:
+      owner: agda
+      action: Formalize and prove fold idempotence or document which folds satisfy it
+      justification: Core property needs Agda verification.
+
+  - id: SPEC-FOLD-003
+    title: Fold is Conservative
+    statement: >
+      atoms(fold(Phi)) is a subset of atoms(Phi). Fold does not fabricate.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Theory claims conservativity universally. Agda has viability
+        conditions framework but not a general conservativity theorem.
+    gap:
+      owner: agda
+      action: Prove conservativity or characterize which folds are conservative
+      justification: Core property needs Agda verification.
+
+  # ============================================================
+  # RESOLUTION ORDER (T1-T2)
+  # ============================================================
+
+  - id: SPEC-RES-001
+    title: Resolution Order is Lattice
+    statement: >
+      The resolution order Out < Rem < In forms a bounded lattice with
+      meet, join, and absorption laws.
+    tier: T1
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.CutOps
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda proves all 8 lattice properties: commutativity, associativity,
+        idempotence, and absorption for both meet and join.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified in Agda.
+    tests:
+      - kind: typecheck
+        target: Mechanics/CutOps.agda
+
+  - id: SPEC-RES-002
+    title: De Morgan Laws
+    statement: >
+      Inversion distributes over meet and join operations on the resolution lattice.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.CutOps.inv-⊓ʳ-dist
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: All four De Morgan distribution laws proven.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  - id: SPEC-RES-003
+    title: Inversion is Involutive
+    statement: >
+      inv(inv(s)) = s for all Side s. Inversion swaps In/Out, preserves Rem.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.CutOps.inv-involutive
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: Direct proof by case analysis in Agda.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  # ============================================================
+  # EXTENSIONAL EQUALITY (T1)
+  # ============================================================
+
+  - id: SPEC-EXT-001
+    title: Extensional Equality is Equivalence
+    statement: >
+      Cuts are compared pointwise. c1 ≈ c2 iff for all u, apply c1 u = apply c2 u.
+      This relation is reflexive, symmetric, and transitive.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Configuration.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.≈-refl
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda proves all three equivalence properties for extensional equality.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  - id: SPEC-EXT-002
+    title: Cut Operations Respect Extensional Equality
+    statement: >
+      If c1 ≈ c2, then f(c1) ≈ f(c2) for all cut operations f.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Configuration.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.CutOps.⊓ᶜ-cong
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: Congruence proven for meet, join, and inversion operations.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  # ============================================================
+  # OPACITY & NON-IDENTIFIABILITY (T2)
+  # ============================================================
+
+  - id: SPEC-OPAC-001
+    title: Non-Identifiability (Opacity)
+    statement: >
+      Partial observations cannot uniquely determine cuts. Two distinct
+      cuts can be observationally equivalent on any finite observation set.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Remainder.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Opacity.non-identifiable-at-true
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda proves existence of distinct cuts with identical partial observations.
+        This formalizes the "veil" of opacity.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  # ============================================================
+  # DECAY & UPDATE (T2)
+  # ============================================================
+
+  - id: SPEC-DECAY-001
+    title: Decay is Real (Non-Monotonic)
+    statement: >
+      Update removes subsumed cuts. The aggregate after update can differ
+      from the aggregate after simple addition.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 02_mechanisms/The Metabolism.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.DecayTest.decay-is-real
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda provides concrete witness showing aggregate(update(ctx,c)) ≠ aggregate(add(ctx,c)).
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified with concrete counterexample.
+    tests:
+      - kind: typecheck
+        target: Mechanics/DecayTest.agda
+
+  - id: SPEC-DECAY-002
+    title: Resolution Monotonicity Under Decay
+    statement: >
+      During Ref-Pruning Decay, resolution never decreases. For all u,
+      aggregate(ctx, u) <= aggregate(update(ctx, c), u) in the resolution order.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 02_mechanisms/The Metabolism.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Finite.DecayLemmas.aggregate-never-weakens
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Key theorem: decay may increase ambiguity (Out -> Rem) but never
+        decreases resolution (no In -> Rem or In -> Out).
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+    tests:
+      - kind: typecheck
+        target: Mechanics/Finite/DecayLemmas.agda
+
+  # ============================================================
+  # AGGREGATION & SUBSUMPTION (T2)
+  # ============================================================
+
+  - id: SPEC-AGG-001
+    title: Subsumption is Decidable
+    statement: >
+      For finite domains, subsumption (d ⊑ c iff forall u, d(u) ⊓ c(u) = d(u))
+      is decidable and can be computed.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Configuration.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Context._⊑_
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: Implemented as decidable pointwise check over finite elements.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  - id: SPEC-AGG-002
+    title: Ambiguity Mass Computes
+    statement: >
+      For finite systems, ambiguity mass (count of Rem-marked elements)
+      is computable.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Admissible State.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Finite.ambiguityMass
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: Direct computation via map and sum over finite elements.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  # ============================================================
+  # IDENTITY (T2)
+  # ============================================================
+
+  - id: SPEC-IDENT-001
+    title: Identity is Regime-Relative
+    statement: >
+      What counts as load-bearing for identity depends on the metabolic
+      regime (observation window). Identity changes with regime.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Identity-as-Theory.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.IdentityParametric.LoadBearingAt
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        LoadBearingAt predicate is parameterized by observation window,
+        directly encoding regime-relativity.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified by construction.
+
+  # ============================================================
+  # VALUE VS POLICY (T2)
+  # ============================================================
+
+  - id: SPEC-VPOL-001
+    title: Value-Policy Non-Invertibility
+    statement: >
+      Value projections cannot recover context structure. Multiple
+      distinct contexts can yield identical value observations.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 03_distinctions/Value vs Policy.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Bridge.ValuePolicy.theorem-value-non-injective-R
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Explicit counterexample: two distinct cuts with identical value
+        observations under both R and P projections.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified with counterexamples.
+
+  - id: SPEC-VPOL-002
+    title: Projection Divergence
+    statement: >
+      Resolution and Pressure projections can vary independently.
+      Same policy can yield different value distributions.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 03_distinctions/Value vs Policy.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Bridge.ValuePolicy.theorem-projections-diverge
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: Proven by construction showing independent variation.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  # ============================================================
+  # DYNAMICS & SYNTHESIS (T2)
+  # ============================================================
+
+  - id: SPEC-DYN-001
+    title: Synthesis Respects Mode
+    statement: >
+      The synthesis operation filters cuts based on metabolic mode.
+      Stabilize mode filters In-marked; Explore mode filters Rem-marked.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 02_mechanisms/The Metabolism.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Dynamics.synthesize
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Mode-dependent filtering is explicit in the synthesize implementation.
+    gap:
+      owner: intentional
+      action: none
+      justification: Fully verified.
+
+  # ============================================================
+  # SCALING & WITNESSES (T2)
+  # ============================================================
+
+  - id: SPEC-SCALE-001
+    title: Five-Element Scaling Witness
+    statement: >
+      The mechanics scale beyond trivial examples. A 5-element system
+      (Earth, Air, Fire, Water, Aether) demonstrates computational tractability.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Configuration.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Examples.FiveElement
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: Witness family demonstrates non-trivial scaling.
+    gap:
+      owner: intentional
+      action: none
+      justification: Computational witness exists.
+
+  # ============================================================
+  # MODAL CONCEPTS (T1-T2)
+  # ============================================================
+
+  - id: SPEC-MODAL-001
+    title: T-failure
+    statement: >
+      The T-axiom (box phi -> phi) is invalid for becoming systems.
+      box phi and not-phi can be jointly satisfiable.
+    tier: T1
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/T-failure.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Theory develops T-failure extensively. Agda has Modal modules
+        but T-failure is not directly formalized in Mechanics layer.
+    gap:
+      owner: agda
+      action: Formalize T-failure in Mechanics or bridge to Modal modules
+      justification: Core modal claim needs direct Agda formalization.
+
+  - id: SPEC-MODAL-002
+    title: Prospective Necessity
+    statement: >
+      Necessity is closure over admissible stabilizing completions,
+      not "already true". box phi does not entail phi.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Prospective Necessity.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Conceptually aligned with T-failure. Not directly formalized
+        as a standalone claim in Mechanics.
+    gap:
+      owner: agda
+      action: Consider formalizing prospective necessity semantics
+      justification: Important modal concept, lower priority than T-failure.
+
+  - id: SPEC-MODAL-003
+    title: Interval of Becoming
+    statement: >
+      There is a structural gap between constraint (box phi) and
+      realization (phi). This interval is where agency, plasticity,
+      and learning live.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Interval of Becoming.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Conceptual claim about the workspace between commitment and
+        realization. May emerge from T-failure formalization.
+    gap:
+      owner: theory
+      action: Clarify what formal property would verify this claim
+      justification: Highly conceptual; needs operationalization.
+
+  # ============================================================
+  # UNFOLD (T1)
+  # ============================================================
+
+  - id: SPEC-UNFOLD-001
+    title: Unfold Operator Definition
+    statement: >
+      Unfold re-opens configuration space, generating new distinctions
+      under pressure. It is the dual of fold.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Unfold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Theory describes unfold conceptually. Agda focuses on fold/aggregation.
+        Unfold may be implicit in dynamics but not explicit operator.
+    gap:
+      owner: agda
+      action: Consider whether unfold needs explicit formalization
+      justification: May be emergent from dynamics rather than primitive.
+
+  # ============================================================
+  # METABOLISM (T2)
+  # ============================================================
+
+  - id: SPEC-METAB-001
+    title: The Metabolism
+    statement: >
+      The coupled fold/unfold cycle produces three regimes: creative
+      (unfold > fold), homeostatic (unfold ≈ fold), crystalline (fold > unfold).
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 02_mechanisms/The Metabolism.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Dynamics.Mode
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: partial
+      rationale: >
+        Agda has Stabilize/Explore modes which partially capture the
+        homeostatic/creative distinction. Full three-regime model
+        not explicitly formalized.
+    gap:
+      owner: agda
+      action: Consider extending Mode to capture crystalline regime
+      justification: Partial coverage; extension would strengthen alignment.
+
+  # ============================================================
+  # ADMISSIBILITY (T2)
+  # ============================================================
+
+  - id: SPEC-ADMIS-001
+    title: Admissible State Definition
+    statement: >
+      A configuration is admissible iff fold(Phi) = Phi. Admissibility
+      is fold-closure at scope.
+    tier: T2
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Admissible State.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Follows from idempotence. If idempotence is proven, admissibility
+        becomes definable as fixed-point.
+    gap:
+      owner: agda
+      action: Define Admissible predicate once idempotence is proven
+      justification: Blocked by SPEC-FOLD-002.
+
+  # ============================================================
+  # CONFIGURATION (T1)
+  # ============================================================
+
+  - id: SPEC-CONFIG-001
+    title: Configuration Definition
+    statement: >
+      A configuration is a finite, structured collection of symbolic
+      tokens. It is the pre-stabilized state that fold operates on.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Configuration.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Context.Context
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Agda's Context type (List of Cuts) directly models finite
+        token collections.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition alignment is exact.
+
+  # ============================================================
+  # REMAINDER (T2)
+  # ============================================================
+
+  - id: SPEC-REM-001
+    title: Remainder Definition
+    statement: >
+      Trace remainder (always present from cutting) and residual
+      remainder (unresolved tension). Remainder fuels the next cycle.
+    tier: T2
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Remainder.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.Side.Rem
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: partial
+      rationale: >
+        Agda's Rem state captures residual remainder. Trace remainder
+        is implicit in the cutting operation itself.
+    gap:
+      owner: intentional
+      action: none
+      justification: Partial but sufficient for current mechanics.
+
+  # ============================================================
+  # TRUTH & MEANING (T2)
+  # ============================================================
+
+  - id: SPEC-TRUTH-001
+    title: Truth Definition
+    statement: >
+      Truth is ineliminable commitment at scope; what survives fold-closure.
+      Scope-relative, not absolute.
+    tier: T2
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Truth.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Conceptual definition. Could be formalized as predicate over
+        admissible states, but requires idempotence first.
+    gap:
+      owner: theory
+      action: Clarify operational definition of "survives fold-closure"
+      justification: Needs operationalization before Agda formalization.
+
+  - id: SPEC-MEAN-001
+    title: Meaning Definition
+    statement: >
+      Meaning is constraint on continuation; reduces degrees of freedom.
+      Lives between dissolution and crystallization.
+    tier: T2
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Meaning.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Highly conceptual. Would require formalizing "continuation"
+        and "degrees of freedom" in the mechanics.
+    gap:
+      owner: theory
+      action: Consider whether meaning is formalizable or remains philosophical
+      justification: May be intentionally extra-formal.
+
+  # ============================================================
+  # PLASTICITY & IDENTITY (T2-T3)
+  # ============================================================
+
+  - id: SPEC-PLAST-001
+    title: Plasticity Definition
+    statement: >
+      Capacity for recursive self-relevant distinctions without collapse.
+      Requires T-failure to maintain interval during reentry.
+    tier: T2
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Plasticity.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Plasticity
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: partial
+      rationale: >
+        Agda has Plasticity module with some formalization.
+        Full recursive reentry may not be captured.
+    gap:
+      owner: agda
+      action: Review Plasticity module coverage against theory claims
+      justification: Partial coverage; may need extension.
+
+  - id: SPEC-PLAST-002
+    title: The Plastic Self
+    statement: >
+      Level 6 self: trajectory of S -> S+1 reorganizations. Self as
+      region where distinctions remain deformable under reentry.
+    tier: T3
+    theory:
+      status: conjecture
+      notes_ref: 01_concepts/The Plastic Self.md
+      last_reviewed: 2026-01-25
+      confidence: medium
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        High-level philosophical claim about self-transformation.
+        May be beyond current Agda formalization scope.
+    gap:
+      owner: intentional
+      action: none
+      justification: T3 conjecture; formalization is future work.
+
+  # ============================================================
+  # HIERARCHIES (T1)
+  # ============================================================
+
+  - id: SPEC-HIER-001
+    title: Organizational Hierarchy
+    statement: >
+      Levels -2 to 6 classify what is stabilized. Higher levels expand
+      scope/target, not add ontological primitives.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Organizational Hierarchy.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Classification schema for theory organization. Not directly
+        formalized in Agda, which focuses on mechanics primitives.
+    gap:
+      owner: intentional
+      action: none
+      justification: Organizational framework, not formal claim.
+
+  - id: SPEC-HIER-002
+    title: Locus Hierarchy
+    statement: >
+      Loci 0-3 classify who/what performs stabilization. Orthogonal
+      to Organizational Hierarchy.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Locus Hierarchy.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Classification schema. Orthogonality to Org Hierarchy could
+        potentially be formalized as independence property.
+    gap:
+      owner: intentional
+      action: none
+      justification: Organizational framework, not formal claim.
+
+  # ============================================================
+  # CONTRADICTION (T2)
+  # ============================================================
+
+  - id: SPEC-CONTRA-001
+    title: Contained Contradiction
+    statement: >
+      Structural capacity to maintain polarity-conflict without
+      inferential collapse. Requires paraconsistent base.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Contained Contradiction.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.Side
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: partial
+      rationale: >
+        Trichotomy (In/Out/Rem) allows coexistence of opposing polarities.
+        Full paraconsistent logic lives in LP/FDE modules, not Mechanics.
+    gap:
+      owner: intentional
+      action: none
+      justification: Mechanics captures containment; logic modules handle inference.
+
+  - id: SPEC-CONTRA-002
+    title: Contradiction-preservation
+    statement: >
+      Atomic polarity-conflict survives fold without explosion.
+      Fold is non-purifying closure.
+    tier: T2
+    theory:
+      status: theorem
+      notes_ref: 01_concepts/Contradiction-preservation.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Theory claims fold preserves atomic conflicts. Agda does not
+        have explicit non-explosion proof for fold.
+    gap:
+      owner: agda
+      action: Prove fold does not eliminate atomic contradictions
+      justification: Important paraconsistency property.
+
+  - id: SPEC-CONTRA-003
+    title: Contradiction is Cheaper to Contain
+    statement: >
+      Paraconsistent containment is computationally cheaper than
+      forced consistency resolution.
+    tier: T3
+    theory:
+      status: conjecture
+      notes_ref: 04_claims/Contradiction is cheaper to contain than resolve.md
+      last_reviewed: 2026-01-25
+      confidence: medium
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Computational/economic claim. Would require complexity analysis
+        comparing containment vs resolution strategies.
+    gap:
+      owner: theory
+      action: Operationalize "cheaper" for potential formalization
+      justification: T3 conjecture; needs refinement.
+
+  # ============================================================
+  # DISTINCTIONS (T1)
+  # ============================================================
+
+  - id: SPEC-CDIST-001
+    title: Commitment vs Realization
+    statement: >
+      Commitment (box phi) is prospective closure. Realization (phi)
+      is present instantiation. They can diverge (T-failure).
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 03_distinctions/Commitment vs Realization.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: >
+        Follows from T-failure formalization. Currently implicit in
+        modal semantics but not explicit in Mechanics.
+    gap:
+      owner: agda
+      action: Define explicit Commitment/Realization predicates after T-failure
+      justification: Blocked by SPEC-MODAL-001.
+
+  - id: SPEC-CDIST-002
+    title: Necessity vs Actuality
+    statement: >
+      Necessity is closure over admissible completions. Actuality is
+      present configuration. Distinct by T-failure.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 03_distinctions/Necessity vs Actuality.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: conjecture
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: weakened
+      rationale: Same as SPEC-CDIST-001; follows from T-failure.
+    gap:
+      owner: agda
+      action: Define after T-failure formalization
+      justification: Blocked by SPEC-MODAL-001.
+
+  # ============================================================
+  # CONCEPT TYPES (T1)
+  # ============================================================
+
+  - id: SPEC-CTYPE-001
+    title: Concept Types
+    statement: >
+      Not all concepts are cut-positions. Some are scalar drivers
+      (pre-form). Distinguishes cut-generated positions from scalars.
+    tier: T1
+    theory:
+      status: definition
+      notes_ref: 01_concepts/Concept Types.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: different
+      rationale: >
+        Meta-theoretical distinction about concept kinds. Agda
+        focuses on cut-positions; scalars are pre-formal.
+    gap:
+      owner: intentional
+      action: none
+      justification: Classification for theory; scalars may be out of scope for Agda.
