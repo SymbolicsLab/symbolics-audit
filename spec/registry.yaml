@@ -706,20 +706,20 @@ specs:
         reading of necessity and Agda's Kripke-style accessibility semantics.
 
   - id: SPEC-MODAL-003
-    title: Interval of Becoming
+    title: Interval of Becoming (Definition)
     statement: >
       Interval(s, phi) holds iff box-phi holds at s but phi does not hold at s.
       This structural gap between constraint and realization is where agency,
       plasticity, and learning live.
     tier: T1
     claim: definition
-    proof: n/a
+    proof: verified
     theory:
       notes_ref: 01_concepts/Interval of Becoming.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      pointer: null
+      pointer: Mechanics.TFailure.Interval
       safety: safe
     dsl:
       status: missing
@@ -727,16 +727,44 @@ specs:
     mapping:
       relation: exact
       rationale: >
-        Pure definition: Interval(s, φ) := (s ⊨ □φ) × (s ⊭ φ).
-        Definable NOW in Agda given any Kripke semantics.
-        The *existence* of such states is a separate claim (follows from T-failure).
+        Pure definition: Interval R P s = (box R P s) × (¬ P s).
+        Directly encodes the theory definition. Existence is separate (SPEC-MODAL-004).
     gap:
       owner: intentional
       action: none
       justification: >
         Definition is exact. The philosophical interpretation ("where agency lives")
-        is commentary, not part of the formal definition. Existence claim is
-        separate and follows from SPEC-MODAL-001.
+        is commentary, not part of the formal definition.
+
+  - id: SPEC-MODAL-004
+    title: Interval Existence
+    statement: >
+      There exist states s and predicates φ such that Interval(s, φ) holds,
+      i.e., □φ holds at s but φ does not hold at s. The Interval is non-empty.
+    tier: T2
+    claim: theorem
+    proof: verified
+    theory:
+      notes_ref: 01_concepts/Interval of Becoming.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      pointer: Mechanics.TFailure.interval-inhabited
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Direct witness via T-failure countermodel: s₀ satisfies Interval R₂ P
+        because □P holds at s₀ (all accessible states satisfy P) but P does not
+        hold at s₀. This proves the Interval is inhabited.
+    gap:
+      owner: intentional
+      action: none
+      justification: >
+        Existence follows directly from T-failure countermodel (SPEC-MODAL-001).
 
   # ============================================================
   # UNFOLD (T1)
@@ -1135,12 +1163,11 @@ specs:
       justification: Mechanics captures containment; logic modules handle inference.
 
   - id: SPEC-CONTRA-002
-    title: Contradiction-preservation
+    title: Non-Explosive Paraconsistency (Totality Under Conflict)
     statement: >
-      Atomic polarity-conflict (a cut c where c(u) = In and c'(u) = Out for
-      some u in the same context) survives fold without inferential explosion.
-      Fold is non-purifying closure: if contradiction exists pre-fold, it
-      persists (is not eliminated) post-fold.
+      For all ctx, mode, fold: applyFold mode fold ctx returns a well-defined ctx′.
+      Operations remain total even when conflicting inputs are present.
+      This is paraconsistency via non-explosion, NOT preservation of conflicts.
     tier: T2
     claim: theorem
     proof: verified
@@ -1157,18 +1184,18 @@ specs:
     mapping:
       relation: exact
       rationale: >
-        Agda proves non-explosive paraconsistency: conflicting contexts
-        (with both In and Out at same locus) produce well-defined results
-        under all operations (aggregate, synthesize, applyFold). The system
-        doesn't collapse or become undefined when contradictions exist.
-        Concrete witness: conflict-non-explosion on Two-element universe.
+        Agda proves non-explosive paraconsistency: all operations (aggregate,
+        synthesize, applyFold) are total functions even on conflicting inputs.
+        The system doesn't crash or become undefined when contradictions exist.
+        NOTE: This is totality/non-explosion, not preservation. Preservation
+        is a separate property (see SPEC-CONTRA-004).
     gap:
       owner: intentional
       action: none
       justification: >
-        Verified via totality proofs: all operations (joinAllRes, aggregate,
-        synthesize, applyFold) are total functions even on conflicting inputs.
-        Conflicts are contained, not explosive.
+        Theorem correctly proves totality. The aggregate resolves conflicts
+        by picking In (max), so conflicts are NOT preserved in the aggregate.
+        Preservation is a separate claim requiring different proof or design.
 
   - id: SPEC-CONTRA-003
     title: Contradiction is Cheaper to Contain
@@ -1200,6 +1227,41 @@ specs:
         THEORY-ONLY: Empirical nature. This is a claim about computational cost
         and performance that cannot be stated in the type system without first
         defining a cost model. Intentionally non-formal.
+
+  - id: SPEC-CONTRA-004
+    title: Contradiction Preservation Under Fold
+    statement: >
+      If atomic conflict is present in Φ at element u, then atomic conflict
+      remains present in fold(Φ) at u. Formally:
+      HasConflictAt Φ u → HasConflictAt (applyFold mode fold Φ) u
+    tier: T2
+    claim: conjecture
+    proof: conjecture
+    theory:
+      notes_ref: 01_concepts/Contradiction-preservation.md
+      last_reviewed: 2026-01-25
+      confidence: medium
+    agda:
+      pointer: null
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        This is the preservation claim implied by "contained contradiction."
+        Current aggregate resolves conflicts by picking In (max), so this
+        property is FALSE for the current fold implementation.
+    gap:
+      owner: agda
+      action: >
+        Either (A) prove preservation by changing fold to preserve conflict
+        markers, OR (B) accept that fold resolves conflicts and update theory.
+      justification: >
+        DESIGN DECISION: aggregate currently eliminates conflicts by choosing
+        max. To prove preservation, either represent conflict explicitly
+        (token or Both value) or accept non-preservation as intended behavior.
 
   # ============================================================
   # DISTINCTIONS (T1)

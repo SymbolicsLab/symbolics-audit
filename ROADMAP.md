@@ -5,7 +5,7 @@ It reflects the current YELLOW issues in the audit report and their dependencies
 
 **Last updated:** 2026-01-25
 
-**Status:** ✅ All YELLOW specs resolved. Audit shows 39 GREEN, 0 YELLOW, 0 RED.
+**Status:** 1 YELLOW (SPEC-CONTRA-004 - design decision required)
 
 ---
 
@@ -178,7 +178,7 @@ persistence of conflict structure. The system is non-explosive by construction.
 | ~~SPEC-CONTRA-002~~ | ~~theorem+conjecture~~ | ✅ **VERIFIED** | Done |
 | ~~SPEC-ADMIS-001~~ | ~~weakened mapping~~ | ✅ **VERIFIED** | Done |
 
-Audit status: **39 GREEN, 0 YELLOW, 0 RED**
+Audit status: **40 GREEN, 1 YELLOW, 0 RED** (after semantic honesty fix)
 
 **Resolved to GREEN:**
 - SPEC-MODAL-002 → `claim: bridge` (documented translation)
@@ -186,6 +186,36 @@ Audit status: **39 GREEN, 0 YELLOW, 0 RED**
 - SPEC-CONTRA-003 → `claim: theory-only` (empirical/cost claim)
 - SPEC-CDIST-001 → `claim: bridge` (terminological mapping)
 - SPEC-CDIST-002 → `claim: bridge` (terminological mapping)
+
+**New YELLOW (design decision required):**
+- SPEC-CONTRA-004 → Contradiction preservation (see below)
+
+---
+
+## Design Decision: Conflict Preservation vs Resolution
+
+The current fold "aggregate resolves conflicts by picking In (max)." This is **conflict-elimination with non-explosion**, not **contradiction-preservation**.
+
+Both are legitimate designs, but they have different philosophical implications:
+
+**Option A: Preservation is real** (aligns with original theory notes)
+- Conflicts must be represented explicitly (token or Both value)
+- Fold must not delete conflict markers
+- "Contained contradiction" = system keeps conflicts explicitly present after stabilization
+
+**Option B: Fold resolves locally but stays non-explosive** (aligns with current Agda)
+- Fold picks a winner (In/max) when conflicts occur
+- System remains functional but conflicts are eliminated
+- "Contained contradiction" = system can process conflicting inputs without crashing
+
+### Current State
+- SPEC-CONTRA-002: Proves Option B (non-explosion/totality) — VERIFIED
+- SPEC-CONTRA-004: States the Option A claim (preservation) — CONJECTURE
+
+### Required Decision
+Before SPEC-CONTRA-004 can be resolved, decide which world you want and update either:
+- The Agda fold implementation (to preserve conflicts), OR
+- The theory notes (to match "non-explosive resolution" semantics)
 
 ---
 
@@ -207,6 +237,23 @@ This prevents slowly reclassifying everything to `theory-only` or `bridge` to ac
 **Examples of invalid claim changes:**
 - `theorem` → `bridge`: (no justification given)
 - `theorem` → `theory-only`: "Too hard to prove" (laziness is not valid)
+
+---
+
+## Theorem Narrowing Rule
+
+If a spec is renamed/narrowed because the proved theorem was weaker than the original claim:
+
+1. The old semantic claim MUST become a new spec (as conjecture), OR
+2. The old semantic claim MUST be marked `theory-only` with explicit justification
+
+You cannot achieve GREEN by proving a weaker theorem under an old name.
+This preserves continuity of intent and prevents semantic drift.
+
+**Example (SPEC-CONTRA-002/004 split):**
+- Original SPEC-CONTRA-002 claimed "contradiction preservation"
+- Agda proved only "non-explosion" (weaker property)
+- Fix: Renamed SPEC-CONTRA-002 to match what was proved, created SPEC-CONTRA-004 for the original claim
 
 ---
 
