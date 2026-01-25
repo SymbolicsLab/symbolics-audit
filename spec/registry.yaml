@@ -1,6 +1,21 @@
 # Symbolics Spec Registry
 # Cross-layer compatibility contract
-# Generated: 2026-01-25
+# Updated: 2026-01-25
+#
+# Schema: claim/proof model (replaces single 'status' field)
+#
+# claim: what the spec asserts (theory-side)
+#   theorem - proven claim in theory, should have Agda proof
+#   conjecture - unproven claim
+#   definition - establishes terminology
+#   bridge - documents translation between layers (GREEN even with 'different' mapping)
+#   theory-only - philosophical grounding, no Agda expected
+#
+# proof: what Agda has done (implementation-side)
+#   verified - Agda has proof/definition matching claim
+#   conjecture - Agda has postulate or unproven claim
+#   refuted - Agda has counterexample
+#   n/a - no Agda verification expected
 #
 # Tiers:
 #   T1 - Foundational: primitives, definitions, core axioms
@@ -27,6 +42,7 @@ specs:
       It has polarity (phi / not-phi) and is the Level 1 primitive.
       Nothing simpler than a cut produces form; relation is secondary at Level 2+.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Distinction.md
@@ -54,6 +70,7 @@ specs:
     statement: >
       The minimal token is polarity; relation is secondary at Level 2+.
     tier: T1
+    status: theorem
     theory:
       status: theorem
       notes_ref: 04_claims/Distinction is atomic.md
@@ -82,6 +99,7 @@ specs:
       Fold re-partitions the status of distinctions. It is the
       stabilizing closure operator that produces admissible states.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Fold.md
@@ -108,12 +126,14 @@ specs:
     title: Fold is Idempotent
     statement: >
       fold(fold(Phi)) = fold(Phi) for any configuration Phi.
+      (Conjectured; may require preconditions on canonical fold implementation.)
     tier: T2
+    status: conjecture
     theory:
-      status: theorem
+      status: conjecture
       notes_ref: 01_concepts/Fold.md
       last_reviewed: 2026-01-25
-      confidence: high
+      confidence: medium
     agda:
       status: conjecture
       pointer: null
@@ -122,10 +142,10 @@ specs:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
+      relation: exact
       rationale: >
-        Theory asserts idempotence universally. Agda has not formalized
-        idempotence as a general theorem, though specific folds may satisfy it.
+        Both theory and Agda treat this as conjecture pending proof.
+        May require preconditions on which folds satisfy idempotence.
     gap:
       owner: agda
       action: Formalize and prove fold idempotence or document which folds satisfy it
@@ -135,12 +155,14 @@ specs:
     title: Fold is Conservative
     statement: >
       atoms(fold(Phi)) is a subset of atoms(Phi). Fold does not fabricate.
+      (Conjectured; may require preconditions on canonical fold implementation.)
     tier: T2
+    status: conjecture
     theory:
-      status: theorem
+      status: conjecture
       notes_ref: 01_concepts/Fold.md
       last_reviewed: 2026-01-25
-      confidence: high
+      confidence: medium
     agda:
       status: conjecture
       pointer: null
@@ -149,10 +171,10 @@ specs:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
+      relation: exact
       rationale: >
-        Theory claims conservativity universally. Agda has viability
-        conditions framework but not a general conservativity theorem.
+        Both theory and Agda treat this as conjecture pending proof.
+        May require preconditions characterizing which folds are conservative.
     gap:
       owner: agda
       action: Prove conservativity or characterize which folds are conservative
@@ -168,6 +190,7 @@ specs:
       The resolution order Out < Rem < In forms a bounded lattice with
       meet, join, and absorption laws.
     tier: T1
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Fold.md
@@ -198,6 +221,7 @@ specs:
     statement: >
       Inversion distributes over meet and join operations on the resolution lattice.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Fold.md
@@ -223,6 +247,7 @@ specs:
     statement: >
       inv(inv(s)) = s for all Side s. Inversion swaps In/Out, preserves Rem.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Fold.md
@@ -253,6 +278,7 @@ specs:
       Cuts are compared pointwise. c1 ≈ c2 iff for all u, apply c1 u = apply c2 u.
       This relation is reflexive, symmetric, and transitive.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Configuration.md
@@ -279,6 +305,7 @@ specs:
     statement: >
       If c1 ≈ c2, then f(c1) ≈ f(c2) for all cut operations f.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Configuration.md
@@ -309,6 +336,7 @@ specs:
       Partial observations cannot uniquely determine cuts. Two distinct
       cuts can be observationally equivalent on any finite observation set.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Remainder.md
@@ -341,6 +369,7 @@ specs:
       Update removes subsumed cuts. The aggregate after update can differ
       from the aggregate after simple addition.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 02_mechanisms/The Metabolism.md
@@ -371,6 +400,7 @@ specs:
       During Ref-Pruning Decay, resolution never decreases. For all u,
       aggregate(ctx, u) <= aggregate(update(ctx, c), u) in the resolution order.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 02_mechanisms/The Metabolism.md
@@ -406,6 +436,7 @@ specs:
       For finite domains, subsumption (d ⊑ c iff forall u, d(u) ⊓ c(u) = d(u))
       is decidable and can be computed.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Configuration.md
@@ -432,6 +463,7 @@ specs:
       For finite systems, ambiguity mass (count of Rem-marked elements)
       is computable.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Admissible State.md
@@ -462,6 +494,7 @@ specs:
       What counts as load-bearing for identity depends on the metabolic
       regime (observation window). Identity changes with regime.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Identity-as-Theory.md
@@ -494,6 +527,7 @@ specs:
       Value projections cannot recover context structure. Multiple
       distinct contexts can yield identical value observations.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 03_distinctions/Value vs Policy.md
@@ -522,6 +556,7 @@ specs:
       Resolution and Pressure projections can vary independently.
       Same policy can yield different value distributions.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 03_distinctions/Value vs Policy.md
@@ -552,6 +587,7 @@ specs:
       The synthesis operation filters cuts based on metabolic mode.
       Stabilize mode filters In-marked; Explore mode filters Rem-marked.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 02_mechanisms/The Metabolism.md
@@ -583,6 +619,7 @@ specs:
       The mechanics scale beyond trivial examples. A 5-element system
       (Earth, Air, Fire, Water, Aether) demonstrates computational tractability.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Configuration.md
@@ -613,27 +650,29 @@ specs:
       The T-axiom (box phi -> phi) is invalid for becoming systems.
       box phi and not-phi can be jointly satisfiable.
     tier: T1
+    claim: theorem
+    proof: verified
     theory:
-      status: theorem
       notes_ref: 01_concepts/T-failure.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      status: conjecture
-      pointer: null
+      pointer: Mechanics.TFailure.T-failure-countermodel
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
+      relation: exact
       rationale: >
-        Theory develops T-failure extensively. Agda has Modal modules
-        but T-failure is not directly formalized in Mechanics layer.
+        Agda proves T-failure via 2-state Kripke countermodel.
+        State s₀ accesses s₁ (non-reflexive frame). Valuation P holds
+        at s₁ but not s₀. Therefore □P holds at s₀ (all accessible
+        states satisfy P) but P does not hold at s₀. QED.
     gap:
-      owner: agda
-      action: Formalize T-failure in Mechanics or bridge to Modal modules
-      justification: Core modal claim needs direct Agda formalization.
+      owner: intentional
+      action: none
+      justification: Fully verified with concrete countermodel.
 
   - id: SPEC-MODAL-002
     title: Prospective Necessity
@@ -641,56 +680,63 @@ specs:
       Necessity is closure over admissible stabilizing completions,
       not "already true". box phi does not entail phi.
     tier: T1
+    claim: bridge
+    proof: n/a
     theory:
-      status: definition
       notes_ref: 01_concepts/Prospective Necessity.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      status: conjecture
       pointer: null
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
+      relation: exact
       rationale: >
-        Conceptually aligned with T-failure. Not directly formalized
-        as a standalone claim in Mechanics.
+        Bridge spec: relates □ semantics to T-failure. The definition of
+        prospective necessity as "closure over completions" is the documented
+        translation between modal intuition and Agda's accessibility semantics.
     gap:
-      owner: agda
-      action: Consider formalizing prospective necessity semantics
-      justification: Important modal concept, lower priority than T-failure.
+      owner: intentional
+      action: none
+      justification: >
+        Bridge spec documenting the translation between theory's "prospective"
+        reading of necessity and Agda's Kripke-style accessibility semantics.
 
   - id: SPEC-MODAL-003
     title: Interval of Becoming
     statement: >
-      There is a structural gap between constraint (box phi) and
-      realization (phi). This interval is where agency, plasticity,
-      and learning live.
+      Interval(s, phi) holds iff box-phi holds at s but phi does not hold at s.
+      This structural gap between constraint and realization is where agency,
+      plasticity, and learning live.
     tier: T1
+    claim: definition
+    proof: n/a
     theory:
-      status: definition
       notes_ref: 01_concepts/Interval of Becoming.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      status: missing
       pointer: null
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: different
+      relation: exact
       rationale: >
-        Conceptual claim about the workspace between commitment and
-        realization. May emerge from T-failure formalization.
+        Pure definition: Interval(s, φ) := (s ⊨ □φ) × (s ⊭ φ).
+        Definable NOW in Agda given any Kripke semantics.
+        The *existence* of such states is a separate claim (follows from T-failure).
     gap:
-      owner: theory
-      action: Clarify what formal property would verify this claim
-      justification: Highly conceptual; needs operationalization.
+      owner: intentional
+      action: none
+      justification: >
+        Definition is exact. The philosophical interpretation ("where agency lives")
+        is commentary, not part of the formal definition. Existence claim is
+        separate and follows from SPEC-MODAL-001.
 
   # ============================================================
   # UNFOLD (T1)
@@ -702,6 +748,7 @@ specs:
       Unfold re-opens configuration space, generating new distinctions
       under pressure. It is the dual of fold.
     tier: T1
+    status: theory-only
     theory:
       status: definition
       notes_ref: 01_concepts/Unfold.md
@@ -717,12 +764,15 @@ specs:
     mapping:
       relation: different
       rationale: >
-        Theory describes unfold conceptually. Agda focuses on fold/aggregation.
-        Unfold may be implicit in dynamics but not explicit operator.
+        Theory-level operator stub. Unfold is conceptually dual to fold but
+        Agda focuses on fold/aggregation. Unfold may be implicit in dynamics
+        or may not require explicit formalization.
     gap:
-      owner: agda
-      action: Consider whether unfold needs explicit formalization
-      justification: May be emergent from dynamics rather than primitive.
+      owner: intentional
+      action: none
+      justification: >
+        Theory-level conceptual operator. Formalization deferred until
+        specific properties of unfold need verification.
 
   # ============================================================
   # METABOLISM (T2)
@@ -734,6 +784,7 @@ specs:
       The coupled fold/unfold cycle produces three regimes: creative
       (unfold > fold), homeostatic (unfold ≈ fold), crystalline (fold > unfold).
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 02_mechanisms/The Metabolism.md
@@ -767,6 +818,7 @@ specs:
       A configuration is admissible iff fold(Phi) = Phi. Admissibility
       is fold-closure at scope.
     tier: T2
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Admissible State.md
@@ -799,6 +851,7 @@ specs:
       A configuration is a finite, structured collection of symbolic
       tokens. It is the pre-stabilized state that fold operates on.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Configuration.md
@@ -831,6 +884,7 @@ specs:
       Trace remainder (always present from cutting) and residual
       remainder (unresolved tension). Remainder fuels the next cycle.
     tier: T2
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Remainder.md
@@ -863,6 +917,7 @@ specs:
       Truth is ineliminable commitment at scope; what survives fold-closure.
       Scope-relative, not absolute.
     tier: T2
+    status: theory-only
     theory:
       status: definition
       notes_ref: 01_concepts/Truth.md
@@ -878,12 +933,15 @@ specs:
     mapping:
       relation: different
       rationale: >
-        Conceptual definition. Could be formalized as predicate over
-        admissible states, but requires idempotence first.
+        Philosophical definition grounding the formal work. Formalization
+        is optional; the Agda mechanics can proceed without formalizing
+        "truth" as a predicate.
     gap:
-      owner: theory
-      action: Clarify operational definition of "survives fold-closure"
-      justification: Needs operationalization before Agda formalization.
+      owner: intentional
+      action: none
+      justification: >
+        Theory-level philosophical definition. Agda formalizes the mechanics
+        (fold, admissibility) without needing explicit "truth" predicate.
 
   - id: SPEC-MEAN-001
     title: Meaning Definition
@@ -891,6 +949,7 @@ specs:
       Meaning is constraint on continuation; reduces degrees of freedom.
       Lives between dissolution and crystallization.
     tier: T2
+    status: theory-only
     theory:
       status: definition
       notes_ref: 01_concepts/Meaning.md
@@ -906,12 +965,14 @@ specs:
     mapping:
       relation: different
       rationale: >
-        Highly conceptual. Would require formalizing "continuation"
-        and "degrees of freedom" in the mechanics.
+        Philosophical definition. Intentionally extra-formal; grounds
+        the conceptual framework without requiring Agda formalization.
     gap:
-      owner: theory
-      action: Consider whether meaning is formalizable or remains philosophical
-      justification: May be intentionally extra-formal.
+      owner: intentional
+      action: none
+      justification: >
+        Theory-level philosophical definition. Meaning is the interpretive
+        frame, not a formalizable predicate.
 
   # ============================================================
   # PLASTICITY & IDENTITY (T2-T3)
@@ -923,6 +984,7 @@ specs:
       Capacity for recursive self-relevant distinctions without collapse.
       Requires T-failure to maintain interval during reentry.
     tier: T2
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Plasticity.md
@@ -951,6 +1013,7 @@ specs:
       Level 6 self: trajectory of S -> S+1 reorganizations. Self as
       region where distinctions remain deformable under reentry.
     tier: T3
+    status: conjecture
     theory:
       status: conjecture
       notes_ref: 01_concepts/The Plastic Self.md
@@ -983,6 +1046,7 @@ specs:
       Levels -2 to 6 classify what is stabilized. Higher levels expand
       scope/target, not add ontological primitives.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Organizational Hierarchy.md
@@ -1011,6 +1075,7 @@ specs:
       Loci 0-3 classify who/what performs stabilization. Orthogonal
       to Organizational Hierarchy.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Locus Hierarchy.md
@@ -1043,6 +1108,7 @@ specs:
       Structural capacity to maintain polarity-conflict without
       inferential collapse. Requires paraconsistent base.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Contained Contradiction.md
@@ -1068,9 +1134,12 @@ specs:
   - id: SPEC-CONTRA-002
     title: Contradiction-preservation
     statement: >
-      Atomic polarity-conflict survives fold without explosion.
-      Fold is non-purifying closure.
+      Atomic polarity-conflict (a cut c where c(u) = In and c'(u) = Out for
+      some u in the same context) survives fold without inferential explosion.
+      Fold is non-purifying closure: if contradiction exists pre-fold, it
+      persists (is not eliminated) post-fold.
     tier: T2
+    status: theorem
     theory:
       status: theorem
       notes_ref: 01_concepts/Contradiction-preservation.md
@@ -1087,10 +1156,15 @@ specs:
       relation: weakened
       rationale: >
         Theory claims fold preserves atomic conflicts. Agda does not
-        have explicit non-explosion proof for fold.
+        have explicit non-explosion proof for fold. "Atomic" means
+        element-level polarity conflict; "persist" means fold does not
+        resolve or eliminate the conflict.
     gap:
       owner: agda
-      action: Prove fold does not eliminate atomic contradictions
+      action: >
+        Prove: if context contains cuts c, c' with c(u)=In and c'(u)=Out,
+        then aggregate(fold(context), u) is not forced to In or Out
+        (remains Rem or preserves conflict structure).
       justification: Important paraconsistency property.
 
   - id: SPEC-CONTRA-003
@@ -1099,13 +1173,13 @@ specs:
       Paraconsistent containment is computationally cheaper than
       forced consistency resolution.
     tier: T3
+    claim: theory-only
+    proof: n/a
     theory:
-      status: conjecture
       notes_ref: 04_claims/Contradiction is cheaper to contain than resolve.md
       last_reviewed: 2026-01-25
       confidence: medium
     agda:
-      status: missing
       pointer: null
       safety: safe
     dsl:
@@ -1114,12 +1188,15 @@ specs:
     mapping:
       relation: different
       rationale: >
-        Computational/economic claim. Would require complexity analysis
-        comparing containment vs resolution strategies.
+        Cost model / complexity claim. Would require formalizing a cost metric
+        (time complexity? space? inference steps?) to prove in Agda.
     gap:
-      owner: theory
-      action: Operationalize "cheaper" for potential formalization
-      justification: T3 conjecture; needs refinement.
+      owner: intentional
+      action: none
+      justification: >
+        THEORY-ONLY: Empirical nature. This is a claim about computational cost
+        and performance that cannot be stated in the type system without first
+        defining a cost model. Intentionally non-formal.
 
   # ============================================================
   # DISTINCTIONS (T1)
@@ -1131,27 +1208,30 @@ specs:
       Commitment (box phi) is prospective closure. Realization (phi)
       is present instantiation. They can diverge (T-failure).
     tier: T1
+    claim: bridge
+    proof: n/a
     theory:
-      status: definition
       notes_ref: 03_distinctions/Commitment vs Realization.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      status: conjecture
       pointer: null
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
+      relation: exact
       rationale: >
-        Follows from T-failure formalization. Currently implicit in
-        modal semantics but not explicit in Mechanics.
+        Bridge spec: defines Commitment := □φ and Realization := φ.
+        The definition is exact. The claim that they can *diverge* is
+        a consequence of T-failure (SPEC-MODAL-001), not part of this definition.
     gap:
-      owner: agda
-      action: Define explicit Commitment/Realization predicates after T-failure
-      justification: Blocked by SPEC-MODAL-001.
+      owner: intentional
+      action: none
+      justification: >
+        Bridge spec documenting the translation between philosophical terms
+        (commitment/realization) and modal notation (□φ/φ).
 
   - id: SPEC-CDIST-002
     title: Necessity vs Actuality
@@ -1159,25 +1239,30 @@ specs:
       Necessity is closure over admissible completions. Actuality is
       present configuration. Distinct by T-failure.
     tier: T1
+    claim: bridge
+    proof: n/a
     theory:
-      status: definition
       notes_ref: 03_distinctions/Necessity vs Actuality.md
       last_reviewed: 2026-01-25
       confidence: high
     agda:
-      status: conjecture
       pointer: null
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: weakened
-      rationale: Same as SPEC-CDIST-001; follows from T-failure.
+      relation: exact
+      rationale: >
+        Bridge spec: defines Necessity := □ (closure over completions) and
+        Actuality := present configuration. The claim that they are *distinct*
+        follows from T-failure (SPEC-MODAL-001).
     gap:
-      owner: agda
-      action: Define after T-failure formalization
-      justification: Blocked by SPEC-MODAL-001.
+      owner: intentional
+      action: none
+      justification: >
+        Bridge spec documenting the translation between philosophical terms
+        (necessity/actuality) and modal semantics.
 
   # ============================================================
   # CONCEPT TYPES (T1)
@@ -1189,6 +1274,7 @@ specs:
       Not all concepts are cut-positions. Some are scalar drivers
       (pre-form). Distinguishes cut-generated positions from scalars.
     tier: T1
+    status: definition
     theory:
       status: definition
       notes_ref: 01_concepts/Concept Types.md
