@@ -180,6 +180,34 @@ When adding a new fold or decay:
 
 4. Document the component in this taxonomy
 
+## Taxonomy Validation
+
+Categories are **operational classifications** based on measured effects, not metaphysical essence.
+
+### Validation Method
+
+For each fold, run on canonical test contexts and measure:
+- Pressure delta: `Sum Unres(after) - Sum Unres(before)`
+- Conflict delta: `Sum Both(after) - Sum Both(before)`
+
+### Expected Category Effects
+
+| Category | Pressure Delta | Conflict Delta |
+|----------|---------------|----------------|
+| Stabilizer | <= 0 (decreases) | varies |
+| Consolidator | ~= 0 (unchanged) | varies |
+| Resolver | <= 0 (decreases) | varies |
+| Expander | >= 0 (increases) | varies |
+
+### If Category Doesn't Match Behavior
+
+If a fold's measured behavior doesn't match its declared category:
+1. The category is wrong -> update registry.json
+2. The fold implementation is wrong -> fix the code
+3. The test contexts are unrepresentative -> add more tests
+
+**Never** keep a mislabeled category. That's how the DSL becomes untrustworthy.
+
 ## See Also
 
 - `registry.json` - Canonical component definitions

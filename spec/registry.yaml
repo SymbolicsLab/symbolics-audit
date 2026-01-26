@@ -1782,3 +1782,36 @@ specs:
       owner: intentional
       action: none
       justification: Definition established. Phase 5 of DSL development.
+
+  - id: SPEC-DSL-010
+    title: Initialization Strategies
+    statement: >
+      AgentSpec.init specifies how the initial context is created.
+      Strategies: empty (default), random (seeded), uniform, fromCuts.
+      Random strategy uses deterministic seeded RNG for reproducibility.
+      Same seed always produces same initial state, enabling scientific
+      experimentation and debugging.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: src/runtime/init.ts
+    mapping:
+      relation: exact
+      rationale: >
+        Init strategies are defined in registry.json with initStrategies array.
+        TypeScript implements all four strategies with seeded RNG for random.
+        Agda formalization is optional (strategies are runtime config, not logic).
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 6 of DSL development.

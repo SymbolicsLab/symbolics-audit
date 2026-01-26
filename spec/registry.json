@@ -171,5 +171,76 @@
       "index": 4,
       "description": "Pre-aggregation context structure (cut count, total supports)"
     }
+  ],
+
+  "categoryWarnings": [
+    {
+      "code": "WARN-001",
+      "condition": "stabilizeFold.category == 'expander'",
+      "message": "Stabilize fold is an expander; expect dissolution",
+      "severity": "error"
+    },
+    {
+      "code": "WARN-002",
+      "condition": "exploreFold.category in ['stabilizer', 'resolver']",
+      "message": "Explore fold reduces pressure; expect crystallization",
+      "severity": "error"
+    },
+    {
+      "code": "WARN-003",
+      "condition": "stabilizeFold.category == 'consolidator' && exploreFold.category == 'consolidator'",
+      "message": "Both folds are consolidators; regime won't steer effectively",
+      "severity": "warning"
+    },
+    {
+      "code": "WARN-004",
+      "condition": "stabilizeFold.category in ['stabilizer', 'resolver'] && exploreFold.category in ['stabilizer', 'resolver']",
+      "message": "Both folds reduce pressure; expect rapid crystallization",
+      "severity": "error"
+    },
+    {
+      "code": "WARN-005",
+      "condition": "stabilizeFold.category == 'expander' && exploreFold.category == 'expander'",
+      "message": "Both folds are expanders; expect rapid dissolution",
+      "severity": "error"
+    }
+  ],
+
+  "initStrategies": [
+    {
+      "id": "empty",
+      "index": 0,
+      "description": "All elements start as Neither/Res (no information, resolved)",
+      "params": []
+    },
+    {
+      "id": "random",
+      "index": 1,
+      "description": "Randomly assign values with deterministic seed",
+      "params": [
+        { "name": "seed", "type": "number", "required": true, "description": "Random seed for reproducibility" },
+        { "name": "inRate", "type": "number", "default": 0.25, "min": 0, "max": 1, "description": "Probability of In" },
+        { "name": "outRate", "type": "number", "default": 0.25, "min": 0, "max": 1, "description": "Probability of Out" },
+        { "name": "bothRate", "type": "number", "default": 0.1, "min": 0, "max": 1, "description": "Probability of Both" },
+        { "name": "unresRate", "type": "number", "default": 0.3, "min": 0, "max": 1, "description": "Probability of Unres" }
+      ]
+    },
+    {
+      "id": "uniform",
+      "index": 2,
+      "description": "All elements have the same Side value",
+      "params": [
+        { "name": "truth", "type": "string", "required": true, "enum": ["neither", "in", "out", "both"] },
+        { "name": "resolved", "type": "string", "required": true, "enum": ["res", "unres"] }
+      ]
+    },
+    {
+      "id": "fromCuts",
+      "index": 3,
+      "description": "Explicit list of cut definitions",
+      "params": [
+        { "name": "cuts", "type": "array", "required": true, "description": "Array of cut definitions" }
+      ]
+    }
   ]
 }
