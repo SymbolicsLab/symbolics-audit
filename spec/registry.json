@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schemaVersion": "0.1.0",
+  "description": "Canonical registry of DSL components shared between Agda and TypeScript",
+  "specRef": "SPEC-DSL-007",
+
+  "foldCategories": {
+    "stabilizer": "Reduces Unres (pressure) or makes commitments explicit",
+    "consolidator": "Combines cuts without significantly changing pressure",
+    "resolver": "Turns specific patterns into settled states (Res)",
+    "expander": "Increases articulation capacity or introduces new pressure"
+  },
+
+  "decayCategories": {
+    "none": "No decay applied",
+    "pruning": "Reduces redundancy in context structure",
+    "forgetting": "Drops stale or inactive commitments",
+    "cooling": "Gradually reduces Unres without removing cuts"
+  },
+
+  "folds": [
+    {
+      "id": "identity",
+      "index": 0,
+      "category": "consolidator",
+      "description": "No-op, returns input unchanged",
+      "params": [],
+      "specRefs": ["SPEC-FOLD-001"],
+      "proofStatus": "verified",
+      "viabilityGuaranteed": true,
+      "preservesConflicts": true
+    },
+    {
+      "id": "aggregate",
+      "index": 1,
+      "category": "consolidator",
+      "description": "Joins all cuts using Resolution aggregation",
+      "params": [],
+      "specRefs": ["SPEC-JOIN-001", "SPEC-CONTRA-004"],
+      "proofStatus": "verified",
+      "viabilityGuaranteed": true,
+      "preservesConflicts": true
+    },
+    {
+      "id": "consensus",
+      "index": 2,
+      "category": "stabilizer",
+      "description": "Threshold-based agreement, reduces ambiguity when threshold met",
+      "params": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "default": 2,
+          "min": 1,
+          "max": 10
+        }
+      ],
+      "specRefs": ["SPEC-FOLD-001"],
+      "proofStatus": "conjecture",
+      "viabilityGuaranteed": false,
+      "preservesConflicts": true
+    },
+    {
+      "id": "unfold",
+      "index": 3,
+      "category": "expander",
+      "description": "Increases exploration pressure by adding sideRem",
+      "params": [],
+      "specRefs": ["SPEC-UNFOLD-001"],
+      "proofStatus": "verified",
+      "viabilityGuaranteed": true,
+      "preservesConflicts": true
+    },
+    {
+      "id": "resolve-stable",
+      "index": 4,
+      "category": "resolver",
+      "description": "Settles unpolarized remainder (Neither/Unres → Neither/Res)",
+      "params": [],
+      "specRefs": [],
+      "proofStatus": "verified",
+      "viabilityGuaranteed": true,
+      "preservesConflicts": true
+    }
+  ],
+
+  "decays": [
+    {
+      "id": "none",
+      "index": 0,
+      "category": "none",
+      "description": "No decay applied",
+      "params": [],
+      "specRefs": []
+    },
+    {
+      "id": "priority",
+      "index": 1,
+      "category": "pruning",
+      "description": "Priority-based decay removes subsumed cuts",
+      "params": [],
+      "specRefs": ["SPEC-DECAY-001"]
+    },
+    {
+      "id": "forget-stale",
+      "index": 2,
+      "category": "forgetting",
+      "description": "Removes cuts that haven't changed in K steps",
+      "params": [
+        {
+          "name": "staleThreshold",
+          "type": "number",
+          "default": 3,
+          "min": 1,
+          "max": 10
+        }
+      ],
+      "specRefs": []
+    }
+  ],
+
+  "policies": [
+    {
+      "id": "homeostatic",
+      "index": 0,
+      "description": "Pressure-based regime switching: >hi→stabilize, <lo→explore, else→decay",
+      "params": [],
+      "specRefs": ["SPEC-MODAL-001", "SPEC-METAB-001"],
+      "axioms": [
+        "pressureCount(∅) = 0 < lo → DoExplore",
+        "pressureCount(ctx) > hi → DoStabilize",
+        "pressureCount(ctx) < lo → DoExplore",
+        "lo ≤ pressureCount(ctx) ≤ hi → DoDecay"
+      ]
+    },
+    {
+      "id": "crystalline",
+      "index": 1,
+      "description": "Always stabilize regardless of pressure",
+      "params": [],
+      "specRefs": [],
+      "axioms": [
+        "∀ ctx → DoStabilize"
+      ]
+    }
+  ],
+
+  "observables": [
+    {
+      "id": "truth_distribution",
+      "index": 0,
+      "description": "Neither/In/Out/Both counts in aggregated view"
+    },
+    {
+      "id": "pressure_ratio",
+      "index": 1,
+      "description": "Unres/Res counts in aggregated view"
+    },
+    {
+      "id": "conflicts",
+      "index": 2,
+      "description": "Count of Both (conflict) elements"
+    },
+    {
+      "id": "intervals",
+      "index": 3,
+      "description": "Interval states (future extension)"
+    },
+    {
+      "id": "raw_context",
+      "index": 4,
+      "description": "Pre-aggregation context structure (cut count, total supports)"
+    }
+  ]
+}

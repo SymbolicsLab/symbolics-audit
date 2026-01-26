@@ -1482,3 +1482,303 @@ specs:
       owner: intentional
       action: none
       justification: Classification for theory; scalars may be out of scope for Agda.
+
+  # ============================================================
+  # DSL LAYER (T2)
+  # ============================================================
+
+  - id: SPEC-DSL-001
+    title: AgentSpec Core Type
+    statement: >
+      AgentSpec defines a symbolic agent via domain, folds, regime, policy,
+      and observables. It is the core configuration type for the DSL layer.
+      An AgentSpec compiles to executable Agda plus an AnalysisReport.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Core.AgentSpec
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: Applications.DSL.Core.AgentSpec
+    mapping:
+      relation: exact
+      rationale: >
+        AgentSpec is the primary configuration type for the DSL layer.
+        It references Mechanics primitives (Side, Context) and provides
+        the specification format for symbolic agents.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 1 of DSL development.
+
+  - id: SPEC-DSL-002
+    title: Trajectory Output Type
+    statement: >
+      DSL execution produces a Trajectory: a time series of Snapshots
+      and Events, not just a final state. The Trajectory captures the
+      full execution history including regime switches and termination.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Trajectory.Trajectory
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: Applications.DSL.Trajectory.Trajectory
+    mapping:
+      relation: exact
+      rationale: >
+        Trajectory type captures execution output with full observability.
+        Snapshots track two-channel Side distributions; Events track
+        discrete actions. Supports analysis and debugging.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 1 of DSL development.
+
+  - id: SPEC-DSL-003
+    title: AnalysisReport Output Type
+    statement: >
+      DSL compilation produces an AnalysisReport containing viability checks,
+      regime predictions, spec linkages, and warnings. This enables
+      verification before execution.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Analysis.Types.AnalysisReport
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: Applications.DSL.Analysis.Types.AnalysisReport
+    mapping:
+      relation: exact
+      rationale: >
+        AnalysisReport provides compile-time analysis output.
+        Viability checking, regime prediction, and spec linkage
+        ensure agent specifications are sound before execution.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 1 of DSL development.
+
+  - id: SPEC-DSL-004
+    title: Elaboration is Total and Checked
+    statement: >
+      elaborate : AgentSpec → Either (List ElabError) ElaboratedAgent.
+      Elaboration either produces a valid agent with resolved library
+      references or precise errors. No silent defaults, no partial
+      elaboration. All fold, decay, and policy names must resolve to
+      library entries.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Elab.elaborate
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: Applications.DSL.Elab.elaborate
+    mapping:
+      relation: exact
+      rationale: >
+        Elaboration is implemented as a total function using Agda's
+        sum type (Either). Every code path produces either a list of
+        errors or a valid ElaboratedAgent. Library lookups use Maybe
+        and accumulate errors for unknown references.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 2 of DSL development.
+
+  - id: SPEC-DSL-005
+    title: FoldLibrary Standard Components
+    statement: >
+      The DSL includes a standard library of folds (identity, aggregate,
+      consensus, unfold), decays (none, priority), and policies
+      (homeostatic, crystalline). Each component carries metadata
+      including spec references, viability guarantees, and conflict
+      preservation properties.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.FoldLibrary.Standard.standardFolds
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: Applications.DSL.FoldLibrary.Standard
+    mapping:
+      relation: exact
+      rationale: >
+        Standard library provides named folds with explicit metadata.
+        Each FoldMeta carries spec references linking to verified
+        properties, enabling compile-time analysis of agent behavior.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 2 of DSL development.
+
+  - id: SPEC-DSL-006
+    title: Runtime Wiring to Mechanics
+    statement: >
+      The DSL runtime is wired to actual Mechanics types. RuntimeState holds
+      a real Context U; observation uses Mechanics aggregate; policy decisions
+      are based on actual pressure metrics (Unres count). The execution loop
+      maintains state, applies folds/decay to Context, and produces Trajectory
+      with real Snapshots capturing two-channel Side distributions.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Run.runWithDomain
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: Applications.DSL.Runtime
+    mapping:
+      relation: exact
+      rationale: >
+        Runtime wiring connects DSL interpreter to Mechanics primitives.
+        RuntimeState holds actual Context U; takeSnapshot uses aggregate
+        function to compute Belnap four-valued truth channels; policy
+        decisions use real pressureCount from Observe module; fold/decay
+        application uses Apply module. The loop produces Trajectory with
+        real Snapshots. Termination detection checks crystallization
+        (pressure = 0), dissolution (all pressure), and stability.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 3 of DSL development.
+
+  - id: SPEC-DSL-007
+    title: JSON Schema v0.1.0
+    statement: >
+      The DSL JSON schema defines the external interface for AgentSpec.
+      Version 0.1.0 is compatible with Phase 3 Mechanics (Belnap four-valued,
+      two-channel Side). Stable string IDs map to internal ℕ IDs.
+      Schema is documented in spec/dsl-schema.md.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Registry
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: spec/dsl-schema.md
+    mapping:
+      relation: exact
+      rationale: >
+        The Registry module defines stable external ID mappings that match
+        the JSON schema. Lookup functions provide typed access to FoldMeta
+        by external ID. Schema documentation tracks all valid IDs and their
+        semantics. External tools use string IDs; Agda uses ℕ internally.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 4 of DSL development.
+
+  - id: SPEC-DSL-008
+    title: Fold and Decay Taxonomy
+    statement: >
+      Folds and decays are classified by category to enable analyzer warnings.
+      Fold categories: stabilizer (reduces pressure), consolidator (neutral),
+      resolver (settles patterns), expander (increases pressure).
+      Decay categories: none, pruning, forgetting, cooling.
+      The analyzer warns on misconfigured category combinations.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: 00_inbox/drafts/Fold-taxonomy.md
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.FoldLibrary.Standard
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: spec/taxonomy.md
+    mapping:
+      relation: exact
+      rationale: >
+        Taxonomy is defined in registry.json with foldCategories and
+        decayCategories objects. Each fold and decay entry includes a
+        category field. TypeScript analyzer uses categories to produce
+        warnings about misconfigured agents.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 5 of DSL development.
+
+  - id: SPEC-DSL-009
+    title: Minimal Complete Agent Invariant
+    statement: >
+      An AgentSpec is complete iff it specifies: non-empty domain,
+      valid stabilize fold, valid explore fold, valid decay, valid policy,
+      regime with lo <= hi and maxSteps > 0, and stabilityThreshold >= 1.
+      This invariant is checked by both Agda elaboration and TypeScript validation.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: verified
+      pointer: Applications.DSL.Elab.elaborate
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: spec/agent-invariant.md
+    mapping:
+      relation: exact
+      rationale: >
+        Completeness invariant is documented in agent-invariant.md.
+        Checked by Agda's elaborate function and TypeScript's validateAgentSpec.
+        Error conditions map to ElabError constructors.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 5 of DSL development.
