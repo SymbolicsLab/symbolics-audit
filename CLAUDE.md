@@ -126,6 +126,21 @@ Each spec has two top-level fields that separate theory-side assertions from imp
 | `bridge` | any | GREEN | Documented translation |
 | `theory-only` | `n/a` | GREEN | Intentionally non-formal |
 | T1 + `conjecture` | any | YELLOW | Foundational tier needs certainty |
+| any | any + `design_decision: required` | YELLOW | Design fork must be resolved |
+
+### Design Decision Flag
+
+Specs with unresolved design decisions use:
+```yaml
+design_decision: required | resolved | n/a
+```
+
+- `required`: A design fork must be resolved before this spec can be proved/closed
+- `resolved`: Design decision was made (document in justification)
+- `n/a`: No design decision involved (default, can be omitted)
+
+Specs with `design_decision: required` are ALWAYS YELLOW regardless of claim/proof alignment.
+This surfaces real architectural decisions that cannot be hidden behind "aligned conjecture."
 
 ### Bridge Specs
 

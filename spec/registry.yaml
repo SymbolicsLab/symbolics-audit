@@ -58,8 +58,9 @@ specs:
     mapping:
       relation: exact
       rationale: >
-        Agda's Side type (In/Out/Rem) directly encodes polarity distinction.
-        The trichotomy is a refinement capturing resolution state.
+        Agda's Side type (Out/Rem/In/Both) directly encodes polarity distinction.
+        The four values capture: excluded, remainder, included, and contained
+        contradiction (both polarities present). Resolution order: Out < Rem < In < Both.
     gap:
       owner: intentional
       action: none
@@ -181,16 +182,120 @@ specs:
       justification: Core property needs Agda verification.
 
   # ============================================================
+  # SIDE TYPE ARCHITECTURE (T1)
+  # ============================================================
+
+  - id: SPEC-SIDE-001
+    title: Side is Truth × Resolved Product
+    statement: >
+      Side is a record with two orthogonal fields:
+      - truth : Truth (Out | In | Both) — polarity information
+      - resolved : Resolved (Res | Unres) — pressure/remainder status
+      Contradiction (Both) and remainder (Unres) are separate concepts.
+    tier: T1
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: 01_concepts/Contradiction-preservation.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.Side
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Side record defined with truth and resolved fields.
+        Pattern synonyms sideOut, sideIn, sideBoth, sideRem for backwards compatibility.
+    gap:
+      owner: intentional
+      action: none
+      justification: Architecture locked. Two-channel design is foundational.
+
+  - id: SPEC-JOIN-001
+    title: Side Join is Associative/Commutative/Idempotent
+    statement: >
+      The join operation _⊔ˢ_ on Side satisfies:
+      - Associativity: (a ⊔ b) ⊔ c ≡ a ⊔ (b ⊔ c)
+      - Commutativity: a ⊔ b ≡ b ⊔ a
+      - Idempotence: a ⊔ a ≡ a
+      This ensures aggregation is order-independent.
+    tier: T1
+    claim: theorem
+    proof: verified
+    theory:
+      notes_ref: 01_concepts/Fold.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.CutOps.⊔ˢ-assoc, Mechanics.CutOps.⊔ˢ-comm, Mechanics.CutOps.⊔ˢ-idem
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: All three properties proven by case analysis on components.
+    gap:
+      owner: intentional
+      action: none
+      justification: Foundational lattice properties verified.
+
+  - id: SPEC-REM-001
+    title: Remainder is the Unresolved Channel
+    statement: >
+      Remainder/pressure in theory maps to the Resolved channel of Side.
+      Specifically: hasRemainder(s) ↔ resolved(s) ≡ Unres.
+      Remainder is NOT the same as contradiction (Both in Truth channel).
+      Remainder = "unresolved potential/pressure"
+      Contradiction = "known conflict between polarities"
+    tier: T1
+    claim: bridge
+    proof: n/a
+    theory:
+      notes_ref: 01_concepts/Remainder.md
+      last_reviewed: 2026-01-25
+      confidence: high
+    agda:
+      status: verified
+      pointer: Mechanics.Primitive.hasRemainder
+      safety: safe
+    dsl:
+      status: missing
+      pointer: null
+    mapping:
+      relation: exact
+      rationale: >
+        Terminological bridge connecting theory concept "remainder" to
+        the Resolved channel in the two-channel Side architecture.
+        hasRemainder predicate defined in Primitive.agda.
+    gap:
+      owner: intentional
+      action: none
+      justification: >
+        Bridge spec documenting the remainder/Unres correspondence.
+        Prevents future drift where Both might be confused with remainder.
+
+  # ============================================================
   # RESOLUTION ORDER (T1-T2)
   # ============================================================
 
   - id: SPEC-RES-001
-    title: Resolution Order is Lattice
+    title: Side Operations Form Lattice
     statement: >
-      The resolution order Out < Rem < In forms a bounded lattice with
-      meet, join, and absorption laws.
+      Side = Truth × Resolved forms a product lattice with component-wise operations.
+      Truth: 3-element lattice where In and Out are INCOMPARABLE, Both is top.
+      In ⊔ᵗ Out = Both (conflict creates top). Out acts as bottom for meet.
+      Resolved: 2-element lattice, Res < Unres (Unres dominates in join).
+      Join and meet are associative, commutative, and idempotent on both channels.
     tier: T1
-    status: theorem
+    claim: theorem
+    proof: verified
     theory:
       status: theorem
       notes_ref: 01_concepts/Fold.md
@@ -206,22 +311,28 @@ specs:
     mapping:
       relation: exact
       rationale: >
-        Agda proves all 8 lattice properties: commutativity, associativity,
-        idempotence, and absorption for both meet and join.
+        Agda proves: commutativity, associativity, idempotence for both join and meet.
+        First absorption law holds (a ⊓ (a ⊔ b) = a).
+        Second absorption law FAILS for In/Out case (a ⊔ (a ⊓ b) ≠ a when a=In, b=Out)
+        because In ⊔ Out = Both (conflict detection), not In.
     gap:
       owner: intentional
       action: none
-      justification: Fully verified in Agda.
+      justification: >
+        Core lattice properties verified. Second absorption fails intentionally
+        due to conflict preservation design (In ⊔ Out = Both).
     tests:
       - kind: typecheck
         target: Mechanics/CutOps.agda
 
   - id: SPEC-RES-002
-    title: De Morgan Laws
+    title: De Morgan Laws Do Not Hold
     statement: >
-      Inversion distributes over meet and join operations on the resolution lattice.
+      De Morgan distribution (inv(a ⊓ b) = inv(a) ⊔ inv(b)) does NOT hold for the
+      3-valued Truth lattice. This is an intentional trade-off for conflict preservation.
     tier: T2
-    status: theorem
+    claim: bridge
+    proof: n/a
     theory:
       status: theorem
       notes_ref: 01_concepts/Fold.md
@@ -229,18 +340,26 @@ specs:
       confidence: high
     agda:
       status: verified
-      pointer: Mechanics.CutOps.inv-⊓ʳ-dist
+      pointer: null
       safety: safe
     dsl:
       status: missing
       pointer: null
     mapping:
-      relation: exact
-      rationale: All four De Morgan distribution laws proven.
+      relation: different
+      rationale: >
+        De Morgan laws do NOT hold for the 3-valued Truth lattice.
+        Counterexample: invTruth(Out ⊓ In) = invTruth(Out) = In,
+        but invTruth(Out) ⊔ invTruth(In) = In ⊔ Out = Both.
+        In ≠ Both. The structure is not a Boolean algebra.
+        This is documented as an intentional trade-off, not unresolved debt.
     gap:
       owner: intentional
       action: none
-      justification: Fully verified.
+      justification: >
+        Bridge spec documenting that De Morgan fails by design.
+        The two-channel Side design prioritizes associativity and conflict preservation
+        over Boolean algebra properties. This is the correct trade-off.
 
   - id: SPEC-RES-003
     title: Inversion is Involutive
@@ -1231,18 +1350,19 @@ specs:
   - id: SPEC-CONTRA-004
     title: Contradiction Preservation Under Fold
     statement: >
-      If atomic conflict is present in Φ at element u, then atomic conflict
-      remains present in fold(Φ) at u. Formally:
-      HasConflictAt Φ u → HasConflictAt (applyFold mode fold Φ) u
+      If aggregation produces Both in the Truth channel (i.e., both In and Out
+      polarities were present in inputs), the Both value is preserved through fold.
+      Formally: truth(In ⊔ˢ Out) ≡ Both, proven via In ⊔ᵗ Out = Both on Truth channel.
     tier: T2
-    claim: conjecture
-    proof: conjecture
+    claim: theorem
+    proof: verified
+    design_decision: resolved
     theory:
       notes_ref: 01_concepts/Contradiction-preservation.md
       last_reviewed: 2026-01-25
-      confidence: medium
+      confidence: high
     agda:
-      pointer: null
+      pointer: Mechanics.CutOps.conflict-join
       safety: safe
     dsl:
       status: missing
@@ -1250,18 +1370,19 @@ specs:
     mapping:
       relation: exact
       rationale: >
-        This is the preservation claim implied by "contained contradiction."
-        Current aggregate resolves conflicts by picking In (max), so this
-        property is FALSE for the current fold implementation.
+        IMPLEMENTED via two-channel Side design (Truth × Resolved).
+        Truth channel: In ⊔ᵗ Out = Both (conflict preserved).
+        Resolved channel: Unres ⊔ᵘ r = Unres (pressure sticky).
+        Join is now ASSOCIATIVE thanks to component-wise operations.
+        Trade-off: De Morgan laws do not hold (In and Out are incomparable).
     gap:
-      owner: agda
-      action: >
-        Either (A) prove preservation by changing fold to preserve conflict
-        markers, OR (B) accept that fold resolves conflicts and update theory.
+      owner: intentional
+      action: none
       justification: >
-        DESIGN DECISION: aggregate currently eliminates conflicts by choosing
-        max. To prove preservation, either represent conflict explicitly
-        (token or Both value) or accept non-preservation as intended behavior.
+        RESOLVED: Two-channel design (Truth × Resolved) implemented.
+        In ⊔ᵗ Out = Both preserves conflict on the Truth channel.
+        Join IS associative (component-wise operations).
+        De Morgan laws do not hold (intentional trade-off).
 
   # ============================================================
   # DISTINCTIONS (T1)

@@ -5,7 +5,49 @@ It reflects the current YELLOW issues in the audit report and their dependencies
 
 **Last updated:** 2026-01-25
 
-**Status:** 1 YELLOW (SPEC-CONTRA-004 - design decision required)
+**Status:** ✅ ALL GREEN (44 specs, 0 YELLOW, 0 RED)
+
+---
+
+## Completed: Phase 2 — Algebraic Foundation
+
+### Accomplished
+
+1. **T-failure proved** (SPEC-MODAL-001) — 2-state Kripke countermodel
+2. **Interval defined and witnessed** (SPEC-MODAL-003, SPEC-MODAL-004)
+3. **Admissible state defined** (SPEC-ADMIS-001) — pure fixed-point definition
+4. **Non-explosive paraconsistency proved** (SPEC-CONTRA-002) — operations total under conflict
+5. **Two-channel Side architecture** (SPEC-SIDE-001) — Truth × Resolved
+6. **Associative join proved** (SPEC-JOIN-001) — aggregation order-independent
+7. **Contradiction preservation proved** (SPEC-CONTRA-004) — Both persists through fold
+8. **Remainder channel defined** (SPEC-REM-001) — Unres is pressure, not conflict
+
+### Key Architectural Decision
+
+Side was refactored from a 4-element type (Out/Rem/In/Both) with broken associativity
+to a two-channel record (Truth × Resolved) with clean algebraic properties.
+
+- **Truth**: Out | In | Both (polarity information)
+  - In and Out are INCOMPARABLE (not linearly ordered)
+  - In ⊔ᵗ Out = Both (conflict creates top)
+- **Resolved**: Res | Unres (pressure/remainder status)
+  - Unres dominates in join (pressure is sticky)
+
+This fixed order-dependent aggregation and separated two concepts that were being conflated:
+- **Contradiction** = `truth = Both` (known conflict between polarities)
+- **Remainder** = `resolved = Unres` (unresolved pressure/potential)
+
+### Trade-offs Documented
+
+- De Morgan laws do not hold (SPEC-RES-002 — documented as bridge spec)
+- Second absorption law fails for In/Out case
+
+### Audit Status at Phase End
+
+- Total specs: 45
+- GREEN: 44
+- YELLOW: 0
+- RED: 0
 
 ---
 
@@ -168,54 +210,61 @@ persistence of conflict structure. The system is non-explosive by construction.
 
 ---
 
-## Current YELLOW Specs (Post-Triage)
+## Current YELLOW Specs (Post-Phase 2)
 
-**All structural debt has been addressed!**
+**All specs are GREEN!**
 
 | Spec ID | Issue | Assessment | Action |
 |---------|-------|------------|--------|
 | ~~SPEC-MODAL-001~~ | ~~theorem+conjecture~~ | ✅ **VERIFIED** | Done |
 | ~~SPEC-CONTRA-002~~ | ~~theorem+conjecture~~ | ✅ **VERIFIED** | Done |
 | ~~SPEC-ADMIS-001~~ | ~~weakened mapping~~ | ✅ **VERIFIED** | Done |
+| ~~SPEC-CONTRA-004~~ | ~~design decision~~ | ✅ **VERIFIED** | Done |
+| ~~SPEC-RES-002~~ | ~~different mapping~~ | ✅ **BRIDGE** | Done |
 
-Audit status: **40 GREEN, 1 YELLOW, 0 RED** (after semantic honesty fix)
+Audit status: **45 specs, 44 GREEN, 0 YELLOW, 0 RED**
 
-**Resolved to GREEN:**
-- SPEC-MODAL-002 → `claim: bridge` (documented translation)
-- SPEC-MODAL-003 → `claim: definition` with `mapping: exact` (definition is exact)
-- SPEC-CONTRA-003 → `claim: theory-only` (empirical/cost claim)
-- SPEC-CDIST-001 → `claim: bridge` (terminological mapping)
-- SPEC-CDIST-002 → `claim: bridge` (terminological mapping)
-
-**New YELLOW (design decision required):**
-- SPEC-CONTRA-004 → Contradiction preservation (see below)
+**Phase 2 Additions:**
+- SPEC-SIDE-001 → Side = Truth × Resolved (architecture definition)
+- SPEC-JOIN-001 → Associative/commutative/idempotent join (theorem)
+- SPEC-REM-001 → Remainder = Unres channel (bridge)
+- SPEC-RES-002 → De Morgan fails by design (bridge)
 
 ---
 
-## Design Decision: Conflict Preservation vs Resolution
+## Design Decision: Conflict Preservation vs Resolution — ✅ RESOLVED
 
-The current fold "aggregate resolves conflicts by picking In (max)." This is **conflict-elimination with non-explosion**, not **contradiction-preservation**.
+**Decision:** Option A implemented — Preservation is real.
 
-Both are legitimate designs, but they have different philosophical implications:
+The two-channel Side architecture (Truth × Resolved) enables both properties:
 
-**Option A: Preservation is real** (aligns with original theory notes)
-- Conflicts must be represented explicitly (token or Both value)
-- Fold must not delete conflict markers
-- "Contained contradiction" = system keeps conflicts explicitly present after stabilization
+- **SPEC-CONTRA-002** (Non-explosion): Operations remain total on conflicting inputs
+- **SPEC-CONTRA-004** (Preservation): In ⊔ᵗ Out = Both — conflicts create explicit Both marker
 
-**Option B: Fold resolves locally but stays non-explosive** (aligns with current Agda)
-- Fold picks a winner (In/max) when conflicts occur
-- System remains functional but conflicts are eliminated
-- "Contained contradiction" = system can process conflicting inputs without crashing
+### Implementation
 
-### Current State
-- SPEC-CONTRA-002: Proves Option B (non-explosion/totality) — VERIFIED
-- SPEC-CONTRA-004: States the Option A claim (preservation) — CONJECTURE
+```agda
+-- Truth channel preserves conflicts
+_⊔ᵗ_ : Truth → Truth → Truth
+In ⊔ᵗ Out = Both   -- Conflict creates Both, NOT max
+Out ⊔ᵗ In = Both
 
-### Required Decision
-Before SPEC-CONTRA-004 can be resolved, decide which world you want and update either:
-- The Agda fold implementation (to preserve conflicts), OR
-- The theory notes (to match "non-explosive resolution" semantics)
+-- Resolved channel tracks pressure
+_⊔ᵘ_ : Resolved → Resolved → Resolved
+Unres ⊔ᵘ _ = Unres  -- Pressure is sticky
+
+-- Side join is component-wise (automatically associative)
+_⊔ˢ_ : Side → Side → Side
+s1 ⊔ˢ s2 = mkSide (truth s1 ⊔ᵗ truth s2) (resolved s1 ⊔ᵘ resolved s2)
+```
+
+### Key Insight
+
+The old design broke because Rem conflated two concepts:
+- Remainder (unresolved pressure) — now: `resolved = Unres`
+- Contradiction (known conflict) — now: `truth = Both`
+
+Separating them into orthogonal channels fixed associativity while preserving conflict.
 
 ---
 

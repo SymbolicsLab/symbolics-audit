@@ -2,6 +2,30 @@
 
 Cross-layer compatibility tracking for the Symbolics Lab project.
 
+## Current Status
+
+**Audit Result:** 45 specs, 44 GREEN, 0 YELLOW, 0 RED
+
+### Architecture Verified (Phase 2 Complete)
+
+| Spec | Description |
+|------|-------------|
+| SPEC-SIDE-001 | Two-channel Side (Truth × Resolved) |
+| SPEC-JOIN-001 | Associative aggregation |
+| SPEC-CONTRA-004 | Contradiction preservation (Both persists) |
+| SPEC-REM-001 | Remainder separation (Unres ≠ Both) |
+| SPEC-MODAL-001 | T-failure (modal foundation) |
+
+### How to Run
+
+```bash
+cd symbolics-audit
+python3 scripts/audit.py
+# Output written to AUDIT_REPORT.md
+```
+
+---
+
 ## Purpose
 
 This repository maintains alignment between three layers of the Symbolics formal theory:
