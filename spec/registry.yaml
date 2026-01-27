@@ -1815,3 +1815,137 @@ specs:
       owner: intentional
       action: none
       justification: Definition established. Phase 6 of DSL development.
+
+  - id: SPEC-DSL-011
+    title: Fold Expressions (Combinators)
+    statement: >
+      FoldExpr allows compositional fold definitions without turning the DSL
+      into a general programming language. Types: ref (simple fold reference),
+      seq (sequential composition), repeat (bounded repetition, max 10),
+      if (conditional based on metrics). Max depth: 5. Max nodes: 20.
+      These limits keep expressions analyzable and prevent unbounded computation.
+    tier: T2
+    claim: definition
+    proof: verified
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: src/runtime/fold-expr.ts
+    mapping:
+      relation: exact
+      rationale: >
+        FoldExpr types defined in types.ts. Interpreter executes all combinator
+        types. Validation enforces depth/count/node limits. Backward compatible
+        with legacy FoldRef format. Category inference extended for combinators.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 7 of DSL development.
+
+  - id: SPEC-DSL-012
+    title: Decision Justification
+    statement: >
+      Every policy decision emits a DecisionJustification record capturing:
+      metrics at decision point (pressure, conflicts, truth counts, cut count),
+      regime zone (above-hi, below-lo, in-window), thresholds used, action chosen,
+      and the FoldExprPath showing which branches were taken for conditional folds.
+      This enables post-hoc explanation of agent behavior.
+    tier: T2
+    claim: definition
+    proof: n/a
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: src/schema/types.ts, src/runtime/interpreter.ts
+    mapping:
+      relation: exact
+      rationale: >
+        DecisionJustification and FoldExprPath types defined in schema/types.ts.
+        Interpreter captures justification on every fold/decay event via
+        captureJustification(). Events are now StructuredEvent with justification field.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 8 of DSL development.
+
+  - id: SPEC-DSL-013
+    title: Effect Lattice and Abstract Interpretation
+    statement: >
+      Static analysis predicts fold effects without execution. MetricEffect lattice:
+      {decrease, increase, no-change, unknown}. FoldEffects captures effects on
+      all metrics (pressure, conflicts, inCount, outCount, neitherCount).
+      Operations: joinEffect (conservative merge), composeEffects (sequential),
+      amplifyEffects (repeated). StaticPrediction infers likely outcome
+      (crystallization, dissolution, homeostasis) with confidence level.
+    tier: T2
+    claim: definition
+    proof: n/a
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: src/analysis/effects.ts, src/schema/registry.ts
+    mapping:
+      relation: exact
+      rationale: >
+        Effect lattice defined in analysis/effects.ts with join/compose/amplify
+        operations. Registry stores fold effect signatures. Analysis module
+        uses abstract interpretation to predict outcomes.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 8 of DSL development.
+
+  - id: SPEC-DSL-014
+    title: Run Capsule Format
+    statement: >
+      RunCapsule bundles everything needed to reproduce and verify a run:
+      version info, spec used, registry snapshot (component versions/hashes),
+      init result (strategy, seed, context hash), analysis report, full trajectory,
+      and metadata (timestamp, duration). Verification re-runs spec and compares
+      context hash, step count, and final state. INVARIANT: Re-running with same
+      spec/seed must produce identical trajectory.
+    tier: T2
+    claim: definition
+    proof: n/a
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-26
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: src/capsule/types.ts, src/capsule/generate.ts
+    mapping:
+      relation: exact
+      rationale: >
+        RunCapsule type defined in capsule/types.ts. Generation and verification
+        implemented in capsule/generate.ts. CLI commands 'capsule' and 'verify-capsule'
+        added. Hashing uses SHA-256 for context verification.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 8 of DSL development.
