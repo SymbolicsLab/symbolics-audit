@@ -116,6 +116,37 @@
         }
       ],
       "specRefs": []
+    },
+    {
+      "id": "drop-persistent-conflict",
+      "index": 3,
+      "category": "cooling",
+      "description": "Resolves persistent conflict; can emit pressure for metabolic loop",
+      "params": [
+        {
+          "name": "persistThreshold",
+          "type": "number",
+          "default": 3,
+          "min": 1,
+          "max": 10
+        },
+        {
+          "name": "dropSide",
+          "type": "string",
+          "default": "out"
+        },
+        {
+          "name": "emitPressure",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "name": "targetTruth",
+          "type": "string",
+          "default": "remaining"
+        }
+      ],
+      "specRefs": ["SPEC-DSL-020"]
     }
   ],
 
@@ -205,6 +236,44 @@
       "severity": "error"
     }
   ],
+
+  "foldEffects": {
+    "identity": {
+      "pressure": "no-change",
+      "conflicts": "no-change",
+      "inCount": "no-change",
+      "outCount": "no-change",
+      "neitherCount": "no-change"
+    },
+    "aggregate": {
+      "pressure": "unknown",
+      "conflicts": "unknown",
+      "inCount": "unknown",
+      "outCount": "unknown",
+      "neitherCount": "unknown"
+    },
+    "consensus": {
+      "pressure": "decrease",
+      "conflicts": "decrease",
+      "inCount": "unknown",
+      "outCount": "unknown",
+      "neitherCount": "unknown"
+    },
+    "unfold": {
+      "pressure": "increase",
+      "conflicts": "unknown",
+      "inCount": "unknown",
+      "outCount": "unknown",
+      "neitherCount": "unknown"
+    },
+    "resolve-stable": {
+      "pressure": "decrease",
+      "conflicts": "no-change",
+      "inCount": "no-change",
+      "outCount": "no-change",
+      "neitherCount": "no-change"
+    }
+  },
 
   "initStrategies": [
     {

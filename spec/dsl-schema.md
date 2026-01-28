@@ -79,16 +79,67 @@ that defines a symbolic agent. The schema is versioned and tracked under audit.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `stabilize` | FoldRef | Fold applied when pressure > hi |
-| `explore` | FoldRef | Fold applied when pressure < lo |
+| `stabilize` | FoldExpr | Fold expression applied when pressure > hi |
+| `explore` | FoldExpr | Fold expression applied when pressure < lo |
 
-**FoldRef structure:**
+**FoldExpr** can be a simple reference or a composite expression.
+
+#### Simple Reference (backward compatible)
+```json
+{ "type": "ref", "name": "aggregate", "params": {} }
+```
+Or shorthand (deprecated but supported):
+```json
+{ "name": "aggregate", "params": {} }
+```
+
+#### Sequential Composition
 ```json
 {
-  "name": "<fold-id>",
-  "params": { "<param-name>": <value> }
+  "type": "seq",
+  "first": { "type": "ref", "name": "resolve-stable", "params": {} },
+  "second": { "type": "ref", "name": "aggregate", "params": {} }
 }
 ```
+Applies first, then second. Pipeline semantics.
+
+#### Bounded Repetition
+```json
+{
+  "type": "repeat",
+  "fold": { "type": "ref", "name": "aggregate", "params": {} },
+  "count": 3
+}
+```
+Applies fold `count` times. Max count: 10.
+
+#### Conditional
+```json
+{
+  "type": "if",
+  "metric": "conflicts",
+  "cmp": "gt",
+  "threshold": 2,
+  "then": { "type": "ref", "name": "resolve-stable", "params": {} },
+  "else": { "type": "ref", "name": "aggregate", "params": {} }
+}
+```
+If metric comparison is true, apply `then`, else apply `else`.
+
+**Available Metrics:**
+- `pressure` - Unres count
+- `conflicts` - Both count
+- `inCount`, `outCount`, `neitherCount` - Truth distribution
+- `cutCount` - Context structure size
+
+**Comparison Operators:** `gt`, `lt`, `eq`, `gte`, `lte`
+
+**FoldExpr Limits:**
+- Max depth: 5
+- Max repeat count: 10
+- Max nodes: 20
+
+These limits keep expressions analyzable and prevent unbounded computation.
 
 ### decay (required)
 

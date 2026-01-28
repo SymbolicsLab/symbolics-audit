@@ -1949,3 +1949,72 @@ specs:
       owner: intentional
       action: none
       justification: Definition established. Phase 8 of DSL development.
+
+  - id: SPEC-DSL-020
+    title: Resolution Produces Pressure
+    statement: >
+      When drop-persistent-conflict resolves Both, it can emit pressure
+      by setting resolved=Unres. This creates a metabolic loop where
+      conflict → pressure → explore → conflict. Controlled by emitPressure
+      and targetTruth parameters. When emitPressure=true and targetTruth=neither,
+      Both → Neither/Unres instead of Both → In or Both → Out.
+    tier: T2
+    claim: definition
+    proof: n/a
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-28
+      confidence: high
+    agda:
+      status: missing
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: src/runtime/interpreter.ts
+    mapping:
+      relation: exact
+      rationale: >
+        Phase 11d implementation. emitPressure and targetTruth parameters
+        added to drop-persistent-conflict decay. Registry updated with
+        new parameter definitions.
+    gap:
+      owner: intentional
+      action: none
+      justification: Definition established. Phase 11d of DSL development.
+
+  - id: SPEC-DSL-021
+    title: Metabolic Conflict Cycling Requires Pressure Emission
+    statement: >
+      In the metabolic configuration class (drop-persistent-conflict with
+      emitPressure=true, targetTruth=neither), the distribution of conflictSwitches
+      stochastically dominates the non-emitting configuration. Specifically:
+      - Without pressure emission: max switches ≤ 2, 0% runs with 3+ switches
+      - With pressure emission: max switches = 3, 22.5% runs with 3+ switches
+      This demonstrates that resolution must produce pressure for conflict
+      to cycle through the metabolic loop.
+    tier: T2
+    claim: empirical
+    proof: experiments/metabolic-tension/
+    theory:
+      notes_ref: null
+      last_reviewed: 2026-01-28
+      confidence: high
+    agda:
+      status: n/a
+      pointer: null
+      safety: safe
+    dsl:
+      status: implemented
+      pointer: experiments/metabolic-tension/
+    mapping:
+      relation: exact
+      rationale: >
+        Empirical finding from Phase 11d sweep experiment. 600 runs with
+        metabolic configuration compared to 600 runs with dynamic configuration.
+        Key metric: conflictSwitches distribution shows metabolic achieves 3+
+        switches in 22.5% of runs vs 0% for non-emitting.
+    gap:
+      owner: intentional
+      action: none
+      justification: Empirical claim verified by experiment. Phase 11d/12.
