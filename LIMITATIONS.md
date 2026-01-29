@@ -139,28 +139,37 @@ postulate
 
 ## Experiment Limitations
 
-### Metabolic Tension Results (Phase 11d)
+### Metabolic Tension Results (Phase 11d) - **INVALIDATED**
 
 **Location**: `symbolics-dsl/experiments/metabolic-tension/`
 
-**Key limitations**:
+**Status**: **ARTIFACT OF PLACEHOLDER IMPLEMENTATION**
 
-1. **Threshold artifact**: "Tension zone" defined as ≥3 switches; max observed = 3
-   - With threshold ≥2: 75% qualify
-   - With threshold ≥3: 22.5% qualify
-   - With threshold ≥4: 0% qualify
+Phase 2.5 ablation study demonstrated that the "metabolic tension" results were artifacts:
 
-2. **Terminology overclaim**: "Metabolic cycling" implies sustained oscillation
-   - Reality: max 3 switches = conflict appears, resolves, returns ONCE
-   - Better term: "transient conflict return" or "single rebound"
+| Finding | Placeholder | Canonical |
+|---------|-------------|-----------|
+| Max switches | 3 | **2** |
+| Mean switches | 1.90 | **1.16** |
+| "Tension zone" (≥3) | 22.5% | **0.0%** |
 
-3. **Implementation**: Based on placeholder folds, not real Agda semantics
+**The "metabolic cycling" phenomenon does not occur under canonical Agda semantics.**
 
-4. **Causality**: "Resolution must produce pressure" is correlation, not proven mechanism
+See `symbolics-dsl/experiments/canonical-tension/RESULTS.md` for the ablation analysis.
 
-5. **Scaling**: Only tested at domain size 15
+### What Was Artifact
 
-6. **Baselines**: "Static" and "Dynamic" comparisons differ in multiple parameters
+1. **Placeholder `aggregate`**: Returned `uniformCut(sideIn)` instead of actual join
+2. This injected positive evidence everywhere
+3. Mixed with Out values to create artificial conflicts
+4. Decay + explore created oscillation not present in real semantics
+
+### Canonical Semantics Results
+
+With real Agda semantics (Phase 2):
+- **Maximum switches**: 2 (conflict can appear, resolve, return once)
+- **No sustained cycling**: After one return, conflicts resolve permanently
+- **96.7% reach stability**: System converges, doesn't oscillate
 
 ---
 
