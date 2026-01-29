@@ -1,7 +1,7 @@
 # Proof Plan for Switch Bound Theorems
 
-**Date**: 2026-01-29
-**Status**: Phase 3A.4 - Agda Formalization
+**Date**: 2026-01-29 (updated)
+**Status**: Phase 3A.4 - Agda Formalization (SwitchBound.agda created, L12 proven)
 **Related**: SWITCH-BOUND.md, OPERATIONS.md
 
 ---
@@ -127,9 +127,14 @@ conflict-join : In ⊔ᵗ Out ≡ Both
 ```
 ∀ t → isBoth(Neither ⊔ᵗ t) → isBoth(t)
 ```
-**Status**: ⚠ TO PROVE
+**Status**: ✓ PROVEN
+**Location**: `Mechanics/SwitchBound.agda:73-74`
 
 **Proof**: Follows from L4 (`Neither ⊔ᵗ t = t`).
+```agda
+Neither-cannot-create-conflict : ∀ t → isBoth (Neither ⊔ᵗ t) ≡ true → isBoth t ≡ true
+Neither-cannot-create-conflict t p = trans (cong isBoth (sym (⊔ᵗ-identityˡ t))) p
+```
 
 ---
 
@@ -186,7 +191,7 @@ conflict-join : In ⊔ᵗ Out ≡ Both
 | L9 | Unfold preserves truth | VERIFIED, TO PROVE | HIGH |
 | L10 | Decay preserves aggregate | VERIFIED, TO PROVE | MEDIUM |
 | L11 | Conflict creation | ✓ PROVEN | — |
-| L12 | Neither can't create conflict | TO PROVE | HIGH |
+| L12 | Neither can't create conflict | ✓ PROVEN | — |
 | T1 | Truth invariant | TO PROVE | HIGH |
 | SB-1 | Canonical switches = 0 | TO PROVE | GOAL |
 | SB-2 | Drop-conflict switches ≤ 1 | TO PROVE | GOAL |
@@ -195,8 +200,10 @@ conflict-join : In ⊔ᵗ Out ≡ Both
 
 ## Next Steps
 
-1. **Create SwitchBound.agda**: Start with L8, L9, L12
-2. **Define canonical step**: Formalize the step relation
+1. ~~**Create SwitchBound.agda**: Start with L8, L9, L12~~ ✓ DONE (2026-01-29)
+2. **Prove L8**: Aggregate idempotence in Agda
+3. **Prove L9**: Unfold preserves truth in Agda
+4. **Define canonical step**: Formalize the step relation
 3. **Prove T1**: Truth invariant theorem
 4. **Define switchCount**: Formalize the switch counting function
 5. **Prove SB-1**: Main canonical system theorem
