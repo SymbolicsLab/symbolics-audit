@@ -280,12 +280,38 @@ Testing showed only 70% of cases preserved aggregate under resolution order.
 
 ---
 
+## DD-010: Canonical vs Variant Decay Semantics
+
+**Status**: DECIDED
+
+**Decision**: `decay_absorb` (absorption-based subsumption) is the canonical decay for formal proofs. `decay_dropConflict` (drop-persistent-conflict) is a variant mechanism for engineering purposes.
+
+**Context**: Phase 3A.3 revealed that the "≤ 2 switches" conjecture was too weak because it conflated two different systems with different decay semantics.
+
+**Rationale**:
+1. `decay_absorb` is aggregate-preserving → clean semantics, switches = 0
+2. `decay_dropConflict` is intentionally non-preserving → can resolve conflicts, switches ≤ 1
+3. Both are valid, but they are DIFFERENT systems with DIFFERENT theorems
+
+**Consequence**:
+- **SB-1 (switches = 0)**: Applies to canonical system with decay_absorb only
+- **SB-2 (switches ≤ 1)**: Applies to system with decay_dropConflict enabled
+- The bound "≤ 2" was loose because it combined results without distinguishing decays
+
+**Implementation**:
+- `decay_absorb`: Implemented via `updateContext` (context.ts:149-158)
+- `decay_dropConflict`: Implemented via `applyDropPersistentConflict` (interpreter.ts:159-246)
+
+**Documentation**: `conjectures/OPERATIONS.md`, `conjectures/SWITCH-BOUND.md`
+
+---
+
 ## Pending Decisions Summary
 
 | ID | Topic | Status | Blocking |
 |----|-------|--------|----------|
-| DD-002 | Unfold Semantics | PENDING | Switch bound result |
-| DD-003 | Decay Mechanisms | PENDING | Switch bound result |
+| DD-002 | Unfold Semantics | RESOLVED (implicitly) | — |
+| DD-003 | Decay Mechanisms | RESOLVED (see DD-010) | — |
 
 ## Resolved Decisions Summary
 
@@ -298,6 +324,7 @@ Testing showed only 70% of cases preserved aggregate under resolution order.
 | DD-007 | Test Oracle | Three-layer validation |
 | DD-008 | Domain Size | |U|=15 default |
 | DD-009 | Subsumption Order (Decay) | Absorption order (≤ⱼ) |
+| DD-010 | Canonical vs Variant Decay | decay_absorb is canonical, decay_dropConflict is variant |
 
 ---
 
