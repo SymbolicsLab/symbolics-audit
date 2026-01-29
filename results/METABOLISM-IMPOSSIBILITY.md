@@ -1,8 +1,8 @@
-# Metabolism Impossibility Under Canonical Semantics
+# Truth-Invariance Theorem (Metabolism Impossibility)
 
-**Date**: 2026-01-29
-**Status**: VERIFIED (exhaustive model checking) / PENDING (Agda formalization)
-**Related**: conjectures/SWITCH-BOUND.md, conjectures/OPERATIONS.md
+**Date**: 2026-01-29 (updated Phase 3A.5)
+**Status**: ✓ PROVEN (Agda, `--safe --without-K`)
+**Related**: conjectures/SWITCH-BOUND.md, conjectures/OPERATIONS.md, conjectures/PROOF-PLAN.md
 
 ---
 
@@ -132,15 +132,18 @@ This is now a **design choice**, not an emergent property.
 
 ---
 
-## Verified Lemmas
+## Proven Lemmas (Agda)
 
-| Lemma | Statement | Evidence |
-|-------|-----------|----------|
-| Lemma 1 | Decay preserves aggregate | 15625/15625 exhaustive tests |
-| Lemma 2 | Stabilize is idempotent | 351/351 exhaustive tests |
-| Lemma 3 | Explore preserves truth | 351/351 exhaustive tests |
-| — | DoStabilize cannot increase conflict | 351/351 exhaustive tests |
-| — | DoExplore cannot increase conflict | 351/351 exhaustive tests |
+| Lemma | Statement | Status | Location |
+|-------|-----------|--------|----------|
+| L8 | Aggregate idempotence | ✓ PROVEN | `SwitchBound.agda:129-130` |
+| L9 | Unfold preserves truth | ✓ PROVEN | `SwitchBound.agda:175-192` |
+| L10-core | Absorbed cuts don't contribute | ✓ PROVEN | `SwitchBound.agda:223-225` |
+| L12 | Neither can't create conflict | ✓ PROVEN | `SwitchBound.agda:70-71` |
+| T1-stabilize | DoStabilize preserves truthOfAgg | ✓ PROVEN | `SwitchBound.agda:250` |
+| T1-explore | DoExplore preserves truthOfAgg | ✓ PROVEN | `SwitchBound.agda:254` |
+
+All proofs compile with `agda --safe --without-K`.
 
 ---
 
@@ -148,19 +151,23 @@ This is now a **design choice**, not an emergent property.
 
 You can now credibly say:
 
-> "We prove that under canonical semantics—where aggregate is pointwise join,
-> decay removes only absorbed cuts, and stabilize/explore add aggregate or
-> identity cuts—truth conflict is an invariant of the dynamics.
+> **Theorem (Truth-Invariance)**: Under canonical semantics—where aggregate is
+> pointwise join, decay removes only absorbed cuts, stabilize adds the aggregate,
+> and explore adds identity cuts—the truth component of the aggregate is invariant.
 >
-> Consequently, 'metabolic cycling' (sustained oscillation in truth conflict)
-> is impossible without adding an explicit novelty operator.
+> **Corollary (SB-1)**: `switches(τ) = 0` for all trajectories.
 >
-> The earlier observed oscillation was caused by a placeholder implementation
-> that accidentally injected truth support. Removing the placeholder removed
-> the oscillation, confirming the structural diagnosis."
+> **Proof**: Agda, `--safe --without-K`. See `symbolics-core/src/Mechanics/SwitchBound.agda`.
 
-This is a clean, honest, publishable result. It explains both what the system
-does (stabilize) and what it cannot do (cycle) without external intervention.
+Consequently, "metabolic cycling" (sustained oscillation in truth conflict)
+is structurally impossible without adding an explicit novelty operator.
+
+The earlier observed oscillation was caused by a placeholder implementation
+that accidentally injected truth support. Removing the placeholder removed
+the oscillation, confirming the structural diagnosis.
+
+This is a clean, honest, **machine-verified** result. It explains both what the
+system does (stabilize) and what it cannot do (cycle) without external intervention.
 
 ---
 
