@@ -167,75 +167,56 @@ From `Mechanics.Archive.DecayLemmas-legacy`:
 
 ---
 
-## Critical Finding: Resolution Order ≠ Join Order
+## Critical Finding: Resolution Order ≠ Join Order (RESOLVED)
 
 **Date**: 2026-01-29
-**Status**: CONFIRMED
+**Status**: RESOLVED
 
-### The Problem
+### The Problem (was)
 
 The resolution order used for subsumption does NOT match the join semilattice order.
 
 In a proper semilattice: `a ≤ b ⟺ a ⊔ b = b`
 
-But with the current resolution order, there are 5 counterexamples:
+But with resolution order, there are 5 counterexamples:
 
-| a | b | a ≤ b? | join(a,b) = b? |
-|---|---|--------|----------------|
+| a | b | Res order? | join(a,b) = b? |
+|---|---|:----------:|:--------------:|
 | Out | Neither | YES | NO |
 | Out | In | YES | NO |
 | Out | Rem | YES | NO |
 | Rem | In | YES | NO |
 | Rem | Both | YES | NO |
 
-### Root Cause
+### The Fix (implemented)
 
-The resolution order considers primarily the Truth channel, but join also affects the Resolved channel:
-- `sideRem = Neither/Unres`
-- `sideIn = In/Res`
-- Resolution says: `Rem ≤ In` (Neither ≤ In in truth)
-- But: `join(Rem, In) = In/Unres ≠ In/Res` (because Unres dominates)
+**Use absorption order for decay subsumption**: `a ≤ b ⟺ join(a,b) = b`
 
-### Consequence
+This is the lattice order induced by join. It guarantees:
+- If `d` is absorbed by `c`, then `join(d, c) = c`
+- Removing `d` when `c` is present doesn't change the aggregate
+- Decay is now semantics-preserving
 
-**Lemma 1 (Decay Preserves Aggregate) is FALSE.**
+### Implementation
 
-Subsumption-based pruning CAN change the aggregate:
-- If cut `d` is "subsumed" by cut `c` (in resolution order)
-- And `d` has `Unres` resolved status
-- Removing `d` loses the `Unres` contribution
-- The aggregate changes from `X/Unres` to `X/Res`
+Two orders now exist:
+1. **Resolution order** (`sideLeq`): For policy decisions, regime management
+2. **Absorption order** (`sideAbsorbedBy`): For decay subsumption
 
-Exhaustive test: only 10918/15625 (70%) of 2-element domain cases preserve aggregate.
+The runtime's `isSubsumed` now uses `sideAbsorbedBy`.
 
-### Impact on Switch Bound
+### Verification
 
-This finding complicates the switch bound proof because:
-1. We cannot assume decay is semantically neutral
-2. Subsumption-based pruning can change conflict status
-3. The aggregate is NOT monotonic with respect to context operations
+**Lemma 1 (Decay Preserves Aggregate): VERIFIED**
 
-### Options
+Exhaustive test (2-element domain): **100% pass** (15625/15625)
 
-**Option A: Fix the Order**
-Use true semilattice order for subsumption: `a ≤ b ⟺ join(a,b) = b`
-- Pro: Lemma 1 becomes true by definition
-- Con: Changes existing Agda semantics (Finite.agda)
-
-**Option B: Accept Non-Preservation**
-Acknowledge that decay changes aggregate and analyze consequences
-- Pro: No changes to Agda
-- Con: Makes switch bound proof harder
-
-**Option C: Redesign Decay**
-Use a different decay mechanism that is provably aggregate-preserving
-- Pro: Clean semantics
-- Con: Significant redesign
+Previously with resolution order: only 70% passed.
 
 ### Evidence
 
-- Test file: `symbolics-dsl/test/resolution-vs-join-order.test.ts`
-- Exhaustive test: `symbolics-dsl/test/decay-preserves-aggregate.test.ts`
+- Test file: `symbolics-dsl/test/decay-preserves-aggregate.test.ts` (100% pass)
+- Two-order documentation: `symbolics-dsl/src/runtime/side.ts`
 
 ## Alternative Hypothesis
 

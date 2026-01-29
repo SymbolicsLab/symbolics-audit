@@ -337,14 +337,15 @@ We have: `switches(τ) ≤ K` for some fixed K.
 aggregateCut(updateContext(C, newCut, n)) = aggregateCut([newCut, ...C])
 ```
 
-**STATUS: FALSE**
+**STATUS: VERIFIED (using absorption order)**
 
-The lemma fails because the resolution order ≠ join order. See SWITCH-BOUND.md for details.
+With absorption order for subsumption (`a ≤ b ⟺ join(a,b) = b`), the lemma holds.
 
-Exhaustive test (2-element domain): only 70% of cases preserve aggregate.
+Exhaustive test (2-element domain): **100% of cases pass** (15625/15625).
 
-**Why it fails**: The resolution order says `Rem ≤ In`, but `join(Rem, In) = In/Unres ≠ In/Res`.
-When a cut with `Unres` is removed as "subsumed", its `Unres` contribution is lost.
+**The fix**: Use absorption order for decay subsumption instead of resolution order.
+This guarantees that if `d` is subsumed by `newCut`, then `join(d, newCut) = newCut`,
+so removing `d` doesn't change the aggregate.
 
 ### Lemma 2: Aggregate is Idempotent
 

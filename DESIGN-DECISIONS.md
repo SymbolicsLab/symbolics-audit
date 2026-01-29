@@ -253,6 +253,33 @@ The latter matches the simulation semantics.
 
 ---
 
+## DD-009: Subsumption Order for Decay
+
+**Status**: RESOLVED
+
+**Decision**: Use absorption order (`a ≤ b ⟺ join(a,b) = b`) for decay subsumption.
+
+**Context**: Resolution order (DD-004) was found to NOT preserve aggregate during decay.
+Testing showed only 70% of cases preserved aggregate under resolution order.
+
+**Rationale**:
+- Resolution order says `Rem ≤ In`, but `join(Rem, In) = In/Unres ≠ In`
+- Removing "subsumed" cuts could lose the `Unres` contribution
+- Absorption order guarantees: if `d ≤ c`, then `join(d, c) = c`
+- This makes decay semantics-preserving by construction
+
+**Consequence**:
+- **100% of exhaustive tests pass** (was 70%)
+- Decay provably preserves aggregate
+- Switch bound proof is now feasible
+
+**Implementation**:
+- `sideAbsorbedBy(a, b)`: checks `join(a,b) = b`
+- `isSubsumed` now uses `sideAbsorbedBy`
+- `sideLeq` remains for policy decisions (resolution order)
+
+---
+
 ## Pending Decisions Summary
 
 | ID | Topic | Status | Blocking |
@@ -265,11 +292,12 @@ The latter matches the simulation semantics.
 | ID | Topic | Decision |
 |----|-------|----------|
 | DD-001 | Research Direction | Phase 3A: Prove switch bound |
-| DD-004 | Subsumption Order | Resolution order (≤ʳ) |
+| DD-004 | Subsumption Order (Policy) | Resolution order (≤ʳ) |
 | DD-005 | Empty Aggregate | Neither/Res |
 | DD-006 | Update Semantics | Add + remove subsumed |
 | DD-007 | Test Oracle | Three-layer validation |
 | DD-008 | Domain Size | |U|=15 default |
+| DD-009 | Subsumption Order (Decay) | Absorption order (≤ⱼ) |
 
 ---
 
