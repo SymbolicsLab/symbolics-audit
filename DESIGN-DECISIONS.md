@@ -306,6 +306,40 @@ Testing showed only 70% of cases preserved aggregate under resolution order.
 
 ---
 
+## DD-011: Evidence Ingestion Policy
+
+**Status**: DECIDED
+
+**Decision**: Explore-trigger policy — ingest evidence when pressure is low.
+
+**Context**: The evidence interface allows external observations to enter the system, breaking truth-invariance and enabling cycling. The question is: when should the system check for and ingest evidence?
+
+**Options Considered**:
+
+| Option | Description | Pros | Cons |
+|--------|-------------|------|------|
+| A. Every step | Check evidence before policy decision | Responsive | May overwhelm internal dynamics |
+| B. Explore-trigger | Ingest when pressure < lo | Fits "explore" semantics | May miss urgent evidence |
+| C. Interleaved | Alternate internal/external steps | Balanced | More complex policy |
+| D. Explicit action | DoIngest is policy-choosable | Maximum flexibility | Requires policy to decide when |
+
+**Rationale**:
+1. Explore mode already represents "seeking novelty"
+2. When pressure is low, the system is stable and can accept new information
+3. Avoids flooding during high-pressure periods when the system is already processing
+4. Consistent with the "metabolism" metaphor: digest when calm, not when stressed
+
+**Consequence**:
+- `DoIngest` is checked when `pressure < lo` and evidence stream is non-empty
+- Takes priority over `DoExplore` in this condition
+- Explicit rate limiting can further constrain ingestion
+
+**Implementation**: See `symbolics-dsl/src/runtime/interpreter.ts`
+
+**Documentation**: `spec/EVIDENCE-INTERFACE.md`
+
+---
+
 ## Pending Decisions Summary
 
 | ID | Topic | Status | Blocking |
@@ -325,6 +359,7 @@ Testing showed only 70% of cases preserved aggregate under resolution order.
 | DD-008 | Domain Size | |U|=15 default |
 | DD-009 | Subsumption Order (Decay) | Absorption order (≤ⱼ) |
 | DD-010 | Canonical vs Variant Decay | decay_absorb is canonical, decay_dropConflict is variant |
+| DD-011 | Evidence Ingestion Policy | Explore-trigger (ingest when pressure < lo) |
 
 ---
 
