@@ -1,6 +1,27 @@
 # Symbolics Spec Registry
 # Cross-layer compatibility contract
-# Updated: 2026-01-25
+# Updated: 2026-01-29
+#
+# ============================================================================
+# EPISTEMIC STATUS SUMMARY (as of 2026-01-29)
+# ============================================================================
+#
+#   Total specs: 61
+#
+#   By proof status:
+#     Verified (Agda --safe): 20 specs
+#     Conjecture (postulates/unproven): 8 specs
+#     Definitions (no proof needed): 21 specs
+#     Bridges/theory-only: 12 specs
+#
+#   KNOWN IMPLEMENTATION GAPS:
+#     - TypeScript fold implementations are PLACEHOLDERS (see interpreter.ts)
+#     - Subsumption check is PLACEHOLDER (always returns true)
+#     - Agda-TS semantic equivalence NOT ESTABLISHED
+#
+#   See LIMITATIONS.md in project root for full details.
+#
+# ============================================================================
 #
 # Schema: claim/proof model (replaces single 'status' field)
 #
