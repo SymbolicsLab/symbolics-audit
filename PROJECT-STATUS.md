@@ -1,8 +1,36 @@
-# Symbolics Project Status (Post-Phase 12)
+# Symbolics Project Status
 
 **Date**: 2026-01-29
-**Arc**: DSL Development Phases 1-12 Complete
-**Epistemic Status**: Mixed (see below)
+**Arc**: DSL Development Phases 1-12 + Phase 2 Semantic Bridge + Phase 2.5 Ablation
+**Epistemic Status**: Grounded (see below)
+
+---
+
+## Phase 2.5 Critical Finding: Prior Results Were Artifact
+
+The "metabolic tension" result (22.5% with 3+ switches) was caused by **placeholder fold implementations** that injected uniform `sideIn` at every element.
+
+### Ablation Comparison
+
+| Metric | Placeholder | Canonical |
+|--------|-------------|-----------|
+| Max switches | 3 | **2** |
+| Mean switches | 1.90 | **1.16** |
+| ≥3 switches | 22.5% | **0.0%** |
+
+### Domain Size Scaling (Canonical)
+
+| Domain | Runs | Max | Mean | ≥2 | ≥3 |
+|--------|------|-----|------|-----|-----|
+| |U|=5 | 239 | 2 | 0.79 | 28.8% | 0% |
+| |U|=10 | 319 | 2 | 1.11 | 46.0% | 0% |
+| |U|=15 | 2249 | 2 | 1.16 | 39.2% | 0% |
+| |U|=30 | 559 | 2 | 1.36 | 51.5% | 0% |
+
+**The 2-switch maximum is consistent across all domain sizes tested.**
+
+The prior results are invalid as evidence about the formal system.
+See `symbolics-dsl/experiments/canonical-tension/RESULTS.md` for full analysis.
 
 ---
 
@@ -17,42 +45,47 @@ The following have been formally proven with no postulates:
 - Extensional equality for Cuts is an equivalence relation
 - De Morgan laws hold for the Truth bilattice
 - Conflict preservation: `In ⊔ᵗ Out = Both`
+- Empty aggregation identity: `joinAllRes [] = mkSide Neither Res`
 
 ## What Is Conjectural / Postulated
 
 The following are **not proven** and rely on postulates:
 
 - Lyapunov potential properties (7 postulates in `Mechanics.Potential.Conjectures`)
-  - `potential-zero-iff-in-window`
-  - `stabilize-reduces-potential-above`
-  - `convergence-to-equilibrium`
-  - `potential-is-lyapunov` (master conjecture)
 - Fold idempotence (SPEC-FOLD-002 - conjecture)
 - Fold conservativity (SPEC-FOLD-003 - conjecture)
 
 **Impact**: All claims about system convergence and stability are unproven.
 
-## What Is Incomplete in Implementation
+---
 
-### TypeScript Folds (CRITICAL)
-Location: `symbolics-dsl/src/runtime/interpreter.ts:72-99`
-Status: **Placeholder implementations** that return uniform cuts
+## Implementation Status (Phase 2 Complete)
+
+### TypeScript Folds ✅ FIXED
+Location: `symbolics-dsl/src/runtime/fold-expr.ts`
+Status: **Real semantics implemented**
 ```typescript
 case 'aggregate':
-  return uniformCut(sideIn);  // Does NOT actually aggregate
-case 'unfold':
-  return uniformCut(sideRem); // Just adds uniform Rem
+  return aggregateCut(state.context);  // Actual pointwise join
 ```
-**Impact**: DSL runtime does NOT implement Agda semantics.
 
-### Subsumption Check (CRITICAL)
-Location: `symbolics-core/Mechanics/Context.agda:163-164`
-Status: **Always returns true** (placeholder)
-**Impact**: Decay cannot actually garbage-collect redundant cuts.
+### Subsumption Check ✅ FIXED
+Location: `symbolics-dsl/src/runtime/context.ts`
+Status: **Real lattice order implemented**
+```typescript
+export function isSubsumed(d: Cut, c: Cut, domainSize: number): boolean {
+  return elements.every(i => sideLeq(d(i), c(i)));
+}
+```
 
-### Agda-TS Equivalence
-Status: **Not established**
-**Impact**: "Golden test equivalence" tests placeholder behavior only.
+### Update with Decay ✅ FIXED
+Location: `symbolics-dsl/src/runtime/context.ts`
+Uses Finite.agda semantics: add new cut, remove subsumed.
+
+### Agda-TS Equivalence ✅ ESTABLISHED
+- 29 semantic equivalence tests
+- 9 Agda grounding tests
+- Reference evaluator for cross-validation
 
 ---
 
@@ -68,6 +101,17 @@ Status: **Not established**
 
 ---
 
+## Test Coverage
+
+| Category | Tests | Status |
+|----------|-------|--------|
+| Golden tests | 60 | ✅ Pass |
+| Semantic equivalence | 29 | ✅ Pass |
+| Agda grounding | 9 | ✅ Pass |
+| Total | 98 | ✅ Pass |
+
+---
+
 ## Repository Overview
 
 ### symbolics-core (Agda)
@@ -76,78 +120,53 @@ Status: **Not established**
 - DSL layer: Applications/DSL/ with FoldLibrary, Elab, Run
 
 ### symbolics-audit
-- 61 specs in registry.yaml (see epistemic breakdown above)
-- SPEC-DSL-001 through SPEC-DSL-021
-- DSL schema documentation
+- 61 specs in registry.yaml
+- CANONICAL-SEMANTICS.md: Authoritative spec for TS implementation
+- RESEARCH-QUESTIONS.md: Open and resolved questions
 
 ### symbolics-dsl (TypeScript)
-- **WARNING**: Fold implementations are placeholders
-- CLI: validate, analyze, run, sweep, search, diff, capsule
-- 60 tests passing (but testing placeholder behavior)
+- Phase 2 complete: Real Agda semantics implemented
+- 98 tests passing
+- Canonical tension experiment: 3368 runs across domain sizes
 
 ### symbolics-research
-- Vault notes on theory concepts (philosophy, not formalization)
+- Vault notes on theory concepts
 
 ---
 
-## Experiment Status: Metabolic Tension
+## What Canonical Semantics Show
 
-### What Was Observed
-- 600 runs with `emitPressure=true` configuration
-- Conflict switch distribution: 0 (7.5%), 1 (17.5%), 2 (52.5%), 3 (22.5%)
-- Maximum observed switches: 3
+Under real Agda semantics:
+- **Maximum switches**: 2 (conflict can appear, resolve, return once)
+- **No sustained cycling**: After one return, conflicts resolve permanently
+- **High stability rate**: 96.7% of runs reach stable termination
 
-### Honest Characterization
-
-| Regime | Max Switches | Description |
-|--------|--------------|-------------|
-| Static | 1 | Conflict appears, persists |
-| Dynamic | 2 | Conflict appears, resolves once |
-| **Transient Return** | **3** | **Conflict returns once after resolution** |
-
-**Note**: The term "metabolic cycling" overstates the phenomenon. With max=3 switches, conflict appeared, resolved, and returned once. This is **one return**, not sustained cycling.
-
-### Limitations
-- Threshold sensitivity: "Tension zone" ≥3 switches captures exactly 22.5%
-  - With threshold ≥2: 75% qualify
-  - With threshold ≥4: 0% qualify
-- Based on **placeholder implementations**, not true Agda semantics
-- Association observed, not causality proven
+The system is conservative. Sustained "metabolic cycling" does not occur with current operators.
 
 ---
 
-## Key Files
+## Next Steps (Research Fork)
 
-### Verified Core
-- `symbolics-core/src/Mechanics/Primitive.agda` - Core types
-- `symbolics-core/src/Mechanics/CutOps.agda` - Lattice proofs
+The question "does the formal system exhibit sustained cycling?" has a preliminary answer: **No, under current configuration.**
 
-### Experiment Artifacts (preliminary)
-- `symbolics-dsl/experiments/metabolic-tension/` - Full artifact pack
-- `symbolics-dsl/experiments/metabolic-tension/TENSION-ZONE-DEFINITION.md` - Metric definitions
+Options for Phase 3:
 
-### Specifications
-- `symbolics-audit/spec/registry.yaml` - All SPEC entries with epistemic status
+**A. Accept stability as the result**
+- The formal system is conservative
+- "Metabolism" metaphor may not apply
+- Document what the system actually does
 
----
+**B. Add legitimate novelty source**
+- Design evidence interface or unfold operator
+- Requires formal conservativity constraints
+- Must not be a hidden forcing function
 
-## Next Steps (Priority Order)
+**C. Explore different policies**
+- Test non-homeostatic policies
+- Test different decay mechanisms
+- Search parameter space more thoroughly
 
-1. **Fix critical implementation gaps**
-   - Implement actual aggregation in TypeScript folds
-   - Implement subsumption check for finite domains
-
-2. **Establish Agda-TS equivalence**
-   - Golden tests comparing Agda evaluation to TS output
-   - Fix semantic divergences
-
-3. **Prove or downgrade conjectures**
-   - Attempt fold idempotence proof for concrete implementations
-   - Either prove Lyapunov or mark all dependent claims conjecture
-
-4. **Sensitivity analysis**
-   - Test threshold robustness for metabolic tension claims
-   - Test across domain sizes
+See `DESIGN-DECISIONS.md` for detailed analysis.
 
 ---
 
@@ -159,5 +178,6 @@ Status: **Not established**
 
 ## See Also
 
-- `LIMITATIONS.md` - Full list of known gaps
-- Individual repository `CLAUDE.md` files for development guides
+- `LIMITATIONS.md` - Known gaps and their status
+- `RESEARCH-QUESTIONS.md` - Open and resolved questions
+- `DESIGN-DECISIONS.md` - Pending architectural decisions
