@@ -9,7 +9,9 @@ This document captures pending and resolved architectural decisions for the Symb
 
 ## DD-001: Research Direction After Ablation Study
 
-**Status**: PENDING
+**Status**: DECIDED
+
+**Decision**: Phase 3A - Prove a switch bound under canonical semantics
 
 **Context**: The ablation study (Phase 2.5) showed that the "metabolic tension" phenomenon was an artifact of placeholder semantics. Under canonical Agda semantics:
 
@@ -17,86 +19,47 @@ This document captures pending and resolved architectural decisions for the Symb
 - Runs with ≥3 switches: 0% (not 22.5%)
 - The system is conservative and reaches stable termination
 
-**Decision Required**: What is the research direction for Phase 3?
+**Rationale**:
+1. Empirical pattern (max switches ≤ 2) suggests a theorem exists
+2. Proving any bound is a strong result independent of "metabolism" narrative
+3. If proven, "metabolism" becomes an earned property requiring additional structure
+4. This is the shortest path to a theory+proof contribution
 
-### Option A: Accept Stability as the Result
+**Consequences**:
+- Focus Agda work on convergence/monotonicity for canonical semantics
+- Defer novelty sources (evidence interface, unfold) until bound is understood
+- If bound is proven, metabolism requires explicit justification for any novelty source
 
-**Summary**: The formal system is conservative. Document what it actually does.
+**Test Obligations**:
+- Formalize the conjecture in Agda (see `conjectures/SWITCH-BOUND.md`)
+- Either prove or find counterexample
+- If counterexample found, characterize when bound holds vs fails
 
-**Implications**:
-- The "metabolism" metaphor may not apply to this system
-- The research contribution is the rigorous formalization, not emergent dynamics
-- Focus shifts to what the stable states represent
+**Outcome Interpretation**:
 
-**Deliverables**:
-- Complete documentation of system behavior
-- Formal proof of 2-switch bound (if achievable)
-- Paper on conservative paraconsistent aggregation
+If switch bound is **proven**:
+> "Under canonical semantics, the system provably stabilizes with at most K conflict transitions. Metabolism (sustained cycling) only appears when we add [evidence stream / unfold / non-monotone policy]; otherwise the system converges."
 
-**Risk**: Limited novelty if stability was expected
+If switch bound is **disproven**:
+> "The switch bound fails under [specific conditions]. This characterizes when cycling is possible without external novelty."
 
-### Option B: Add Legitimate Novelty Source
+Either way, we win.
 
-**Summary**: Design an evidence interface or unfold operator that introduces new information in a principled way.
+### Options Considered (for reference)
 
-**Implications**:
-- Must be formally specified in Agda
-- Must satisfy conservativity constraints
-- Cannot be a hidden forcing function (the placeholder was effectively this)
+**Option A: Accept Stability**
+- Document conservative behavior as the result
+- Risk: Limited novelty if stability was expected
 
-**Candidate Mechanisms**:
+**Option B: Add Novelty Source**
+- Design evidence interface or unfold operator
+- Risk: May still converge; requires new formal machinery
 
-1. **Evidence Interface**
-   - External observations that introduce new cuts
-   - Example: sensor readings, user inputs, external events
-   - Constraint: Must not create information from nothing
+**Option C: Explore Configurations**
+- Test alternative folds, decays, policies
+- Risk: May find all configurations are conservative
 
-2. **Unfold Operator**
-   - Currently a stub in TypeScript
-   - Would expand compressed representations into explicit cuts
-   - Agda has spec but no implementation
-
-3. **Stochastic Perturbation**
-   - Random noise injection with formal bounds
-   - Would need probability monad in Agda
-   - Risk: May just be a dressed-up forcing function
-
-**Deliverables**:
-- Formal specification of novelty source
-- Proof of conservativity properties
-- Experiments showing emergent dynamics (if they exist)
-
-**Risk**: May discover that any legitimate novelty source still converges
-
-### Option C: Explore Different Configurations
-
-**Summary**: The current configuration (aggregate + drop-persistent-conflict + homeostatic) may be conservative by design. Test alternatives.
-
-**Configurations to Test**:
-
-| Component | Current | Alternative |
-|-----------|---------|-------------|
-| Fold | aggregate | consensus, weighted |
-| Decay | drop-persistent-conflict | probabilistic, threshold |
-| Policy | homeostatic | crystalline, random |
-
-**Implications**:
-- Systematic parameter search
-- May find configurations with richer dynamics
-- Does not require new formal machinery
-
-**Deliverables**:
-- Sweep across configuration space
-- Identify configurations with different behaviors
-- Characterize which configurations are conservative
-
-**Risk**: May find all configurations are conservative (structural property)
-
-### Recommendation
-
-Start with **Option C** (low cost, informs A/B choice), then:
-- If rich dynamics found → investigate formally
-- If all conservative → either Option A (document) or Option B (add novelty)
+**Why Phase 3A chosen**: Proving a bound is the minimal path to a strong result. It transforms "the system is stable" into "the system is provably stable", which is substantial. Options B/C can follow if the bound is proven
 
 ---
 
@@ -294,14 +257,14 @@ The latter matches the simulation semantics.
 
 | ID | Topic | Status | Blocking |
 |----|-------|--------|----------|
-| DD-001 | Research Direction | PENDING | Phase 3 |
-| DD-002 | Unfold Semantics | PENDING | DD-001 |
-| DD-003 | Decay Mechanisms | PENDING | DD-001 |
+| DD-002 | Unfold Semantics | PENDING | Switch bound result |
+| DD-003 | Decay Mechanisms | PENDING | Switch bound result |
 
 ## Resolved Decisions Summary
 
 | ID | Topic | Decision |
 |----|-------|----------|
+| DD-001 | Research Direction | Phase 3A: Prove switch bound |
 | DD-004 | Subsumption Order | Resolution order (≤ʳ) |
 | DD-005 | Empty Aggregate | Neither/Res |
 | DD-006 | Update Semantics | Add + remove subsumed |
