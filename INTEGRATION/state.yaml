@@ -29,28 +29,41 @@ last_agent: "Claude Code (Opus 4.5)"
 theory_summary: >
   PRESSURE is the true primitive — created by value, what matters. Initially need, later desire.
   INDEX is the organism's orientation to the world: implicit in animals/babies, explicit in symbolic systems.
+  A MEDIUM is a type of index (photography, language, paint each have scope, locus, resolution, measurement).
   DISTINCTION emerges when two systems under shared pressure coordinate — one's differentiation becomes
   legible to the other. The first distinction isn't made but RECOGNIZED. Transmissibility is a two-body
   problem, not one-body sophistication. Distinction is inherently social at origin (though not linguistic).
-  Distinction is primitive within the symbolic order, but pressure is prior.
-  CUT and FOLD are relations, not operations: cut is distinction-to-field; fold is distinction-to-distinction (inclusion).
+  DISTINCTION IS REPRESENTATION — same phenomenon from different angles. Distinction emphasizes the
+  partitioning (this, not that); representation emphasizes the partiality (this aspect, not the whole).
+  Every partition is partial; every partial capture partitions. Remainder unifies them.
+  DISTINCTION IS INHERENTLY RECURSIVE (mise en abyme): each distinction requires an index, each index
+  parameter is itself a distinction with its own index, all the way down. No atomic foundation.
+  Stabilization is where the recursion is arrested at a level that works under pressure.
+  CUT and FOLD are two aspects of every distinction, not two types: cut is distinction-to-field;
+  fold is distinction-to-distinction (inclusion). Every distinction is both.
   POLICY is a cluster of folds. When applied, a policy cluster induces an OPERATOR — the stabilization function.
   STABILIZATION is coherence under pressure — an achievement, not a given. INFERENCE is a policy choice.
-  REMAINDER is what fold excludes — persistent pressure, not waste.
+  REMAINDER is what any distinction excludes — persistent pressure, not waste. Generated at every
+  level of the recursion. The field is an infinite, entangled continuum; any distinction is finite.
   UNFOLD is remainder pressing back on folds, the loosening that permits reconfiguration.
   SHIMMER is dual: oscillation at the moment of fold, and trace of remainder's ongoing pressure.
   OPACITY is the gradient of access to the index of a distinction — relational, not intrinsic.
-  Two SOURCES: endogenous (becoming, persistence by fit) and exogenous (drawing, persistence by force).
+  Tracks access to index, not position in the category.
+  Two SOURCES: endogenous (becoming, persistence by fit) and exogenous (drawing, persistence by constraint).
+  CONSTRAINT is the general case; POWER is the special case (constraint wielded by an agent for asymmetric benefit).
+  Much apparatus has no agent behind it (grammar, infrastructure, accumulated accident).
+  CONSTRAINT PRODUCES FIT: the world rearranges around the apparatus until the distinction appears
+  to track real joints. De-naturalization is recognizing that fit was produced by constraint.
   Spencer-Brown's "draw a distinction" presupposes power; endogenous distinctions become, not drawn.
 
 # --- VAULT STRUCTURE (post-restructure) ---
 vault_structure: "Pentad + 1: 5 living documents in Active/, social ontology planned as 6th, archived legacy in _Archive/"
 active_documents:
-  - "Active/01_Ontology.md (Pressure, Index, Distinction, Two-Body Emergence)"
-  - "Active/02_Operations.md (Cut & Fold as relations, Policies and Induced Operators)"
-  - "Active/03_Phenomenology.md (Remainder, Unfold, Shimmer, Opacity)"
-  - "Active/04_Ecology.md (Sources, Power, Spencer-Brown critique)"
-  - "Active/05_Formalism.md (Agda & Bridge — gap clarified via policy-cluster interpretation)"
+  - "Active/01_Ontology.md (Pressure, Index, Distinction as representation, Recursion of distinction, Two-Body Emergence, Medium as index)"
+  - "Active/02_Operations.md (Cut & Fold as two aspects of every distinction, Cut as representation, Policies and Induced Operators)"
+  - "Active/03_Phenomenology.md (Remainder as what any distinction excludes, Unfold, Shimmer, Opacity)"
+  - "Active/04_Ecology.md (Sources, Constraint vs Power, Sedimentation as constraint-produces-fit, De-naturalization)"
+  - "Active/05_Formalism.md (Agda & Bridge — gap updated for distinction-as-representation)"
   - "Active/06_Social_Ontology.md (PLANNED — bridge development)"
 
 # --- WHAT'S FORMALIZED (Agda) ---
@@ -75,15 +88,16 @@ formalization_note: >
 
 # --- CURRENT CONTEXT ---
 current_context: >
-  Session 9 complete. Drafted foundational paper "The Two-Body Problem: Why Distinction Cannot
-  Emerge Alone" in symbolics-research/Papers/two-body-problem/. Full 9-section paper arguing that
-  transmissible symbolic form (distinction) is constitutively dyadic. 6 rounds of Gemini review
-  feedback integrated. Paper covers: developmental psychology, enculturated apes, experimental
-  semiotics, animal communication, waggle dance counterexample, evolutionary framework (including
-  self-domestication), 3 thematic groups of theoretical allies (philosophical roots, evolutionary/
-  biological, cognitive science/enactivism), and 10 objections with replies. Key conceptual moves:
-  differentiation vs. distinction, updating vs. contesting, truth vs. success, misuse vs. failure,
-  laws vs. rules. Also created state.yaml in symbolics-research and updated README.
+  Session 9 complete. Two major workstreams: (1) Drafted foundational paper "The Two-Body Problem:
+  Why Distinction Cannot Emerge Alone" in symbolics-research/Papers/two-body-problem/. Full 9-section
+  paper, 6 rounds of Gemini review feedback integrated, 10 objections with replies. Key conceptual
+  moves: differentiation vs. distinction, updating vs. contesting, truth vs. success, misuse vs.
+  failure, laws vs. rules. (2) Vault active notes updated with major theory reframes: distinction
+  is representation (01_Ontology), recursion of distinction / mise en abyme (01_Ontology), medium as
+  index (01_Ontology), cut as representation (02_Operations), remainder as what any distinction
+  excludes (03_Phenomenology), constraint vs. power reframe (04_Ecology — power is the special case
+  of constraint; constraint produces fit; de-naturalization), formalism gap table updated (05_Formalism).
+  Remainder Under Feedback paper also in repo. All pushed to GitHub.
 
 # --- ACTIVE THREADS ---
 active_threads:
@@ -143,24 +157,24 @@ agent_status:
 
 # --- RECENT DECISIONS (full history in decision-log.md) ---
 recent_decisions:
+  - id: "distinction-is-representation"
+    date: "2026-02-03"
+    summary: "Distinction and representation are the same phenomenon. Distinction emphasizes partitioning; representation emphasizes partiality. Remainder unifies them."
+  - id: "recursion-mise-en-abyme"
+    date: "2026-02-03"
+    summary: "Distinction is inherently recursive: each requires an index, each index parameter is a distinction, all the way down. No atomic foundation. Stabilization arrests the recursion."
+  - id: "constraint-vs-power"
+    date: "2026-02-03"
+    summary: "Power is the special case of constraint (constraint wielded by agent for asymmetric benefit). Much apparatus has no agent. Constraint produces fit; de-naturalization recognizes fit was produced."
   - id: "two-body-paper-drafted"
     date: "2026-02-03"
     summary: "Full draft of Two-Body Problem paper complete with 6 rounds of Gemini review. 9 sections, 10 objections, 3 thematic groups of theoretical allies."
-  - id: "section7-restructure"
-    date: "2026-02-03"
-    summary: "Section 7 restructured from 16 flat subsections to 3 thematic groups (philosophical roots, evolutionary/biological, cognitive science/enactivism). Coupling-constitution moved to objections."
   - id: "truth-vs-success"
     date: "2026-02-03"
     summary: "Key conceptual move: success is a biological constraint (solitary), truth is a social norm (dyadic). Separation of these axes distinguishes differentiation from distinction."
   - id: "agda-audit-complete"
     date: "2026-02-03"
     summary: "Session 8 audit confirms policy-cluster interpretation; conservativity/contradiction-preservation proven across domains"
-  - id: "two-body-hypothesis"
-    date: "2026-02-02"
-    summary: "Distinction emerges through coordination — two systems under shared pressure, one's differentiation becomes legible to another"
-  - id: "policy-cluster-resolution"
-    date: "2026-02-02"
-    summary: "Fold is relation; policy clusters induce operators; Agda proves operator properties"
 
 # --- DECISIONS PENDING ---
 decisions_pending:
@@ -179,8 +193,9 @@ decisions_pending:
 
 # --- FLAGS ---
 flags:
-  - "SESSION 9 COMPLETE: Two-Body Problem paper drafted and pushed to GitHub"
+  - "SESSION 9 COMPLETE: Two-Body Problem paper + Vault theory updates"
   - "PAPER STATUS: 6 rounds of Gemini review integrated; ready for final proofread"
+  - "VAULT UPDATED: distinction-as-representation, recursion, constraint-vs-power reframes"
   - "KEY MOVES: differentiation/distinction, updating/contesting, truth/success, misuse/failure, laws/rules"
   - "ALL CODE COMPILES: --safe --without-K (from Session 8)"
   - "NEXT: Final paper proofread, then social ontology bridge development"
