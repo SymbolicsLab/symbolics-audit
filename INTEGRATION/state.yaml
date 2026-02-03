@@ -21,9 +21,9 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-03T04:00:00Z"
-last_session: 8
-last_agent: "Claude Code (Opus)"
+last_updated: "2026-02-03T18:00:00Z"
+last_session: 9
+last_agent: "Claude Code (Opus 4.5)"
 
 # --- THEORY SUMMARY (update after each reframe) ---
 theory_summary: >
@@ -75,44 +75,58 @@ formalization_note: >
 
 # --- CURRENT CONTEXT ---
 current_context: >
-  Session 8 complete. Comprehensive Agda audit with 7 parallel domain agents, followed by 4 parallel
-  implementation agents. Results: (1) Bool subsumption implemented in Context.agda and ToyModel.agda.
-  (2) Properties/Conjectures.agda created with counterexamples for commutativity, associativity,
-  monotonicity, and idempotence failures — these are documented FEATURES, not bugs. (3) DSL Runtime
-  wired to Mechanics.Dynamics.step and Mechanics.Context.update. (4) WorldIndexed Properties.agda
-  cleaned — conservativity and contradiction-preservation proven, idempotence deferred with clear
-  documentation of what's needed (bucket sortedness lemmas). All code compiles cleanly.
+  Session 9 complete. Drafted foundational paper "The Two-Body Problem: Why Distinction Cannot
+  Emerge Alone" in symbolics-research/Papers/two-body-problem/. Full 9-section paper arguing that
+  transmissible symbolic form (distinction) is constitutively dyadic. 6 rounds of Gemini review
+  feedback integrated. Paper covers: developmental psychology, enculturated apes, experimental
+  semiotics, animal communication, waggle dance counterexample, evolutionary framework (including
+  self-domestication), 3 thematic groups of theoretical allies (philosophical roots, evolutionary/
+  biological, cognitive science/enactivism), and 10 objections with replies. Key conceptual moves:
+  differentiation vs. distinction, updating vs. contesting, truth vs. success, misuse vs. failure,
+  laws vs. rules. Also created state.yaml in symbolics-research and updated README.
 
 # --- ACTIVE THREADS ---
 active_threads:
-  - id: "agda-review"
-    summary: "Fresh-context Agda audit through policy-cluster lens"
-    status: "COMPLETE"
-    note: "Session 8: 7 domain agents + 4 implementation agents. All findings documented."
+  - id: "two-body-paper"
+    summary: "Foundational paper: The Two-Body Problem"
+    status: "DRAFT COMPLETE"
+    note: "Session 9: 6 rounds of Gemini feedback integrated. Next: final proofread, decide target venue."
     priority: 0
+  - id: "remainder-paper"
+    summary: "Companion paper: Remainder Under Feedback"
+    status: "draft"
+    note: "May need revision to align with refined two-body framework."
+    priority: 1
   - id: "social-ontology-bridge"
     summary: "Develop social ontology as first load-bearing bridge"
     status: "next_session"
     note: "New Active/06_Social_Ontology.md. Most tractable bridge — no formal barriers."
-    priority: 1
+    priority: 2
+  - id: "agda-review"
+    summary: "Fresh-context Agda audit through policy-cluster lens"
+    status: "COMPLETE"
+    note: "Session 8: 7 domain agents + 4 implementation agents. All findings documented."
+    priority: 3
   - id: "scattered-insights"
     summary: "Bring in scattered insights from old system"
     status: "ongoing"
     note: "Must be done through conversation, not migration. Insights earn their way back."
-    priority: 2
+    priority: 4
   - id: "metabolism-dynamics"
     summary: "Fold → Remainder → Unfold → Refold cycle"
     status: "open_thread"
     note: "What determines incremental vs catastrophic unfold?"
-    priority: 3
+    priority: 5
   - id: "bucket-sortedness"
     summary: "Encode bucket sortedness for WorldIndexed idempotence"
     status: "deferred"
     note: "Either Sorted predicate, intrinsic representation (AVL), or direct proof via insertBucket"
-    priority: 4
+    priority: 6
 
 # --- NEXT ACTIONS ---
 next_actions:
+  - "Two-Body Problem paper: final proofread, tighten prose, decide target venue"
+  - "Remainder Under Feedback paper: revise in light of two-body framework refinements"
   - "Create Active/06_Social_Ontology.md — first load-bearing bridge"
   - "Choose specific social phenomenon to develop (money, institutions, looping kinds)"
   - "Ongoing: Bring scattered insights in through conversation (not migration)"
@@ -120,33 +134,33 @@ next_actions:
 
 # --- AGENT LAST ACTIONS ---
 agent_status:
-  claude_code: "Session 8: Comprehensive Agda audit (7 domain agents). Implemented 4 recommendations: Bool subsumption, Properties/Conjectures.agda, DSL wiring, WorldIndexed cleanup. All code compiles."
+  claude_code: "Session 9: Drafted Two-Body Problem paper (9 sections, ~110KB). Integrated 6 rounds of Gemini feedback. Created state.yaml and updated README in symbolics-research. Pushed to GitHub."
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
   cowork: "Not used post-restructure."
   chatgpt: "Not used this session."
-  gemini: "Session 4: Evaluated vault restructure proposal."
+  gemini: "Session 9: 6 rounds of critical review on Two-Body Problem paper. Identified and resolved: triviality objection, coupling-constitution, truth/success framing, misuse/failure, RLHF standing argument, NSL two-scale distinction, wild ape boundary cases, and more."
   codex: "Not used."
 
 # --- RECENT DECISIONS (full history in decision-log.md) ---
 recent_decisions:
+  - id: "two-body-paper-drafted"
+    date: "2026-02-03"
+    summary: "Full draft of Two-Body Problem paper complete with 6 rounds of Gemini review. 9 sections, 10 objections, 3 thematic groups of theoretical allies."
+  - id: "section7-restructure"
+    date: "2026-02-03"
+    summary: "Section 7 restructured from 16 flat subsections to 3 thematic groups (philosophical roots, evolutionary/biological, cognitive science/enactivism). Coupling-constitution moved to objections."
+  - id: "truth-vs-success"
+    date: "2026-02-03"
+    summary: "Key conceptual move: success is a biological constraint (solitary), truth is a social norm (dyadic). Separation of these axes distinguishes differentiation from distinction."
   - id: "agda-audit-complete"
     date: "2026-02-03"
     summary: "Session 8 audit confirms policy-cluster interpretation; conservativity/contradiction-preservation proven across domains"
-  - id: "property-failures-documented"
-    date: "2026-02-03"
-    summary: "Commutativity, associativity, monotonicity failures are FEATURES (decay, mode-dependence, path-dependence)"
   - id: "two-body-hypothesis"
     date: "2026-02-02"
     summary: "Distinction emerges through coordination — two systems under shared pressure, one's differentiation becomes legible to another"
   - id: "policy-cluster-resolution"
     date: "2026-02-02"
     summary: "Fold is relation; policy clusters induce operators; Agda proves operator properties"
-  - id: "inference-as-policy"
-    date: "2026-02-02"
-    summary: "Different logics encode different policies; inference is a policy choice"
-  - id: "pressure-reframe"
-    date: "2026-02-02"
-    summary: "Pressure (from value) is the true primitive; distinction is primitive within symbolic order"
 
 # --- DECISIONS PENDING ---
 decisions_pending:
@@ -165,10 +179,8 @@ decisions_pending:
 
 # --- FLAGS ---
 flags:
-  - "SESSION 8 COMPLETE: Comprehensive Agda audit with implementation"
-  - "PROPERTY FAILURES DOCUMENTED: Commutativity, associativity, monotonicity are features"
-  - "BOOL SUBSUMPTION IMPLEMENTED: Context.agda and ToyModel.agda"
-  - "DSL WIRED: Apply.agda calls Mechanics.Dynamics.step"
-  - "IDEMPOTENCE: Proven for LP; deferred for WorldIndexed (needs sortedness)"
-  - "ALL CODE COMPILES: --safe --without-K"
-  - "NEXT: Social ontology bridge development"
+  - "SESSION 9 COMPLETE: Two-Body Problem paper drafted and pushed to GitHub"
+  - "PAPER STATUS: 6 rounds of Gemini review integrated; ready for final proofread"
+  - "KEY MOVES: differentiation/distinction, updating/contesting, truth/success, misuse/failure, laws/rules"
+  - "ALL CODE COMPILES: --safe --without-K (from Session 8)"
+  - "NEXT: Final paper proofread, then social ontology bridge development"
