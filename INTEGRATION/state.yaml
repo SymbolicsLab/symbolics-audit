@@ -1,0 +1,158 @@
+# Symbolics Project State
+# RULES FOR AGENTS:
+# - Keep this file FLAT. No nesting deeper than 2 levels.
+# - When updating, REWRITE the entire section you're changing. Never patch individual lines.
+# - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
+# - This file is the single source of current project state.
+
+last_updated: "2026-02-03T04:00:00Z"
+last_session: 8
+last_agent: "Claude Code (Opus)"
+
+# --- THEORY SUMMARY (update after each reframe) ---
+theory_summary: >
+  PRESSURE is the true primitive — created by value, what matters. Initially need, later desire.
+  INDEX is the organism's orientation to the world: implicit in animals/babies, explicit in symbolic systems.
+  DISTINCTION emerges when two systems under shared pressure coordinate — one's differentiation becomes
+  legible to the other. The first distinction isn't made but RECOGNIZED. Transmissibility is a two-body
+  problem, not one-body sophistication. Distinction is inherently social at origin (though not linguistic).
+  Distinction is primitive within the symbolic order, but pressure is prior.
+  CUT and FOLD are relations, not operations: cut is distinction-to-field; fold is distinction-to-distinction (inclusion).
+  POLICY is a cluster of folds. When applied, a policy cluster induces an OPERATOR — the stabilization function.
+  STABILIZATION is coherence under pressure — an achievement, not a given. INFERENCE is a policy choice.
+  REMAINDER is what fold excludes — persistent pressure, not waste.
+  UNFOLD is remainder pressing back on folds, the loosening that permits reconfiguration.
+  SHIMMER is dual: oscillation at the moment of fold, and trace of remainder's ongoing pressure.
+  OPACITY is the gradient of access to the index of a distinction — relational, not intrinsic.
+  Two SOURCES: endogenous (becoming, persistence by fit) and exogenous (drawing, persistence by force).
+  Spencer-Brown's "draw a distinction" presupposes power; endogenous distinctions become, not drawn.
+
+# --- VAULT STRUCTURE (post-restructure) ---
+vault_structure: "Pentad + 1: 5 living documents in Active/, social ontology planned as 6th, archived legacy in _Archive/"
+active_documents:
+  - "Active/01_Ontology.md (Pressure, Index, Distinction, Two-Body Emergence)"
+  - "Active/02_Operations.md (Cut & Fold as relations, Policies and Induced Operators)"
+  - "Active/03_Phenomenology.md (Remainder, Unfold, Shimmer, Opacity)"
+  - "Active/04_Ecology.md (Sources, Power, Spencer-Brown critique)"
+  - "Active/05_Formalism.md (Agda & Bridge — gap clarified via policy-cluster interpretation)"
+  - "Active/06_Social_Ontology.md (PLANNED — bridge development)"
+
+# --- WHAT'S FORMALIZED (Agda) ---
+formalized_agda:
+  - "Conservativity: policy can't introduce distinctions it didn't receive — PROVEN (Core, FDE WorldIndexed)"
+  - "Contradiction-preservation: policy can't eliminate contradictions by fiat — PROVEN (Core, FDE WorldIndexed)"
+  - "Gap theorem: different policies (selective vs exploratory) produce different outputs — PROVEN"
+  - "T-failure: consistency operator is doxastic, not alethic — PROVEN"
+  - "Non-explosion: LP policy is paraconsistent — PROVEN"
+  - "Idempotence: PROVEN for LP, deferred for WorldIndexed (needs bucket sortedness lemmas)"
+  - "Bool subsumption: Cut inclusion check for Bool domain — IMPLEMENTED in Context.agda"
+  - "Property counterexamples: Mechanics/Properties/Conjectures.agda documents commutativity/associativity failures"
+  - "DSL wiring: Applications/DSL/Runtime/Apply.agda now calls Mechanics.Dynamics.step"
+
+formalization_note: >
+  SESSION 8 AGDA AUDIT COMPLETE. Seven parallel domain agents analyzed Core, LP, FDE, LFI, Mechanics,
+  Modal, and Applications. Key findings: (1) Conservativity and contradiction-preservation proven in
+  multiple domains. (2) LP has proven idempotence; WorldIndexed idempotence deferred pending bucket
+  sortedness lemmas. (3) Subsumption check implemented for Bool domain. (4) Properties/Conjectures.agda
+  created with explicit counterexamples for property failures. (5) DSL Runtime wired to Mechanics functions.
+  All files compile with --safe --without-K.
+
+# --- CURRENT CONTEXT ---
+current_context: >
+  Session 8 complete. Comprehensive Agda audit with 7 parallel domain agents, followed by 4 parallel
+  implementation agents. Results: (1) Bool subsumption implemented in Context.agda and ToyModel.agda.
+  (2) Properties/Conjectures.agda created with counterexamples for commutativity, associativity,
+  monotonicity, and idempotence failures — these are documented FEATURES, not bugs. (3) DSL Runtime
+  wired to Mechanics.Dynamics.step and Mechanics.Context.update. (4) WorldIndexed Properties.agda
+  cleaned — conservativity and contradiction-preservation proven, idempotence deferred with clear
+  documentation of what's needed (bucket sortedness lemmas). All code compiles cleanly.
+
+# --- ACTIVE THREADS ---
+active_threads:
+  - id: "agda-review"
+    summary: "Fresh-context Agda audit through policy-cluster lens"
+    status: "COMPLETE"
+    note: "Session 8: 7 domain agents + 4 implementation agents. All findings documented."
+    priority: 0
+  - id: "social-ontology-bridge"
+    summary: "Develop social ontology as first load-bearing bridge"
+    status: "next_session"
+    note: "New Active/06_Social_Ontology.md. Most tractable bridge — no formal barriers."
+    priority: 1
+  - id: "scattered-insights"
+    summary: "Bring in scattered insights from old system"
+    status: "ongoing"
+    note: "Must be done through conversation, not migration. Insights earn their way back."
+    priority: 2
+  - id: "metabolism-dynamics"
+    summary: "Fold → Remainder → Unfold → Refold cycle"
+    status: "open_thread"
+    note: "What determines incremental vs catastrophic unfold?"
+    priority: 3
+  - id: "bucket-sortedness"
+    summary: "Encode bucket sortedness for WorldIndexed idempotence"
+    status: "deferred"
+    note: "Either Sorted predicate, intrinsic representation (AVL), or direct proof via insertBucket"
+    priority: 4
+
+# --- NEXT ACTIONS ---
+next_actions:
+  - "Create Active/06_Social_Ontology.md — first load-bearing bridge"
+  - "Choose specific social phenomenon to develop (money, institutions, looping kinds)"
+  - "Ongoing: Bring scattered insights in through conversation (not migration)"
+  - "OPTIONAL: Encode bucket sortedness to complete WorldIndexed idempotence proof"
+
+# --- AGENT LAST ACTIONS ---
+agent_status:
+  claude_code: "Session 8: Comprehensive Agda audit (7 domain agents). Implemented 4 recommendations: Bool subsumption, Properties/Conjectures.agda, DSL wiring, WorldIndexed cleanup. All code compiles."
+  claude_chat: "Session 5: Index reframe, vault restructure proposal."
+  cowork: "Not used post-restructure."
+  chatgpt: "Not used this session."
+  gemini: "Session 4: Evaluated vault restructure proposal."
+  codex: "Not used."
+
+# --- RECENT DECISIONS (full history in decision-log.md) ---
+recent_decisions:
+  - id: "agda-audit-complete"
+    date: "2026-02-03"
+    summary: "Session 8 audit confirms policy-cluster interpretation; conservativity/contradiction-preservation proven across domains"
+  - id: "property-failures-documented"
+    date: "2026-02-03"
+    summary: "Commutativity, associativity, monotonicity failures are FEATURES (decay, mode-dependence, path-dependence)"
+  - id: "two-body-hypothesis"
+    date: "2026-02-02"
+    summary: "Distinction emerges through coordination — two systems under shared pressure, one's differentiation becomes legible to another"
+  - id: "policy-cluster-resolution"
+    date: "2026-02-02"
+    summary: "Fold is relation; policy clusters induce operators; Agda proves operator properties"
+  - id: "inference-as-policy"
+    date: "2026-02-02"
+    summary: "Different logics encode different policies; inference is a policy choice"
+  - id: "pressure-reframe"
+    date: "2026-02-02"
+    summary: "Pressure (from value) is the true primitive; distinction is primitive within symbolic order"
+
+# --- DECISIONS PENDING ---
+decisions_pending:
+  - id: "social-phenomenon"
+    question: "Which social phenomenon to develop first for the bridge?"
+    status: "open"
+    note: "Options: money/crypto, institutional persistence, looping kinds"
+  - id: "category-theory"
+    question: "When to pursue category-theoretic formalization of fold-as-relation?"
+    status: "deferred"
+    note: "After current plan completes"
+  - id: "bucket-sortedness"
+    question: "How to encode bucket sortedness for WorldIndexed idempotence?"
+    status: "deferred"
+    note: "Options: Sorted predicate, AVL trees, direct proof via insertBucket structure"
+
+# --- FLAGS ---
+flags:
+  - "SESSION 8 COMPLETE: Comprehensive Agda audit with implementation"
+  - "PROPERTY FAILURES DOCUMENTED: Commutativity, associativity, monotonicity are features"
+  - "BOOL SUBSUMPTION IMPLEMENTED: Context.agda and ToyModel.agda"
+  - "DSL WIRED: Apply.agda calls Mechanics.Dynamics.step"
+  - "IDEMPOTENCE: Proven for LP; deferred for WorldIndexed (needs sortedness)"
+  - "ALL CODE COMPILES: --safe --without-K"
+  - "NEXT: Social ontology bridge development"
