@@ -1,4 +1,20 @@
 # Symbolics Project State
+#
+# ============================================================================
+# CRITICAL: REPOSITORY STRUCTURE
+# ============================================================================
+# This project uses 4 SEPARATE GitHub repositories. DO NOT create a monorepo.
+#
+# Local workspace: ~/Developer/Symbolics/
+#   ├── symbolics-core/      → github.com/SymbolicsLab/symbolics-core (Agda)
+#   ├── symbolics-audit/     → github.com/SymbolicsLab/symbolics-audit (this repo)
+#   ├── symbolics-dsl/       → github.com/SymbolicsLab/symbolics-dsl (TypeScript)
+#   └── symbolics-research/  → github.com/SymbolicsLab/symbolics-research (Vault)
+#
+# Each repo has its own .git and pushes to its own GitHub remote.
+# NEVER consolidate these into a single repository or monorepo structure.
+# ============================================================================
+#
 # RULES FOR AGENTS:
 # - Keep this file FLAT. No nesting deeper than 2 levels.
 # - When updating, REWRITE the entire section you're changing. Never patch individual lines.
