@@ -21,9 +21,799 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-03T18:00:00Z"
-last_session: 9
+last_updated: "2026-02-06T12:00:00Z"
+last_session: 12
 last_agent: "Claude Code (Opus 4.5)"
+
+# ============================================================================
+# SESSION 12 DECISIONS
+# ============================================================================
+
+session_12_decisions:
+  - id: "one-modality"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Collapse two modalities (□ and □_P) into one. Resilience is the measure, not a second kind of necessity."
+    context: >
+      Session 10 proposed distinguishing □ (topological necessity — invariant under index deformation,
+      endogenous, persistence by fit) from □_P (settlement under policy — what the policy produces,
+      exogenous, persistence by constraint). The motivation was to (1) ground truth beyond mere stability,
+      (2) diagnose paranoid systems (□_P without □), and (3) separate genuine inquiry from computation.
+    problem: >
+      The theory's own commitments undermine making this a binary: (1) Constraint produces fit — □_P can
+      become □ through naturalization, so □ might just be maximally-sedimented □_P. (2) Laws and rules
+      are a gradient, not a binary. (3) In lived experience, we don't encounter two kinds of necessity —
+      we encounter resistance, surprise, stability-under-pressure. The physical and symbolic worlds are
+      entangled; positing two modal realms cuts against this.
+    resolution: >
+      ONE MODALITY: settlement/stabilization under policy (□_P, or just □). RESILIENCE as the measure:
+      how much index/policy perturbation can a distinction survive? Truth = high resilience = the
+      distinction tracks something the field supports. Pathology (paranoid system) = low resilience =
+      stability purchased by narrowing the index, avoiding pressure. "Topological necessity" was a
+      reification of the high-resilience limit, not a separate kind of necessity. The field contributes
+      PRESSURE, not a second modality. Policies that accommodate pressure are resilient.
+    paranoid_system_reframe: >
+      The paranoid system is better diagnosed via distinction/differentiation: the paranoid person is
+      differentiating (internal states) but not making distinctions (transmissible, contestable, surviving
+      uptake). They fail the two-body test. Their "stability" is solitary — can't survive genuine
+      interlocution. This uses existing machinery without adding a new modality.
+    implications:
+      - "Resolves 'second-box-underdefined' review concern — no second box to define"
+      - "Resolves 'resilience-vs-fit' concern — resilience IS the measure of fit (under pressure)"
+      - "□_P language can be kept as 'settlement operator' but not contrasted with a separate □"
+      - "Truth = convergence point that resilient policies approach (Peircean)"
+      - "Inquiry vs computation = whether Layer 4 (update) is active, not two modalities"
+      - "05_Formalism needs update: remove two-modality framing"
+      - "04_Ecology: naturalization is □_P appearing necessary, not □_P appearing as different-kind-□"
+
+  - id: "dyadic-monadic-resolution"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Monadic reasoning is possible because distinction-capacity is dyadic in origin but deployable solo once internalized."
+    context: >
+      Strongest objection from Gemini: If distinction is constitutively dyadic (requires two systems
+      under shared pressure), how can a solitary system reason? Where does the 'no' come from monadically?
+    resolution: >
+      (1) Distinction-capacity is dyadic in origin — you learn to make distinctions through two-body
+      coordination (protoconversation, social referencing, language). The FORM of distinction (contestable,
+      revisable, normatively bound) is inherited from this history. (2) Once you have the capacity, you
+      can deploy it monadically — but you're deploying a fundamentally social form. The 'no' comes from
+      the world's pressure, but your capacity to register that pressure AS CONTESTATION (rather than mere
+      causal impact) comes from dyadic history. (3) The solitary reasoner hasn't simulated a second body —
+      they've INTERNALIZED one. The capacity for self-correction, for treating your own beliefs as
+      contestable, is the trace of dyadic origin. You can argue with yourself because you've argued with
+      others. Connects to Vygotsky: inner speech is internalized dialogue.
+    key_example: >
+      Helen Keller did not have an internal monologue before language acquisition through Anne Sullivan —
+      a paradigmatic two-body interaction. The capacity for internal contestation requires dyadic origin.
+    implications:
+      - "Resolves 'dyadic-monadic-problem' review concern"
+      - "Solitary reasoning is derivative but not deficient — it deploys a social form"
+      - "Vygotsky is a theoretical ally (inner speech = internalized dialogue)"
+      - "Connects to AI question: can AI internalize the dyadic form without genuine two-body history?"
+
+  - id: "layer-5-is-interface"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Layer 5 (metabolic evaluation) is not a policy layer but the interface where pressure enters the system."
+    context: >
+      Gemini objection: "A policy is a set of norms; metabolism is a biological/causal process. If L5
+      is part of the policy, it implies the system decides how to feel pressure. But pressure is
+      supposed to be objective."
+    resolution: >
+      Layer 5 is not a policy layer — it's the BOUNDARY CONDITION. It's where policy meets pressure.
+      The system doesn't choose how to feel pressure; pressure is what the field contributes. Layer 5
+      is the interface where that contribution enters the system. Stratification becomes: Layers 1-4
+      are policy proper (index, consequence, conflict-resolution, update) — norms the system operates
+      under and can revise. Layer 5 is the INTERFACE — where the field's pressure registers, where
+      remainder becomes felt, where the causal world enters the normative system.
+    implications:
+      - "Resolves 'layer-5-status' review concern"
+      - "Preserves pressure as objective (not chosen by system)"
+      - "Policy stratification is now 4 layers + interface, not 5 layers"
+      - "02_Operations needs update: reframe Layer 5 as boundary/interface"
+
+  - id: "distinction-preservation-metabolic"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Distinction-preservation targets metabolic arrest, not just logical explosion. 1984-type regimes are live examples."
+    context: >
+      Reviewer objection: "Classical explosion without revision" is a straw target — no one holds it.
+      Distinction-preservation looks like a constraint invented to rule out an opponent that doesn't exist.
+      (Though classical logic isn't quite a straw man — it's that the degenerate case is what no one holds.)
+    resolution: >
+      The target isn't just explosion but METABOLIC ARREST — any configuration that prevents the
+      fold-remainder-unfold-refold cycle from operating. Distinction-preservation means: don't destroy
+      the medium's capacity to metabolize. This rules out multiple live pathologies:
+      (1) EXPLOSION — destroys by making everything equivalent (classical without revision)
+      (2) CRYSTALLIZATION — destroys by refusing unfold (fundamentalisms, rigid ideologies)
+      (3) FORCED COHERENCE — destroys by suppressing remainder (1984-type regimes, totalizing systems)
+      The 1984 example is paradigmatic: the regime doesn't explode into triviality, it ARRESTS metabolism
+      by forcing all remainder back into the official schema. Doublethink is metabolic arrest by design.
+    live_targets:
+      - "Totalitarian regimes (1984-type forced coherence)"
+      - "Fundamentalisms (crystallization, index treated as unrevisable)"
+      - "Certain AI alignment approaches (training away uncertainty/contradiction)"
+    implications:
+      - "Resolves 'constitutive-vs-normative' review concern"
+      - "Distinction-preservation has live targets, not just straw men"
+      - "Connects to political philosophy: healthy polity = metabolically active"
+      - "Reframes the classical logic point: it's not anti-classical, it's anti-degenerate-configuration"
+
+  - id: "layer-2-3-collapse"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Collapse Layer 3 (conflict-resolution) into Layer 2 (consequence). Conflict resolution is modal structure within consequence."
+    context: >
+      Gemini: "In most non-monotonic logics, the mechanism for resolving conflicts (specificity, priority)
+      is integral to the consequence relation itself, not a separate layer." Separating them implies L2
+      generates contradictions that L3 cleans up — but that's not how most systems work.
+    resolution: >
+      Collapse L3 into L2. Conflict resolution is about the RELATIVE STRENGTH of commitments — which
+      is modal structure. When φ and ψ conflict, asking "which wins" is asking which has more modal
+      force, which is more binding, less defeasible. Consequence relations are INHERENTLY MODAL.
+      "What follows from what" is always already about necessity and strength. Priority orderings,
+      specificity, exceptions — these are modal structure within the consequence relation, not a
+      separate layer above it.
+    new_stratification: >
+      4 LAYERS + INTERFACE:
+      (1) INDEX — what can be distinguished at all
+      (2) CONSEQUENCE — what follows from what, including modal structure (relative strength, defeasibility, priority)
+      (3) UPDATE — how to revise under pressure (when remainder accumulates)
+      (4) INTERFACE — where pressure enters (not a policy layer; boundary condition)
+    connection_to_one_modality: >
+      This reinforces the one-modality decision: modal character throughout is about STRENGTH OF
+      SETTLEMENT. Some things more firmly settled than others. Some commitments defeat others.
+      But it's all one kind of thing (settlement) at different strengths — not different kinds of necessity.
+    implications:
+      - "Resolves 'layer-2-3-collapse' review concern"
+      - "Policy stratification is now 4 layers + interface (was 5 layers)"
+      - "Layer 2 explicitly includes modal structure"
+      - "02_Operations needs major update"
+
+  - id: "hierarchy-unification"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Policy stratification and Organizational Hierarchy are the same structure. Index IS the Form/Formula level."
+    context: >
+      The policy stratification (Index → Consequence → Update) maps directly onto the Organizational
+      Hierarchy (Distinction → Form/Formula → Inference → Modality). Level 2 (Form/Formula) always felt
+      vacuous — "syntactic binding" was a placeholder. The insight: INDEX is what fills Level 2. The
+      index IS the form that distinction takes. Without index, distinction is formless.
+    mapping: >
+      ORGANIZATIONAL HIERARCHY = POLICY STRATIFICATION (viewed operationally):
+      Level 1: Distinction (φ / not-φ) — the primitive, the bare cut
+      Level 2: Index (form/formula) — the articulation of distinction (scope, locus, resolution, measurement)
+      Level 3: Consequence/Inference — what follows from what (entailment structure)
+      Level 4: Modality/Update — states, worlds, revision under pressure
+      Level 5+: Identity/Self — recursive self-modeling
+    key_insight: >
+      Index doesn't sit "under" distinction like a foundation. Index sits "above" distinction like
+      ARTICULATION sits above the thing articulated. The hierarchy is about SCOPE OF STABILIZATION
+      (what includes what), not transcendental priority (what enables what). Each level includes and
+      articulates the level below. Distinction is the THAT; Index is the HOW. Distinction without
+      index is raw, unarticulated — a partition without shape. Index gives distinction its usable form.
+    result: >
+      ONE HIERARCHY with multiple jobs:
+      - Organizational view: What is being stabilized at each level
+      - Policy view: How the system operates at each level
+      - Pathology view: What can go wrong at each level
+      The policy stratification was reinventing the organizational hierarchy without recognizing it.
+    implications:
+      - "Major simplification: one hierarchy, not two parallel structures"
+      - "Level 2 (Form/Formula) now has real content: INDEX"
+      - "Policy stratification language can be retired or kept as 'operational view' of hierarchy"
+      - "01_Ontology and 02_Operations need reconciliation around this unification"
+      - "Organizational Hierarchy note in archive should be promoted/revised"
+
+  - id: "dissolution-vs-gradient"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Inference is not dissolved but placed — it IS Level 3 (consequence) in the unified hierarchy."
+    context: >
+      Gemini noted rhetorical tension between "dissolving" inference and placing it on a "gradient."
+      If it's a region, the category exists. If dissolved, the term should be abandoned.
+    resolution: >
+      Given the hierarchy unification, inference is simply PLACED, not dissolved. Inference IS Level 3
+      (consequence/entailment). It's not a distinct kind of cognitive act — it's operations at the
+      consequence level of the hierarchy. The term remains useful for picking out Level 3 operations,
+      but the boundaries with adjacent levels are vague and the category is not fundamental.
+    implications:
+      - "Resolves 'dissolution-vs-gradient' review concern"
+      - "Clarifies rhetoric: reconceptualization, not elimination"
+
+  - id: "token-form-skip"
+    date: "2026-02-06"
+    status: "rejected"
+    summary: "Distinction-token vs distinction-form terminology not useful — risks reintroducing epistemic/ontological dualism."
+    context: >
+      ChatGPT suggested separating distinction-token (what operator manipulates) from distinction-form
+      (the constituted capacity). This gestures at distinction being both epistemic and ontological.
+    resolution: >
+      The theory's position is that this split doesn't hold. Distinction is representation; representation
+      is distinction. The epistemic and ontological are entangled — distinctions aren't discovered (pure
+      ontology) or invented (pure epistemology), they EMERGE through pressure meeting field. The hierarchy
+      handles it: Level 1 (distinction) and Level 2 (index) are both ontological AND epistemic. The
+      token/form terminology risks reintroducing a dualism the theory has dissolved.
+    implications:
+      - "No new terminology needed"
+      - "Confirms anti-dualist stance on epistemic/ontological"
+
+  - id: "settlement-not-necessity"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "□_P is a process modality (settlement/closure), not Kripkean necessity."
+    context: >
+      ChatGPT: "□_P stops behaving like necessity and starts behaving like a temporal next/future
+      fixed point operator." Given one-modality decision, this is already resolved.
+    resolution: >
+      The single modality is best understood as a PROCESS MODALITY — what the system will converge on
+      under this policy. Not "necessity" (what holds in all possible worlds) but SETTLEMENT (what the
+      policy commits you to). It's prospective. T-failure (□φ without φ) is the gap between commitment
+      and realization — a temporal structure, not a logical anomaly.
+    terminology: >
+      Prefer "settlement" or "closure" over "necessity." Acknowledge process/temporal character.
+    implications:
+      - "Resolves '□_P is temporal' review concern"
+      - "Aligns with one-modality decision"
+      - "Papers should use settlement/closure language"
+
+  - id: "policy-fixity-gradient"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "The gradient is POLICY FIXITY, not constraint. Constraint and fixity are orthogonal."
+    context: >
+      Gemini: Artists/poets operate under massive formal constraints but low policy fixity (rules
+      change during the act). Deduction has high policy fixity. The "constraint gradient" was imprecise.
+    resolution: >
+      Two orthogonal axes:
+      - CONSTRAINT: How strict the rules are
+      - POLICY FIXITY: How resistant the policy is to revision during the act
+      What distinguishes types of inference/distinction-making is FIXITY, not constraint.
+      Examples:
+      - High constraint, high fixity: Deduction (strict rules, held fixed)
+      - High constraint, low fixity: Formal art (sonnet, fugue — strict rules that can be revised mid-work)
+      - Low constraint, low fixity: Free improvisation, paradigm shift
+    implications:
+      - "Resolves 'policy-fixity-not-constraint' review concern"
+      - "Relabel gradient axis in papers"
+      - "Clarifies that art can be highly constrained but low-fixity"
+
+  - id: "remainder-not-parametric"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Remainder is constitutive/structural, not parametric. It doesn't reduce to a single measurable proxy."
+    context: >
+      ChatGPT requested: "Make remainder operational — give remainder at least one measurable proxy."
+    resolution: >
+      Remainder is WHAT DISTINCTION LEAVES OUT — the infinite field minus the finite cut. It's
+      constitutive, not parametric. You can't measure "everything that was excluded" because it's
+      defined by not being captured. You can see remainder's EFFECTS (pressure to revise, prediction
+      error, contradictions, sensitivity to perturbation) but these are effects, not remainder itself.
+      Remainder is the structural fact that any distinction is finite and the field is infinite.
+      This is like asking for a measurable proxy for "the unconscious" or "the thing-in-itself" —
+      the concept is defined by what escapes capture. The formal story should show how remainder
+      MANIFESTS (through effects) without pretending it can be directly measured.
+    implications:
+      - "Resolves 'remainder-operational' review concern"
+      - "Remainder is structural, not a parameter"
+      - "Papers should show remainder's effects, not claim to measure it directly"
+      - "This is a feature of the concept, not a gap in the theory"
+
+  - id: "book-not-papers"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "The theory needs a book to hold its shape, not papers that respond to existing conversations."
+    context: >
+      The "Inference as Policy" paper started as being about inference, then inference dissolved into
+      Level 3 of the hierarchy. Making it "inference-themed" centers old ways of thinking and does
+      nothing to establish symbolics as a new field. Papers respond to existing conversations on their
+      terms; a book holds the theory's own shape.
+    resolution: >
+      The theory needs BOOK-SHAPED development, not paper-shaped. A book:
+      - Builds from foundations
+      - Each piece has its place relative to the whole
+      - External concerns become applications OF the theory, not drivers of it
+      - Establishes symbolics as a coherent field
+      Papers can come later as applications/engagements, but the shape-holding form is the book.
+    implications:
+      - "Deprioritize paper revisions"
+      - "Focus on building the book's spine"
+      - "Existing paper drafts may become chapters or application sections"
+
+  - id: "book-structure"
+    date: "2026-02-06"
+    status: "accepted"
+    summary: "Book arc: Pressure → Distinction → Nature of Distinction → Hierarchy → Metabolism → Self → World"
+    structure: >
+      I. PRESSURE
+         - The primitive: what matters, value, need
+         - Pressure before distinction (pre-symbolic)
+         - Why pressure, not distinction, is the true ground
+
+      II. DISTINCTION
+         - Genesis (speculative): traumatic/scapegoat origin hypothesis — kept here as high-risk speculation
+         - Two-body emergence: necessary conditions
+         - Differentiation vs distinction
+         - The cut as wound (the Fall, irreversibility)
+
+      III. THE NATURE OF DISTINCTION
+         - Remainder (what any distinction leaves out — constitutive, structural not parametric)
+         - Index (form, articulation, orientation)
+         - Opacity (gradient access to index)
+         - Epistemic = ontological (anti-dualist)
+         - Distinction as representation (the identity)
+
+      IV. HIERARCHY
+         - The unified organizational hierarchy
+         - Level 1: Distinction (the bare cut)
+         - Level 2: Index (form, articulation)
+         - Level 3: Consequence (inference, entailment)
+         - Level 4: Modality (update, revision, strength)
+         - Level 5-6: Identity and the plastic self
+         - Each level is the same operation at broader scope
+
+      V. METABOLISM
+         - The dynamics: fold → remainder → unfold → refold
+         - Stabilization and settlement (process modality)
+         - T-failure: commitment before realization
+         - Resilience as the measure of truth
+
+      VI. SELF
+         - Need vs desire (pressure before and after the Fall)
+         - Memory (persistence of folds)
+         - Hope (T-failure lived)
+         - Risk (vulnerability to unfold)
+         - Creativity (low policy-fixity distinction-making)
+         - The plastic self (trajectory of self-reorganizations)
+
+      VII. WORLD
+         - Fit and constraint (endogenous/exogenous)
+         - Naturalization (constraint appearing as topology)
+         - Power (constraint with an agent)
+         - Applications: social ontology, AI, politics, etc.
+    genesis_note: >
+      Genesis (the scapegoat/traumatic origin hypothesis) is kept within Distinction as speculative.
+      The hypothesis: distinction emerged from a traumatic event for a community where partitioning
+      became a matter of survival — potentially a scapegoat structure, a mass death event. This would
+      explain why distinction is "wounding," why remainder is constitutive (the expelled IS the remainder),
+      why desire is structured by loss. High-risk but generative. May be strengthened over time.
+    implications:
+      - "This is the book's spine"
+      - "Existing papers become chapters or applications"
+      - "Genesis is speculative, kept within Distinction, not its own section"
+
+  - id: "outstanding-items-deprioritized"
+    date: "2026-02-06"
+    status: "deferred"
+    summary: "Several review items remain unresolved but are deprioritized given the book reframe."
+    items:
+      - "one-theorem: packaging question, less relevant for book"
+      - "policy-traceability: ChatGPT's conservativity suggestion — may revisit"
+      - "idempotence-too-strong: concern about path-dependent reasoning — may revisit"
+      - "llm-temporally-segmented: Gemini's LLM metabolism reframe — may revisit for applications"
+      - "phenomenology-of-dogmatism: changes given one-modality decision — may revisit"
+    note: "These were paper-revision concerns. Book structure takes priority."
+
+# ============================================================================
+# SESSION 11 REVIEW FEEDBACK — INFERENCE AS POLICY PAPER
+# ============================================================================
+# Reviews from Gemini and ChatGPT on the revised paper. To be addressed next session.
+# Packaging/structure concerns noted but deprioritized; focus on substantive issues.
+
+review_feedback_session_11:
+  date: "2026-02-04"
+  paper: "Inference as Policy (revised draft with Session 10 changes)"
+  reviewers: ["Gemini", "ChatGPT"]
+
+  # --- SHARED SUBSTANTIVE CHALLENGES (both reviewers) ---
+  shared_challenges:
+    - id: "resilience-vs-fit"
+      summary: "Truth tracks FIT, not resilience. The paranoid system is resilient but doesn't fit."
+      detail: >
+        Gemini: "A distinction can be resilient (stable under many policies) but still fail to track
+        the topology (□). The Paranoid System example highlights this: the paranoia is resilient
+        (stable under updates), but false." The paper conflates internal resilience (stability under
+        policy variation) with topological fit (stability under index deformation).
+      location: "Section 8.3"
+      action: "Distinguish two measures: internal resilience vs topological fit. Truth tracks the latter."
+
+    - id: "layer-5-status"
+      summary: "Is metabolic evaluation a policy LAYER or the INTERFACE between policy and world?"
+      detail: >
+        Gemini: "Layer 5 sounds like a mechanism of the system, not a layer of the policy. A policy
+        is a set of norms; metabolism is a biological/causal process. If L5 is part of the policy,
+        it implies the system decides how to feel pressure. But the paper argues pressure is objective."
+        Chat: "If policy is the whole stack, then 'inference is policy choice' risks sounding like
+        'inference depends on everything,' which is true but not explanatory."
+      action: "Consider framing Layer 5 as the interface/boundary, not a policy layer proper."
+
+    - id: "second-box-underdefined"
+      summary: "Topological necessity (□) is conceptually interesting but under-defined."
+      detail: >
+        Chat: "'Invariant under deformation of the index' needs at least one concrete formalization
+        or worked example, otherwise it reads like a metaphorical 'real structure.' ... Why does
+        inhabiting the world guarantee index-invariant propositions are actualized at your current
+        state? Cut □ entirely from this paper or define it properly."
+        Gemini: "Ensure the notation □_P is introduced immediately when modal logic is first mentioned
+        to avoid confusion with standard S5 necessity."
+      action: "Either cut □ from this paper (keep only □_P) or provide crisp definition + example."
+
+    - id: "constitutive-vs-normative"
+      summary: "Is distinction-preservation genuinely constitutive or just ruling out a straw target?"
+      detail: >
+        Gemini: "The paper claims Distinction-Preservation is 'constitutive.' But then it admits that
+        classical explosion is a 'policy choice' (albeit a bad one). If a system explodes, has it
+        ceased to infer, or is it inferring badly?"
+        Chat: "You treat 'classical explosion without revision' as pathological and basically unreal
+        in practice. True, but then distinction-preservation looks like a constraint you invented to
+        rule out an opponent no one holds."
+      action: "Need at least one case where distinction-preservation rules out something tempting/live."
+
+  # --- GEMINI-SPECIFIC INSIGHTS ---
+  gemini_specific:
+    - id: "layer-2-3-collapse"
+      summary: "Conflict-resolution (L3) should collapse into Consequence (L2)."
+      detail: >
+        "In most non-monotonic logics, the mechanism for resolving conflicts (specificity, priority)
+        is integral to the consequence relation itself, not a separate layer 'above' it. By separating
+        them, you risk implying that Layer 2 generates contradictory outputs that Layer 3 cleans up."
+      action: "Consider merging L3 into L2, yielding a 4-layer stratification."
+
+    - id: "dissolution-vs-gradient"
+      summary: "Rhetorical tension between 'dissolving' inference and placing it on a 'gradient'."
+      detail: >
+        "If it is a region [on a gradient], the category exists but has vague boundaries. If it is
+        dissolved, the term should be abandoned. The paper seems to want the former but uses the
+        rhetoric of the latter."
+      action: "Clarify: reconceptualization into a cluster concept, not elimination."
+
+    - id: "policy-fixity-not-constraint"
+      summary: "The gradient axis should be 'policy fixity' not 'constraint'."
+      detail: >
+        "You might mean low-policy-fixity, not low constraint. Artists or poets operate with massive
+        formal constraints. Deduction has high policy fixity. Art/Paradigm shifts have low policy
+        fixity (the rules change during the act)."
+      action: "Relabel the gradient axis in Section 4.2."
+
+    - id: "phenomenology-of-dogmatism"
+      summary: "Agents confuse □_P for □. This explains dogmatism."
+      detail: >
+        "From the inside, □_P feels like □. The paper needs to clarify that this distinction is
+        external/structural, not necessarily accessible to the agent."
+      action: "Add sentence about agents mistaking settlement for topological invariance."
+
+    - id: "llm-temporally-segmented"
+      summary: "LLM metabolism is temporally segmented, not absent."
+      detail: >
+        "Instead of the 'coupled system' defense, argue that the training process (which updates the
+        weights/policy) combined with the inference pass constitutes the full metabolic cycle. The
+        LLM during inference is doing Layer 2; the training run is Layer 4."
+      action: "Reframe LLM case in Section 7 using temporal segmentation."
+
+    - id: "dyadic-monadic-problem"
+      summary: "STRONGEST OBJECTION: If distinction is dyadic, where does the 'no' come from monadically?"
+      detail: >
+        "If distinctions are necessarily social/dyadic, how can a solitary system perform inference
+        on them? ... If Pressure (causal) can provide the normative 'No,' why did we need the Dyad
+        for distinction in the first place?"
+      proposed_answer: >
+        "Monadic inference is simulation of dyadic contestation with nature. The form of distinction
+        (discrete, contestable) is dyadic in origin, but once the capacity for that form is established,
+        an organism can apply it to the world, treating the world as if it were an interlocutor that
+        can say 'no' (via prediction error)."
+      action: "Add explicit treatment of monadic inference as simulated dyadic contestation."
+
+  # --- CHATGPT-SPECIFIC INSIGHTS ---
+  chatgpt_specific:
+    - id: "three-payloads"
+      summary: "Paper carries three payloads: ontology, semantics, methodology."
+      detail: >
+        "You're simultaneously (i) proposing a metaphysics/ontology of distinction, (ii) proposing
+        a formal semantics of inference-as-stabilization, and (iii) proposing a methodology for
+        causal vs constitutive dependence (value/rule interventions). Each of those could anchor a
+        paper. Together, they risk reading like a 'system launch.'"
+      note: "Packaging concern — deprioritized but noted."
+
+    - id: "distinction-token-vs-form"
+      summary: "Separate the formal role (token) from the metaphysical story (form)."
+      detail: >
+        "Introduce two levels explicitly: distinction-token (element of a configuration, what the
+        operator manipulates) and distinction-form (the socially/biologically constituted capacity
+        that makes tokens possible). Then you can say: 'This paper formalizes inference over
+        distinction-tokens; the story of distinction-forms is background motivation.'"
+      action: "Consider introducing this terminological distinction early in the paper."
+
+    - id: "box-p-is-temporal"
+      summary: "□_P is really a settlement/closure operator, not necessity."
+      detail: >
+        "If the operator is deterministic, accessibility is basically 'next stabilized state.' □_P
+        stops behaving like necessity and starts behaving like a temporal next/future fixed point
+        operator. A modal logician will say: 'You're just doing temporal/dynamic logic poorly.'
+        Call □_P a settlement or closure operator and treat it explicitly as a process modality."
+      action: "Rename or explicitly acknowledge □_P as process modality, not Kripkean necessity."
+
+    - id: "one-theorem"
+      summary: "Pick one formal centerpiece that the paper PROVES."
+      detail: >
+        "Decide what the paper proves (even informally): either policy pluralism implies non-uniqueness
+        of closure (gap between policies), or process-derived settlement operator invalidates T off
+        fixed points. Make one of these the formal centerpiece."
+      action: "Choose and highlight one formal result as the paper's theorem."
+
+    - id: "remainder-operational"
+      summary: "Make remainder operational in the formal story."
+      detail: >
+        "Show how remainder appears in the operator picture: as undecided statuses, as contradictions
+        (Both), as failure to converge, as sensitivity to policy perturbation. Give remainder at
+        least one measurable proxy."
+      action: "Add operational characterization of remainder in Section 4 or 5."
+
+    - id: "policy-traceability"
+      summary: "Better conservativity definition: policy-traceability."
+      detail: >
+        "Every output commitment must be licensed by some fold-path in the policy applied to the
+        total state that the system treats as premises. Then you can discuss different premise-
+        boundaries (prompt-only vs prompt+retrieval vs long-term memory) as different declared inputs."
+      action: "Consider replacing current conservativity definition with policy-traceability."
+
+    - id: "idempotence-too-strong"
+      summary: "Idempotence excludes too much (path-dependent reasoning)."
+      detail: >
+        "There are real reasoning processes that are path-dependent, cyclic, or boundedly unstable
+        but still norm-governed (debates, negotiation, certain nonmonotonic systems, reflective
+        equilibrium). Idempotence characterizes completed stabilization (fixed points), not inference
+        as a whole."
+      action: "Weaken idempotence claim: characterizes completed stabilization, not all inference."
+
+  # --- WHAT BOTH AGREE IS STRONG ---
+  agreed_strengths:
+    - "The policy → operator → fixed point mechanism"
+    - "T-failure as commitment/realization gap"
+    - "The five-layer stratification (with refinements needed)"
+    - "The dissolution of inference as a categorical distinction"
+    - "The Peirce engagement"
+    - "The owned classical logic position (LP Layer 2 vs classical+AGM Layer 4)"
+
+  # --- SESSION 11 INTEGRATION ---
+  session_11_integration:
+    - id: "the-fall-irreversibility"
+      date: "2026-02-04"
+      status: "integrated"
+      summary: >
+        The term "cut" was chosen deliberately — distinction is wounding, not neutral partitioning.
+        Once the continuum is cut, it does not heal. This is Jameson's "Fall": the entry into the
+        symbolic order is a fall from wholeness. Desire is structured by this loss — the yearning
+        toward the whole that can only operate through more distinction, taking you further from
+        what you want. The metabolic cycle is living flow AND structured grief. Both framings are
+        true. The theory should own both: distinction enables form AND destroys the whole.
+      location: "04_Ecology.md — new section 'The Fall: Irreversibility and Desire'"
+
+  # --- SUGGESTED PRIORITIZATION FOR NEXT SESSION ---
+  suggested_priority:
+    high:
+      - "resilience-vs-fit (truth tracks fit, not resilience)"
+      - "dyadic-monadic-problem (monadic inference as simulated contestation)"
+      - "second-box-underdefined (cut □ or define it properly)"
+    medium:
+      - "layer-5-status (interface vs policy layer)"
+      - "constitutive-vs-normative (need a live target)"
+      - "dissolution-vs-gradient (clarify rhetoric)"
+      - "distinction-token-vs-form (terminological fix)"
+    low:
+      - "layer-2-3-collapse (architectural simplification)"
+      - "policy-fixity-not-constraint (relabeling)"
+      - "three-payloads (packaging — deprioritized)"
+
+# ============================================================================
+
+# --- SESSION 10 WORKING INSIGHTS (to be integrated into vault) ---
+# These emerged from review of Inference as Policy paper (Gemini + Chat feedback).
+# Capture here before vault revision to avoid loss.
+
+session_10_insights:
+  - id: "inference-not-distinct-category"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      Inference is not a distinct category of act. All distinction-making is inferential to the
+      degree that it is responsive to the pre-given field (physical continuum + symbolic apparatus).
+      The difference between deduction, abduction, and creative work is a gradient of constraint,
+      not a difference of kind. Deduction is maximally constrained (topologically necessary relative
+      to input + policy). Abduction is heavily constrained (remainder-shaped). Poetry is loosely
+      constrained. Fabrication/lying is deliberately non-responsive to the field — a pragmatic
+      phenomenon, not a structural category of the theory.
+    implications:
+      - "The inference/distinction-making binary in Inference as Policy paper dissolves"
+      - "Conservativity becomes a gradient property of policies, not a constitutive binary"
+      - "The metabolism (fold/remainder/unfold/refold) is the real primitive, not 'inference'"
+      - "Abduction is not a 'hybrid' — it is distinction-making under remainder pressure, feeding new stabilization"
+      - "02_Operations needs revision: 'inference is a policy choice' → 'all distinction-making operates under policy'"
+
+  - id: "truth-as-topological-necessity"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      Truth is topological necessity: a distinction is true to the degree it tracks features of the
+      field that are invariant under deformation of the index. The field (infinite, entangled continuum)
+      has topological structure — ridges, joints, features that any reasonable index would approximate.
+      Endogenous distinctions track this structure (persistence by fit). Resilience under policy/index
+      perturbation is the measure of truth. This does the work that conservativity-as-constitutive was
+      trying to do, but anchored in the field's structure rather than in operator properties.
+    implications:
+      - "Replaces binary conservativity as the normative anchor"
+      - "Connects to 04_Ecology: endogenous = tracking topology; exogenous = held by constraint"
+      - "Sedimentation reframed: constraint reshaping the field's topology to LOOK invariant"
+      - "01_Ontology needs section on truth as topological necessity (extends success/truth discussion)"
+      - "The paranoia problem (Gemini point 5) resolved: paranoid system has zero topological anchoring"
+
+  - id: "distinction-preservation-truly-constitutive"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      Distinction-preservation (don't destroy the medium of distinction) is constitutive of ALL
+      distinction-making, not just inference. Classical explosion without revision is pathological
+      regardless of where on the constraint gradient the distinction-making sits. This is the one
+      property that survives the dissolution of the inference/distinction-making binary as truly
+      constitutive rather than gradient.
+
+  - id: "policy-stratification"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      Policy has a five-layer stratification. The layers are ontologically homogeneous (all are folds /
+      inclusion relations) but play structurally different ROLES with a presupposition ordering:
+      (1) INDEX policy — defines the representational space (what can be distinguished at all). Upstream
+      of everything. (2) CONSEQUENCE policy — operates within the space the index defines; determines
+      what follows from what. Different logics differ here. (3) CONFLICT-RESOLUTION policy — governs
+      consequence folds when they disagree; priority orderings, lex specialis, exceptions. Folds about
+      folds. (4) UPDATE policy — governs the unfold phase; when stabilization produces too much remainder,
+      how does the system revise? AGM, paradigm shift, DSM revision cycle. (5) METABOLIC EVALUATION —
+      how remainder gets registered as pressure; the metabolism itself operating on the whole stack.
+    structural_properties:
+      - "Presupposition ordering: each layer presupposes the ones below it"
+      - "Dynamic entanglement: each layer can put pressure on every other through the metabolic cycle"
+      - "Independent interveneability: you can vary one layer while holding others fixed (connects to Woodward)"
+      - "Ontological homogeneity: all layers are folds, but play structurally different roles"
+    gradient_of_constraint: >
+      The gradient of constraint in rational activity maps to how many layers are simultaneously varied.
+      Deduction = 1 layer (consequence, with index and priorities fixed). Abduction = 2 layers
+      (consequence + proposing new folds). Paradigm shift = all layers (index itself being revised).
+      Creative distinction-making = maximum layers, maximum degrees of freedom.
+    precedent_analysis: >
+      NOVEL SYNTHESIS, not rediscovery. No single framework has this structure, but strong partial
+      precedents exist. CLOSEST MATCHES: (1) Ostrom's IAD framework — most precise match for 3 of 5
+      layers (constitutional/collective-choice/operational rules with presupposition ordering + dynamic
+      feedback). Missing revision and metabolic layers. (2) Beer's VSM — five subsystems mapping
+      suggestively onto five layers, also recursive, but functional assignments differ and lacks gradient
+      principle. (3) Bateson's Levels of Learning — presupposition ordering maps well, but Bateson's
+      levels are strictly hierarchical (no dynamic entanglement). STRONG PARTIAL PRECEDENTS:
+      Tarski/type-theoretic universes (presupposition + ontological homogeneity, but static);
+      Smith's reflective tower/3-LISP (presupposition + entanglement + homogeneity, but infinite/
+      undifferentiated); Meadows' leverage points (stratified intervention depth, but ranking not
+      presupposition). GENUINELY NOVEL elements: (a) gradient-of-constraint principle (number of layers
+      varied = type of rational activity) — no precedent found; (b) presupposition ordering AND dynamic
+      entanglement simultaneously — Tarski has former without latter, Ashby has latter without former;
+      (c) ontological homogeneity combined with functional differentiation into specific layers.
+    interlocutors_to_engage:
+      - "Ostrom (institutional stratification — already relevant to Remainder paper)"
+      - "Bateson (levels of learning — with explicit move of ADDING dynamic entanglement he forbids)"
+      - "Peirce (Firstness/Secondness/Thirdness as stratification; habit-taking as policy formation)"
+      - "Beer (VSM as organizational parallel)"
+    implications:
+      - "02_Operations needs major revision: policy decomposition box with 5 layers"
+      - "Inference as Policy paper: stratification resolves the 'policy equivocation' problem"
+      - "Woodward extension strengthened: different layers = different intervention profiles"
+      - "Connects to recursion of distinction: the stratification IS the mise en abyme within policy"
+
+  - id: "fatal-objection-dissolved"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      The regress objection ("who applies the policy?") dissolves under the policy stratification.
+      The application of a policy IS causal/automatic — the system runs the policy like a machine
+      runs a program. Normativity does not live in the atomic act of application. It lives in the
+      REVISABILITY of the policy: Layer 4 (update) can rewrite Layers 1-3 when remainder accumulates.
+      The regress terminates in Layer 5 (metabolic evaluation) — pressure from the field's causal
+      structure. The law/rule distinction doesn't live in whether execution is automatic or judged;
+      it lives in whether the system that operates under the constraint can also revise it. Particles
+      can't revise gravity (law). Thinkers can revise their logic (rule). This is the structural
+      difference. Needs explicit statement in the paper, but no further theoretical work required.
+
+  - id: "two-modalities"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      The paper conflates two distinct modalities that the theory needs to separate.
+      (1) TOPOLOGICAL NECESSITY (□): φ is invariant under deformation of the index. The field has
+      structure — ridges, joints, features — that any reasonable index would approximate. This is
+      genuine necessity, grounded in the physical world's topology. Earns the name. Maps onto
+      ENDOGENOUS source (persistence by fit, governed by laws).
+      (2) SETTLEMENT UNDER POLICY (□_P): φ holds at the fixed point the current policy produces.
+      Prospective — what the policy commits you to. Closer to a "next-state" or "eventually"
+      operator. Maps onto EXOGENOUS source (persistence by constraint, governed by rules).
+    t_failure_at_both_levels: >
+      T-failure (□φ ∧ ¬φ) operates at both levels but means different things.
+      Topological: the field determines φ but the current index hasn't found it (epistemic gap —
+      the space of genuine inquiry). Settlement: the policy determines φ but the system hasn't
+      computed it yet (computational gap — stabilization in progress).
+    divergence_cases: >
+      □_P φ without □φ = policy holds φ but φ isn't topologically real. The PARANOID SYSTEM:
+      perfectly stable under its policy, tracking nothing in the field. Also: sedimented categories
+      that look natural but are held by constraint.
+      □φ without □_P φ = φ is topologically real but current policy can't capture it. The space
+      of GENUINE INQUIRY: the field has structure your stabilization hasn't found.
+    ecology_connection: >
+      Maps directly onto 04_Ecology's two sources. Endogenous/fit/laws = □ (topological necessity).
+      Exogenous/constraint/rules = □_P (settlement under policy). NATURALIZATION is the general term
+      for □_P φ appearing as □φ — constraint appearing as topology, through any mechanism that makes
+      the constraint's index opaque. De-naturalization is the reverse: recognizing apparent □φ as □_P φ.
+      SEDIMENTATION is demoted to the specific slow-temporal-burial case of naturalization. Other
+      mechanisms of naturalization: complexity (the apparatus is too intricate to see through),
+      power asymmetry (those who impose retain index access, those who live under do not), simply
+      not being told. Timescale is empirically contingent; what matters structurally is opacity of
+      the constraint's index.
+    implications:
+      - "Paper's current □ should be renamed to □_P (settlement operator)"
+      - "Topological necessity (□) introduced as genuine modality grounded in the field"
+      - "Paranoia problem fully resolved: paranoid system has □_P without □"
+      - "TERMINOLOGICAL: 'naturalization' = general term (□_P appearing as □); 'sedimentation' = specific slow case"
+      - "04_Ecology needs revision: naturalization as general term, sedimentation as one mechanism"
+      - "Sedimentation/de-naturalization get precise modal formulation"
+      - "05_Formalism needs major update: two modalities, not one"
+      - "Connects T-failure table in 04_Ecology (□φ∧¬φ endogenous; φ∧¬□φ exogenous) to modal framework"
+
+  - id: "peirce-connection"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      The theory is working in Peircean territory and must acknowledge this explicitly — not as
+      citation politeness but as recognition of genuine structural alignment with specific divergences.
+    alignments:
+      - "Firstness (quality, possibility, the undifferentiated) = the FIELD (infinite entangled continuum)"
+      - "Secondness (brute fact, resistance, reaction) = PRESSURE (the field pushing back)"
+      - "Thirdness (law, habit, mediation, generality) = POLICY (cluster of folds governing distinction-making)"
+      - "Habit-taking = policy formation (regularities stabilizing into operative constraints)"
+      - "Pragmaticism (meaning = sum of practical consequences) connects to truth as topological necessity (truth = resilience profile under perturbation)"
+      - "Abduction/deduction/induction trichotomy maps onto constraint gradient (abduction = multiple layers; deduction = consequence layer only; induction = metabolic evaluation)"
+    divergences:
+      - "Peirce keeps abduction/deduction/induction as distinct kinds; the theory dissolves the categorical distinction into a gradient"
+      - "Peirce has Thirdness but not the five-layer policy decomposition"
+      - "Peirce has habit-taking but not the explicit connection to remainder pressure and the metabolic cycle"
+      - "Peirce's 'index' (sign connected to object by causal relation) differs from the theory's 'index' (organism's orientation parameters) — different levels of analysis (Two-Body paper already notes this)"
+      - "The theory adds: field topology, two modalities (□ and □_P), policy stratification, the metabolism as primitive"
+      - "Peirce's semiotic progression (icon → index → symbol) has structural affinity with differentiation → distinction gradient but is not identical"
+    implications:
+      - "Inference as Policy paper must cite Peirce substantively (not just in passing)"
+      - "Peirce joins Brandom, Davidson, active inference as a major interlocutor"
+      - "The theory can be understood as a formalization and extension of Peircean insights with specific additions"
+
+  - id: "classical-logic-bias-owned"
+    date: "2026-02-04"
+    status: "accepted"
+    summary: >
+      The paper claims neutrality between LP and classical logic but the distinction-preservation
+      argument effectively argues against pure classical logic. The fix: own the position explicitly.
+      The theory is not neutral between all possible logic choices. It rules out any TOTAL CONFIGURATION
+      of the policy stack that destroys distinction. But it doesn't privilege LP over classical-with-revision.
+    resolution: >
+      LP and classical logic differ in WHERE they handle contradiction within the five-layer stratification:
+      (1) LP builds contradiction-tolerance into LAYER 2 (consequence). Both φ and ¬φ persist without explosion.
+      (2) Classical + AGM builds contradiction-elimination into LAYER 4 (update). Consequence explodes, but
+      the update policy intervenes before explosion propagates — revises premises, retracts beliefs.
+      Both preserve distinction. Both sustain the medium. They distribute the work differently across the stack.
+      What FAILS distinction-preservation is classical logic WITH NO REVISION CAPACITY — a system that explodes
+      on contradiction and has no Layer 4 to catch it. That's not anti-classical; it's anti-degenerate.
+    further_implication: >
+      Classical logic's historical development of revision theories (AGM, non-monotonic extensions, default
+      reasoning) is, from the theory's perspective, the natural emergence of Layer 4 when Layer 2 is intolerant
+      of contradiction. The system MUST develop update capacity somewhere, or it fails distinction-preservation.
+      This is the metabolic cycle operating on the logic itself — an instance of the theory's own dynamics.
+    implications:
+      - "Paper must stop claiming full neutrality — own the structural constraint"
+      - "Target is the STACK configuration, not Layer 2 alone — avoids strawmanning classical logic"
+      - "Distinction-preservation is a constraint on the whole stratification, not a preference for LP"
+      - "Classical logic's revision-theory history becomes an instance of the metabolic cycle"
 
 # --- THEORY SUMMARY (update after each reframe) ---
 theory_summary: >
@@ -57,14 +847,13 @@ theory_summary: >
   Spencer-Brown's "draw a distinction" presupposes power; endogenous distinctions become, not drawn.
 
 # --- VAULT STRUCTURE (post-restructure) ---
-vault_structure: "Pentad + 1: 5 living documents in Active/, social ontology planned as 6th, archived legacy in _Archive/"
+vault_structure: "Pentad: 5 living documents in Active/, archived legacy in _Archive/"
 active_documents:
   - "Active/01_Ontology.md (Pressure, Index, Distinction as representation, Recursion of distinction, Two-Body Emergence, Medium as index)"
   - "Active/02_Operations.md (Cut & Fold as two aspects of every distinction, Cut as representation, Policies and Induced Operators)"
   - "Active/03_Phenomenology.md (Remainder as what any distinction excludes, Unfold, Shimmer, Opacity)"
   - "Active/04_Ecology.md (Sources, Constraint vs Power, Sedimentation as constraint-produces-fit, De-naturalization)"
   - "Active/05_Formalism.md (Agda & Bridge — gap updated for distinction-as-representation)"
-  - "Active/06_Social_Ontology.md (PLANNED — bridge development)"
 
 # --- WHAT'S FORMALIZED (Agda) ---
 formalized_agda:
@@ -107,15 +896,10 @@ active_threads:
     note: "Session 9: 6 rounds of Gemini feedback integrated. Next: final proofread, decide target venue."
     priority: 0
   - id: "remainder-paper"
-    summary: "Companion paper: Remainder Under Feedback"
+    summary: "Companion paper: Remainder Under Feedback (social ontology bridge)"
     status: "draft"
-    note: "May need revision to align with refined two-body framework."
+    note: "This paper IS the social ontology bridge — applies distinction/remainder/constraint-produces-fit to institutional categories (DSM, Census, HUD, employment). May need revision to align with refined two-body framework."
     priority: 1
-  - id: "social-ontology-bridge"
-    summary: "Develop social ontology as first load-bearing bridge"
-    status: "next_session"
-    note: "New Active/06_Social_Ontology.md. Most tractable bridge — no formal barriers."
-    priority: 2
   - id: "agda-review"
     summary: "Fresh-context Agda audit through policy-cluster lens"
     status: "COMPLETE"
@@ -131,18 +915,21 @@ active_threads:
     status: "open_thread"
     note: "What determines incremental vs catastrophic unfold?"
     priority: 5
+  - id: "multi-agent-formalization"
+    summary: "Formalize two-body emergence via multi-agent dynamics"
+    status: "open_thread"
+    note: "Two-body paper opens new formalization path: model emergence of distinction through multi-agent dynamics (game theory, coalgebra, or multi-agent active inference). Complements operator-level Agda work by addressing a different level. Three conditions (shared pressure, observability, alignment) are structural enough for formal treatment."
+    priority: 6
   - id: "bucket-sortedness"
     summary: "Encode bucket sortedness for WorldIndexed idempotence"
     status: "deferred"
     note: "Either Sorted predicate, intrinsic representation (AVL), or direct proof via insertBucket"
-    priority: 6
+    priority: 7
 
 # --- NEXT ACTIONS ---
 next_actions:
   - "Two-Body Problem paper: final proofread, tighten prose, decide target venue"
   - "Remainder Under Feedback paper: revise in light of two-body framework refinements"
-  - "Create Active/06_Social_Ontology.md — first load-bearing bridge"
-  - "Choose specific social phenomenon to develop (money, institutions, looping kinds)"
   - "Ongoing: Bring scattered insights in through conversation (not migration)"
   - "OPTIONAL: Encode bucket sortedness to complete WorldIndexed idempotence proof"
 
@@ -180,8 +967,8 @@ recent_decisions:
 decisions_pending:
   - id: "social-phenomenon"
     question: "Which social phenomenon to develop first for the bridge?"
-    status: "open"
-    note: "Options: money/crypto, institutional persistence, looping kinds"
+    status: "resolved"
+    note: "Resolved: Remainder Under Feedback paper serves as the social ontology bridge, applying the theory to institutional measurement categories (DSM, Census, HUD, employment). No separate 06_Social_Ontology.md needed."
   - id: "category-theory"
     question: "When to pursue category-theoretic formalization of fold-as-relation?"
     status: "deferred"
@@ -198,4 +985,4 @@ flags:
   - "VAULT UPDATED: distinction-as-representation, recursion, constraint-vs-power reframes"
   - "KEY MOVES: differentiation/distinction, updating/contesting, truth/success, misuse/failure, laws/rules"
   - "ALL CODE COMPILES: --safe --without-K (from Session 8)"
-  - "NEXT: Final paper proofread, then social ontology bridge development"
+  - "SOCIAL ONTOLOGY BRIDGE: Remainder Under Feedback paper serves this role; no separate vault doc needed"
