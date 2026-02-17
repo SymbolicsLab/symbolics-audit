@@ -21,8 +21,8 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-17T23:00:00Z"
-last_session: 15
+last_updated: "2026-02-18T02:00:00Z"
+last_session: 16
 last_agent: "Claude Code (Opus 4.6)"
 
 # ============================================================================
@@ -1223,9 +1223,9 @@ active_threads:
 
   - id: "vault-session-12"
     summary: "Integrate Session 12 decisions into vault documents"
-    status: "DEFERRED"
+    status: "DONE (Session 16)"
     priority: 9
-    note: "One-modality, layer-2-3 collapse, hierarchy unification, policy-fixity gradient. Major updates to 02_Operations and 05_Formalism."
+    note: "Completed 2026-02-17. All 5 vault docs updated. Hierarchy unified, Level renumbering, metabolic arrest, Peirce, dyadic-monadic, remainder anti-parametric, Session 14 Agda milestone, MASTER-PLAN updated."
 
   - id: "scattered-insights"
     summary: "Bring in scattered insights from old system"
@@ -1291,7 +1291,6 @@ next_actions:
     - "Draft book proposal (MIT Press, U Minnesota, Verso)"
     - "Prepare ISRF application (deadline ~Oct 2026)"
   deferred:
-    - "Integrate Session 12 decisions into vault"
     - "Revise Inference as Policy"
     - "Agda/DSL formalization work"
 
@@ -1301,10 +1300,12 @@ next_actions:
 
 agent_status:
   claude_code: >
-    Session 15 (2026-02-17): VISION_E revision (APA 7, 5 critical-read edits, images processed)
-    — near-final, formatting only remaining. APQ abstract reviewed, strategy set (wait for target
-    article, revise by Mar 15). Sorbonne interventionism rejection noted. CALQ strategy revised:
-    split arts bundle from Hannover. All committed to symbolics-research.
+    Session 16 (2026-02-17): Full vault integration pass. All 5 active vault documents updated to
+    reflect Session 12 decisions (one-modality, hierarchy unification, layer collapse, metabolic arrest,
+    policy-fixity gradient, remainder-not-parametric, dyadic-monadic resolution) + Session 10 insights
+    (Peirce connection, classical logic bias owned, policy stratification) + Session 14 Agda milestone.
+    Level renumbering across all documents (Layer→Level). MASTER-PLAN.md updated throughout. Final
+    coherence read-through: 3 additional fixes. All committed to symbolics-research and symbolics-audit.
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
   chatgpt: "Session 12: Reviewed Inference as Policy paper. Key insights: three-payloads concern, distinction-token-vs-form, □_P as temporal/process modality, one-theorem suggestion."
   gemini: "Session 12: Reviewed Inference as Policy paper. Key insights: layer-2-3 collapse, dissolution-vs-gradient rhetoric, policy-fixity not constraint, dyadic-monadic problem (strongest objection), LLM metabolism as temporally segmented."
@@ -1353,6 +1354,9 @@ recent_decisions:
   - id: "vision-e-near-final"
     date: "2026-02-17"
     summary: "VISION_E paper text complete: APA 7, 15 refs, 19,901/20,000 chars, 5 critical-read revisions, images at 300 DPI. Formatting only remaining."
+  - id: "vault-integration-session-16"
+    date: "2026-02-17"
+    summary: "Full vault integration pass. All 5 docs updated for Session 12 decisions + Session 10 insights + Session 14 Agda milestone. MASTER-PLAN updated. Level renumbering. Coherence verified."
 
 # ============================================================================
 # DECISIONS PENDING
@@ -1437,7 +1441,7 @@ flags:
   - "VISION_E DUE FEB 22 — most urgent deadline"
   - "MONITOR BOOKS DUE MAR 1 — draft complete, needs polish"
   - "EV APPLICATION SHOULD GO OUT ASAP — rolling, low effort, high potential"
-  - "SESSION 12 DECISIONS NOT YET IN VAULT — one-modality, layer collapse, hierarchy unification"
+  - "SESSION 12 DECISIONS INTEGRATED INTO VAULT (Session 16) — one-modality, layer collapse, hierarchy unification, metabolic arrest, Peirce, dyadic-monadic, remainder anti-parametric"
   - "AGDA UNIFIED FORMALIZATION COMPLETE — 20 new Symbolics modules, ~94% verified, --safe --without-K (Session 14)"
   - "48K+ WORDS WRITTEN across 5 disciplines — undersold in current applications"
   - "ENS PARIS CONFIRMED — Derrida Today, Jul 13-17 2026. Big credibility win."

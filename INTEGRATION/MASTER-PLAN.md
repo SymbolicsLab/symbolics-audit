@@ -1,6 +1,7 @@
 # MASTER PLAN: Symbolics Theory Integration
 
 *Created: 2026-02-04*
+*Last updated: 2026-02-17 (Session 16 — vault integration pass)*
 *Purpose: Comprehensive strategic roadmap for theory development, integration, and publication*
 
 ---
@@ -24,7 +25,7 @@
 | **Distinction** | Logical primitive, Level 1 of hierarchy | Emergent from two-body recognition under pressure | MAJOR DRIFT |
 | **Pressure** | Downstream of remainder | True primitive, prior to everything | REVERSED CAUSALITY |
 | **Fold** | Operator with formal properties | Relation (inclusion) | STRUCTURAL CONFLICT |
-| **Self** | Levels 5-6 with Godelian machinery, S_t → S_{t+1}, Filter Equation | Endpoint of five moves from distinction | DEGRADATION |
+| **Self** | Levels 5-6 with Godelian machinery, S_t → S_{t+1}, Filter Equation | Level 5+ (recursive self-modeling) in unified hierarchy | DEGRADATION |
 | **Truth** | Cannot not commit (fold-dynamics) | Resilience gradient | MAJOR DRIFT |
 
 **Required Action**: State explicitly what is primitive (pressure vs distinction) and defend the choice. Reconcile or explicitly supersede the Dossier framework.
@@ -33,7 +34,7 @@
 
 | Architecture | Dossier Location | What Was Lost | Pentad Replacement | Decision Required |
 |--------------|------------------|---------------|-------------------|-------------------|
-| **Dual Hierarchy** (Organizational + Locus) | Research Dossier: Synthesis parts 1-6, New Insight parts 1-3 | Who folds? Agency at each level. Cross-locus constraints. | Five-layer Policy Stratification | DIFFERENT QUESTIONS — may need both |
+| **Dual Hierarchy** (Organizational + Locus) | Research Dossier: Synthesis parts 1-6, New Insight parts 1-3 | Who folds? Agency at each level. Cross-locus constraints. | Three-level Policy Stratification + interface | DIFFERENT QUESTIONS — may need both |
 | **Temporal Hierarchy** | Research Dossier: Synthesis part 3 | 7 distinct time structures by level | Nothing (time treated as uniform) | RECOVER or explain why uniform |
 | **Metabolic Regimes** | Research Dossier: Synthesis part 4, New Insight part 2 | Creative/Homeostatic/Crystalline with ΔI conditions | Implicit only | RECOVER formal conditions |
 | **Levels 5-6** | Research Dossier: Synthesis part 5-6 | Godelian pressure, S+1 re-entry, Filter Equation | "Self as endpoint of five moves" | RECOVER mechanism or argue abandonment |
@@ -46,7 +47,7 @@ From Session 11 (Gemini + ChatGPT):
 **HIGH PRIORITY**:
 - `resilience-vs-fit`: Truth tracks FIT (topological), not internal resilience. Paranoid system is resilient but false.
 - `dyadic-monadic-problem`: If distinction is dyadic, where does solitary inference get its 'no'?
-- `second-box-underdefined`: □ (topological necessity) needs definition or should be cut from paper.
+- `second-box-underdefined`: □ (topological necessity) dissolved — one modality (settlement). Resilience replaces □. Paper needs revision to reflect this.
 
 **MEDIUM PRIORITY**:
 - `layer-5-status`: Is metabolic evaluation a policy layer or the interface with world?
@@ -61,8 +62,8 @@ From Session 11 (Gemini + ChatGPT):
 - Can a distinction be both endogenous AND exogenous simultaneously?
 - When does constraint without an agent become constraint with one?
 - Is there a threshold of naturalization beyond which de-naturalization becomes practically impossible?
-- What is the name for the opposite pathology of paranoia? (System that sees only □, treats all □_P as illegitimate)
-- How does resilience interact operationally with □/□_P?
+- What is the name for the opposite pathology of paranoia? (System that treats all constraint as illegitimate)
+- How does resilience interact operationally with settlement (□)?
 
 ---
 
@@ -72,11 +73,11 @@ From Session 11 (Gemini + ChatGPT):
 
 | Document | Content | Status | Needed Updates |
 |----------|---------|--------|----------------|
-| **01_Ontology** | Pressure, Index, Distinction, Two-Body, Resilience | ACTIVE | Add truth-as-topological-necessity section; clarify pressure as primitive |
-| **02_Operations** | Cut, Fold, Policy clusters, Five-layer stratification | ACTIVE | Major revision: policy stratification details from Session 10 |
-| **03_Phenomenology** | Remainder, Unfold, Shimmer, Opacity | ACTIVE | Add operational characterization of remainder |
-| **04_Ecology** | Sources, Naturalization, Two modalities | ACTIVE | Session 10 insights largely integrated; verify two-modalities complete |
-| **05_Formalism** | Agda bridge documentation | ACTIVE | Update for two modalities (□ vs □_P); document fold operator/relation gap |
+| **01_Ontology** | Pressure, Index, Distinction, Two-Body, Resilience, Peirce | ACTIVE | Session 16: dyadic-monadic resolution + Peirce connection added |
+| **02_Operations** | Cut, Fold, Policy clusters, Three-level stratification + interface | ACTIVE | Session 16: hierarchy unified, metabolic arrest framing, Level renumbering |
+| **03_Phenomenology** | Remainder, Unfold, Shimmer, Opacity | ACTIVE | Session 16: remainder anti-parametric argument added, Level renumbering |
+| **04_Ecology** | Sources, Naturalization, One modality (settlement) | ACTIVE | Session 16: verified clean — no changes needed |
+| **05_Formalism** | Agda bridge documentation, Session 14 milestone | ACTIVE | Session 16: idempotence resolved, Session 14 milestone, gap tables updated |
 
 ### 2.2 The Three Papers
 
@@ -90,18 +91,19 @@ From Session 11 (Gemini + ChatGPT):
 
 **Location**: `symbolics-core/src/`
 
-**Verified (63 claims, 86%)**:
+**Verified (~154/163 claims, ~94%)** — post-Session 14 unified formalization:
 - Core logic: Val, DNF soundness, lattice properties (~80+ lemmas)
 - Gap Theorem: Selective vs Exploratory regimes structurally distinct
 - T-Failure: ∘A → A is NOT valid in LFI1
 - Conservativity and contradiction-preservation across LP, FDE, WorldIndexed
-- Idempotence (LP proven; WorldIndexed deferred pending bucket sortedness)
+- Idempotence: proven for both LP and FDE WorldIndexed
 - Potential characterization: `potential = 0 ↔ homeostatic window`
+- Session 14 unified Symbolics module tree (20 new modules, ~90 new theorems): Remainder (6 properties), Unfold (expansion + incorporation), Settlement (via idempotence), Resilience (bounded by space size), Two-body conditions (structural properties)
 
-**Postulated (7 conjectures)**:
-- Lyapunov property
-- Convergence to equilibrium
-- Various dynamics properties in `Potential.Conjectures`
+**Remaining gaps (9)**:
+- 7 DNFSoundness compound consistency stubs (by design)
+- 2 Mechanics holes
+- Lyapunov property and convergence (postulated in `Potential.Conjectures`)
 
 **Key Gap**: Fold as operator (Agda) vs fold as relation (theory). Would require category-theoretic foundations to close.
 
@@ -149,8 +151,8 @@ From Session 11 (Gemini + ChatGPT):
 | 1 | **Resolve primitivity question** | Dossier has distinction primitive; Pentad has pressure primitive. Cannot both be true. | Explicit statement in 01_Ontology with defense |
 | 2 | **Reconcile Dossier/Pentad architectures** | Two incompletely synthesized systems. Policy stratification and dual hierarchy answer different questions. | Mapping document or explicit supersession argument |
 | 3 | **Address fold operator/relation gap** | Structural conflict at heart of formalization | Either category-theoretic extension OR explicit acceptance that Agda captures one aspect only |
-| 4 | **Formalize the two modalities** | □ vs □_P is central but under-defined | Agda types or explicit philosophical characterization |
-| 5 | **Maintain anti-paranoia mechanisms** | Theory's self-sealing capacity is a risk | Continue documenting tensions; resist explaining everything as "different layers" |
+| 4 | ~~**Formalize the two modalities**~~ | **SUPERSEDED** (Session 12): One modality — settlement. Resilience is the measure. | Done — integrated into vault (04_Ecology, 05_Formalism) |
+| 5 | **Maintain anti-paranoia mechanisms** | Theory's self-sealing capacity is a risk | Continue documenting tensions; resist explaining everything as "different levels" |
 
 ### 3.2 Theoretical Reach (What Hasn't Been Addressed)
 
@@ -171,7 +173,7 @@ From Session 11 (Gemini + ChatGPT):
 | Recover Metabolic Regimes | Research Dossier New Insight part 2 | 03_Phenomenology | MEDIUM |
 | Recover Filter Equation | Research Dossier New Insight part 3 | Where? (connects identity to attention) | MEDIUM |
 | Recover Temporal Hierarchy | Research Dossier Synthesis part 3 | Needs evaluation: recover or abandon? | MEDIUM |
-| Integrate Session 10 insights | state.yaml `session_10_insights` | 02_Operations (policy stratification details) | HIGH |
+| Integrate Session 10 insights | state.yaml `session_10_insights` | 02_Operations (policy stratification details) | ~~HIGH~~ DONE (Session 16) |
 | Address Session 11 review | state.yaml `review_feedback_session_11` | Inference as Policy paper | HIGH |
 
 ---
@@ -242,8 +244,8 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 | Proposed Paper | Core Claim | Source Material | Priority |
 |----------------|------------|-----------------|----------|
 | **The Genesis Problem** | Mechanism for how distinction emerges from non-distinction | Multi-agent report §VI; candidate mechanisms | HIGH (if genesis remains gap) |
-| **Policy Stratification** | Five-layer structure with presupposition ordering + dynamic entanglement | state.yaml `session_10_insights.policy-stratification`; precedent analysis (Ostrom, Beer, Bateson) | MEDIUM |
-| **The Two Modalities** | □ vs □_P as distinct operators; naturalization as □_P appearing as □ | state.yaml `session_10_insights.two-modalities`; 04_Ecology | MEDIUM |
+| **Policy Stratification** | Three-level structure + interface with presupposition ordering + dynamic entanglement | state.yaml `session_10_insights.policy-stratification`; precedent analysis (Ostrom, Beer, Bateson) | MEDIUM |
+| ~~**The Two Modalities**~~ | **DISSOLVED** (Session 12): One modality — settlement. Resilience does the work □ was trying to do. | n/a | SUPERSEDED |
 | **Metabolic Regimes** | Formal conditions for Creative/Homeostatic/Crystalline; diagnostic power | Research Dossier materials | LOW (integrate into existing first) |
 | **LLM as Case Study** | LLMs lack triangulation; inference without distinction; metabolism temporally segmented | Vault Archive LLM notes; Session 11 insight | LOW (after foundational papers) |
 
@@ -258,8 +260,8 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 4. Policy Stratification → Logic/philosophy of science
 
 **Extension layer** (develop reach):
-5. The Two Modalities → Modal logic
-6. Genesis → Developmental/evolutionary
+5. Genesis → Developmental/evolutionary
+6. Resilience paper → Modal logic / epistemology (replaces dissolved Two Modalities)
 
 ---
 
@@ -288,7 +290,7 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 **Objective**: Extend theory to cover gaps.
 
 9. **Create 06_Genesis.md** — Placeholder document acknowledging the gap, listing candidate mechanisms.
-10. **Formalize two modalities** — Either in Agda or as explicit philosophical characterization in 05_Formalism.
+10. ~~**Formalize two modalities**~~ — SUPERSEDED (Session 12): One modality (settlement). Formalize resilience instead.
 11. **Revise Remainder Under Feedback paper** — Align with two-body framework.
 
 ### Phase 4: Reconcile Dossier/Pentad (Week 7)
@@ -303,8 +305,8 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 **Objective**: Close the gap between theory and Agda.
 
 14. **Evaluate category-theoretic path** — Would it close operator/relation gap?
-15. **Complete bucket sortedness** — Enable WorldIndexed idempotence proof.
-16. **Formalize unfold** — Currently characterized philosophically only.
+15. ~~**Complete bucket sortedness**~~ — DONE (Session 14): WorldIndexed idempotence proven.
+16. **Deepen unified Symbolics modules** — Move from type encodings to richer proofs (remainder dynamics, resilience as continuous measure, emergence mechanism).
 17. **Address coinductive types** — If metabolism is to be modeled as infinite process.
 
 ### Phase 6: Papers and Publication (Ongoing)
@@ -313,7 +315,7 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 19. **Revise and submit Inference as Policy**
 20. **Revise and submit Remainder Under Feedback**
 21. **Draft Policy Stratification paper** (if warranted after integration)
-22. **Draft Two Modalities paper** (if warranted after formalization)
+22. ~~**Draft Two Modalities paper**~~ — DISSOLVED (Session 12). Consider resilience paper instead.
 
 ---
 
@@ -330,15 +332,15 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 | Recursion of distinction (mise en abyme) | 01_Ontology | Integrated Session 9 |
 | Cut = distinction-to-field; Fold = distinction-to-distinction | 02_Operations | Established |
 | Policy = cluster of folds; induces operator | 02_Operations | Established |
-| Five-layer policy stratification | 02_Operations, state.yaml Session 10 | Needs full integration |
+| Three-level policy stratification + interface | 02_Operations | INTEGRATED (Session 16) |
 | Remainder as what any distinction excludes | 03_Phenomenology | Integrated Session 9 |
 | Incremental vs catastrophic unfold | 03_Phenomenology | Established |
 | Shimmer (dual: oscillation + trace) | 03_Phenomenology | Established |
 | Opacity as gradient of index access | 03_Phenomenology | Established |
 | Endogenous (fit) vs Exogenous (constraint) | 04_Ecology | Established |
 | Constraint produces fit; de-naturalization | 04_Ecology | Integrated Session 9 |
-| □ (topological necessity) vs □_P (settlement) | 04_Ecology, state.yaml Session 10 | Needs formalization |
-| Naturalization = □_P appearing as □ | 04_Ecology | Established |
+| □ (settlement) — one modality; resilience as measure | 04_Ecology, 05_Formalism | INTEGRATED (Session 12 decision, Session 16 vault pass) |
+| Naturalization = constraint appearing as topology | 04_Ecology | Established |
 | The Fall: irreversibility and desire | 04_Ecology | Integrated Session 11 |
 | T-failure: □φ → φ fails | 05_Formalism | Verified in Agda |
 | Gap Theorem: Selective vs Exploratory distinct | 05_Formalism | Verified in Agda |
@@ -360,14 +362,14 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 
 | Insight | Location | Integration Status |
 |---------|----------|-------------------|
-| Inference not distinct category; gradient of constraint | state.yaml `inference-not-distinct-category` | Needs 02_Operations update |
-| Truth as topological necessity | state.yaml `truth-as-topological-necessity` | Needs 01_Ontology section |
-| Distinction-preservation truly constitutive | state.yaml `distinction-preservation-truly-constitutive` | Ready for paper revision |
-| Five-layer policy stratification with precedent analysis | state.yaml `policy-stratification` | Needs 02_Operations expansion |
+| Inference not distinct category; gradient of constraint | state.yaml `inference-not-distinct-category` | INTEGRATED into 02_Operations (Session 16) |
+| Truth as resilience (not topological necessity) | state.yaml; Session 12 one-modality decision | INTEGRATED into 01_Ontology, 04_Ecology, 05_Formalism |
+| Distinction-preservation truly constitutive | state.yaml `distinction-preservation-truly-constitutive` | INTEGRATED into 02_Operations metabolic arrest (Session 16) |
+| Three-level policy stratification + interface | state.yaml `policy-stratification` | INTEGRATED into 02_Operations (Session 16) |
 | Fatal objection dissolved (regress terminates) | state.yaml `fatal-objection-dissolved` | Ready for paper |
-| Two modalities with divergence cases | state.yaml `two-modalities` | Needs 04_Ecology verification |
-| Peirce connection (alignments + divergences) | state.yaml `peirce-connection` | Ready for papers |
-| Classical logic bias owned (LP vs classical+AGM) | state.yaml `classical-logic-bias-owned` | Ready for paper revision |
+| One modality (settlement); two-modalities dissolved | Session 12 decision | INTEGRATED into 04_Ecology, 05_Formalism |
+| Peirce connection (alignments + divergences) | state.yaml `peirce-connection` | INTEGRATED into 01_Ontology (Session 16) |
+| Classical logic bias owned (LP vs classical+AGM) | state.yaml `classical-logic-bias-owned` | INTEGRATED into 02_Operations (Session 16) |
 
 ### 7.4 Formalization Status (Agda/DSL)
 
@@ -376,7 +378,7 @@ The Locus Hierarchy answers "who folds?" — a question the Policy Stratificatio
 | Conservativity | symbolics-core: Core, FDE, WorldIndexed | VERIFIED |
 | Contradiction-preservation | symbolics-core: Core, FDE, WorldIndexed | VERIFIED |
 | Idempotence (LP) | symbolics-core: LP | VERIFIED |
-| Idempotence (WorldIndexed) | symbolics-core: WorldIndexed | DEFERRED (bucket sortedness) |
+| Idempotence (WorldIndexed) | symbolics-core: WorldIndexed | VERIFIED (Session 14) |
 | Gap Theorem | symbolics-core: Gap.agda | VERIFIED |
 | T-Failure | symbolics-core: TFailure.agda | VERIFIED |
 | Potential = 0 ↔ homeostatic | symbolics-core: Mechanics | VERIFIED |
@@ -426,10 +428,11 @@ The theory's self-sealing capacity is a structural risk. Maintain these safeguar
 
 | Metric | Current | Target |
 |--------|---------|--------|
-| Agda verification rate | 86% (63/73 claims) | Maintain or improve |
-| Postulates awaiting proof | 7 | Reduce |
+| Agda verification rate | ~94% (~154/163 claims) | Maintain or improve |
+| Remaining gaps | 9 (7 stubs + 2 holes) | Reduce |
 | Lost architectures recovered | 0/5 | 5/5 |
-| Session 11 feedback addressed | 0/10 | 10/10 |
+| Session 10-12 insights integrated into vault | 8/8 | DONE |
+| Session 11 review feedback addressed (paper) | 0/10 | 10/10 |
 | Papers submitted | 0/3 | 3/3 |
 
 ### 8.3 Regular Review Points
@@ -513,6 +516,7 @@ symbolics-audit/
 | 2026-02-04 | Recommend 06_Genesis.md as placeholder | Genesis is deepest gap; explicit acknowledgment better than silence |
 | 2026-02-04 | Recommend Locus integration into 01_Ontology | Agency question is dimension of distinction, not separate topic |
 | 2026-02-04 | Phase 1 priority: stabilize core before extending reach | Theoretical coherence must precede theoretical reach |
+| 2026-02-17 | Session 16: Full vault integration pass | Integrated Session 12 decisions (one modality, hierarchy unification, layer collapse, metabolic arrest) + Session 10 insights (Peirce, classical logic bias, policy stratification) + Session 14 Agda milestone into all 5 vault docs. Two Modalities paper dissolved. Level renumbering across all documents. |
 
 ---
 
