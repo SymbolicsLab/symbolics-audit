@@ -21,8 +21,8 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-17T22:00:00Z"
-last_session: 14
+last_updated: "2026-02-17T23:00:00Z"
+last_session: 15
 last_agent: "Claude Code (Opus 4.6)"
 
 # ============================================================================
@@ -889,14 +889,18 @@ formalization_note: >
 # ============================================================================
 
 current_context: >
-  Session 14. Major Agda formalization session. (1) Completed the unified Symbolics/ module tree:
-  20 new Agda modules across 7 phases (Bridge, Primitive, Operations, Metabolism, Ecology, Hierarchy,
-  Emergence), all compiling --safe --without-K with 0 holes. ~90 new proven theorems. FDE WorldIndexed
-  idempotence proof completed (was the last major stub from Session 8 audit). Verification rate now
-  ~94% (up from 86%). Commit 0d84f9c. (2) Symbolics Lab site updates: optimized blog images, added
-  OpenGraph/Twitter metadata, added tier grouping and sticky section nav to research page. (3) ENS
-  Paris (Derrida Today, Jul 13-17 2026) confirmed — major credibility win. European circuit now
-  includes 4 stops: Hannover → Portugal → Turin → Konstanz → Paris.
+  Session 15. VISION_E revision + submissions review. (1) VISION_E paper near-final: APA 7 compliance
+  (dual dates for translated works, 3 missing DOIs added), 5 critical-read revisions (explicit framework
+  visibility claim, paradigm case epistemic status clarified, structural-not-generational asymmetry,
+  Digital Atlas reference cut, hallucination tone softened). Body at 19,901/20,000 chars, 15 references.
+  Images at 920x920 300 DPI, Gemini logo removed. Remaining: Word template, anonymization, image ZIP.
+  (2) APQ "Where Values Enter" abstract reviewed — strong. Holman extended deadline to Mar 15 (target
+  article not yet finished). Will request target article and revise. (3) Sorbonne interventionism
+  abstract ("Intervening on Operators") reviewed — rejected same day as submission, likely due to
+  independent researcher status. The foundational rule-intervention framework has no venue yet.
+  (4) CALQ Déplacement strategy revised: split Hannover (philosophy of science, fund via Canada Council
+  Micro-Grant) from arts-relevant bundle (Konstanz + Turin + ENS for CALQ). Konstanz confirmation
+  letter received. ENS confirmation expected shortly.
 
 # ============================================================================
 # PUBLICATIONS — ALL WRITTEN PIECES
@@ -956,10 +960,10 @@ publications:
       title: "Folding with the Machine: Recursive Co-Construction in Large Language Models"
       location: "symbolics-research/Papers/Visions_Folding-with-the-Machine/Draft.md"
       words: 3345
-      status: "UNDER BLIND REVIEW — revisions due Feb 22"
+      status: "NEAR FINAL — formatting remaining (Word template, anonymization, image ZIP)"
       deadline: "2026-02-22"
       discipline: "design/AI"
-      note: "Passed first round. Key concepts: depth as again not beneath, interpretive paternalism, T-failure, folding protocol. Thin reference list (11 sources) is a risk."
+      note: "APA 7 compliant, 15 references (was 12), 19,901/20,000 chars. 5 critical-read revisions applied. Images 920x920 at 300 DPI."
 
     - id: "monitor-books"
       title: "EasyNegative (working title)"
@@ -996,10 +1000,26 @@ publications:
       discipline: "philosophy of logic"
       note: "Most technically ambitious piece. Inference as stabilization under policy, not rule-governed transition. Session 12 decisions (one-modality, layer collapse, book-not-papers) affect this significantly."
 
+    - id: "apq-values"
+      title: "Where Values Enter: Rule-Interventions, Stabilization Operators, and the Job-Relativity of Epistemic Ideals"
+      location: "symbolics-research/Submissions/American-Philosophical-Quarterly/abstract.md"
+      words: 500
+      status: "SUBMITTED — will revise after target article (deadline Mar 15)"
+      discipline: "philosophy of science (values in science)"
+      note: "Applies rule-intervention framework to New Demarcation Problem. Wilholt (guest editor) is at Hannover where presenting in April."
+
+    - id: "sorbonne-interventionism"
+      title: "Intervening on Operators: Extending Interventionism to Non-Causal Dependence"
+      location: "/Users/vivianesauriol/Documents/RESEARCH/Research Dossier/Abstracts and notes/Sub_ jan 10 Sorbonne - Interventionism.pdf"
+      words: 1500
+      status: "REJECTED — Sorbonne workshop (Mar 12-13 2026). Foundational paper, no venue yet."
+      discipline: "metaphysics / philosophy of science"
+      note: "The pure framework (extending Woodward to rule-interventions). APQ abstract is the application. Same-day rejection, likely affiliation filter."
+
   # --- TOTAL WRITTEN OUTPUT ---
-  total_words: 48249
-  total_pieces: 10
-  disciplines: ["formal logic", "philosophy of mind", "philosophy of social science", "philosophy of logic", "design/AI", "cultural criticism", "art criticism", "philosophy of science", "literary/aesthetic theory"]
+  total_words: 50249
+  total_pieces: 12
+  disciplines: ["formal logic", "philosophy of mind", "philosophy of social science", "philosophy of logic", "design/AI", "cultural criticism", "art criticism", "philosophy of science", "literary/aesthetic theory", "continental philosophy"]
 
 # ============================================================================
 # SUBMISSIONS — ACTIVE AND PLANNED
@@ -1008,12 +1028,21 @@ publications:
 submissions:
   active:
     - id: "vision-e-revision"
-      target: "VISION_E (U Bologna / Politecnico di Torino)"
+      target: "VISION_E (Politecnico di Torino)"
       deadline: "2026-02-22"
-      status: "REVISING — passed round 1 of blind review"
+      status: "NEAR FINAL — formatting only (Word template, anonymization, image ZIP)"
       amount: "publication + presentation (~Jun 5)"
       files: "symbolics-research/Papers/Visions_Folding-with-the-Machine/"
       priority: "URGENT"
+
+    - id: "apq-values-in-science"
+      target: "American Philosophical Quarterly — Special Issue: Values in Science"
+      deadline: "2026-03-15"
+      status: "SUBMITTED — will revise after target article distributed"
+      amount: "publication (6 invited for full papers)"
+      files: "symbolics-research/Submissions/American-Philosophical-Quarterly/"
+      priority: "HIGH"
+      note: "Guest editors: Holman (Yonsei) + Wilholt (Hannover). Deadline extended from Feb 15. Target article not yet distributed. Rule-intervention / stabilization operator framework applied to New Demarcation Problem."
 
     - id: "monitor-books"
       target: "Monitor Books"
@@ -1024,13 +1053,14 @@ submissions:
       priority: "URGENT"
 
     - id: "calq-deplacement"
-      target: "CALQ Déplacement — European research circuit"
-      deadline: "2026-03-09"
-      status: "WAITING — needs confirmation letters from Hannover + Konstanz"
+      target: "CALQ Déplacement — arts-relevant European events"
+      deadline: "TBD (recalculate — first event is Turin ~Jun 5, not Hannover Apr 9)"
+      status: "STRATEGY REVISED — bundle Konstanz + Turin + ENS (arts-relevant); Hannover separately via Canada Council"
       amount: "$200/day + transport + insurance"
       files: "symbolics-research/Submissions/CALQ_Deplacement/"
       priority: "HIGH"
-      blockers: ["Confirmation letter from Hannover (Edoardo Peruzzi)", "Confirmation letter from Konstanz (Irmtraud Huber)"]
+      blockers: ["ENS confirmation letter (expected shortly)"]
+      note: "Konstanz confirmation received. Hannover excluded from CALQ (philosophy of science, not arts). Fund Hannover via Canada Council Micro-Grant."
 
     - id: "bogliasco"
       target: "Bogliasco Foundation Fellowship"
@@ -1098,16 +1128,16 @@ funding_summary:
 
 deadlines:
   - date: "2026-02-22"
-    item: "VISION_E paper final revision"
+    item: "VISION_E paper submission (formatting only — text complete)"
     priority: "URGENT"
   - date: "2026-03-01"
     item: "Monitor Books submission"
     priority: "URGENT"
-  - date: "2026-03-09"
-    item: "CALQ Déplacement application (needs confirmation letters)"
-    priority: "HIGH"
   - date: "2026-03-13"
     item: "Bogliasco Fellowship application"
+    priority: "HIGH"
+  - date: "2026-03-15"
+    item: "APQ Values in Science revised abstract (wait for target article)"
     priority: "HIGH"
   - date: "2026-03-31"
     item: "PERICULUM Stage 1 (viability uncertain)"
@@ -1115,6 +1145,9 @@ deadlines:
   - date: "2026-04-09"
     item: "Model Transfer presentation, Leibniz U Hannover"
     priority: "CONFIRMED"
+  - date: "TBD"
+    item: "CALQ Déplacement — arts bundle (Konstanz + Turin + ENS)"
+    priority: "HIGH"
   - date: "2026-05-01"
     item: "Shuttleworth Foundation (if openness ok)"
     priority: "EVALUATE"
@@ -1129,11 +1162,11 @@ deadlines:
 active_threads:
   # --- DEADLINE-DRIVEN (do first) ---
   - id: "vision-e-revision"
-    summary: "Revise VISION_E paper for second round of blind review"
-    status: "TODO"
+    summary: "Format VISION_E for submission (Word template, anonymization, image ZIP)"
+    status: "NEAR FINAL — text complete, formatting only"
     deadline: "2026-02-22"
     priority: 0
-    note: "Paper is strong. Main risks: thin references (11 sources), implicit handling of retention objection. Add 2-3 more references, make temporal asymmetry explicit."
+    note: "APA 7 compliant, 15 refs, 19,901/20,000 chars. 5 critical-read revisions applied. Images ready (920x920, 300 DPI)."
 
   - id: "monitor-books-polish"
     summary: "Final polish on EasyNegative essay"
@@ -1143,11 +1176,12 @@ active_threads:
     note: "7 sections drafted. Needs: final read-through, check section IV (reverse activation), verify submission format."
 
   - id: "calq-deplacement"
-    summary: "CALQ Déplacement travel grant for European circuit"
-    status: "BLOCKED — waiting on confirmation letters"
-    deadline: "2026-03-09"
+    summary: "CALQ Déplacement — arts-relevant bundle (Konstanz + Turin + ENS)"
+    status: "WAITING — ENS confirmation letter expected"
+    deadline: "TBD (recalculate based on first event ~Jun 5)"
     priority: 2
-    blockers: ["Hannover letter", "Konstanz letter"]
+    blockers: ["ENS confirmation letter"]
+    note: "Strategy revised: Hannover (phil of science) split out, fund via Canada Council Micro-Grant. Konstanz confirmed."
 
   - id: "emergent-ventures"
     summary: "Revise and submit Emergent Ventures application"
@@ -1242,14 +1276,15 @@ european_circuit:
 
 next_actions:
   immediate:
-    - "VISION_E revision (due Feb 22) — add references, make retention argument explicit"
+    - "VISION_E formatting (due Feb 22) — Word template, anonymization check, image ZIP"
     - "Monitor Books final polish (due Mar 1)"
-    - "Follow up on CALQ Déplacement confirmation letters (Hannover, Konstanz)"
     - "Revise Emergent Ventures application — lead with concrete output, submit"
   this_month:
     - "Apply to Bogliasco (by Mar 13)"
+    - "APQ: wait for target article from Holman, revise abstract (by Mar 15)"
+    - "CALQ Déplacement: wait for ENS confirmation letter, recalculate deadline for arts bundle"
+    - "Canada Council Micro-Grant for Hannover travel (submit ASAP)"
     - "Check Whiting Creative Nonfiction Grant exact deadline"
-    - "Assess PERICULUM viability honestly"
   coming_months:
     - "Submit Remainder Under Feedback to journal"
     - "Decide venue for Two-Body Problem, submit"
@@ -1266,11 +1301,10 @@ next_actions:
 
 agent_status:
   claude_code: >
-    Session 14 (2026-02-17): Unified Agda formalization — 20 new Symbolics/ modules across
-    7 phases (Bridge, Primitive, Operations, Metabolism, Ecology, Hierarchy, Emergence). ~90
-    new proven theorems, 0 holes. FDE WorldIndexed idempotence completed. Verification rate
-    ~94% (was 86%). Symbolics Lab site: OG metadata, optimized images, research page tier
-    grouping + sticky section nav. All committed and pushed.
+    Session 15 (2026-02-17): VISION_E revision (APA 7, 5 critical-read edits, images processed)
+    — near-final, formatting only remaining. APQ abstract reviewed, strategy set (wait for target
+    article, revise by Mar 15). Sorbonne interventionism rejection noted. CALQ strategy revised:
+    split arts bundle from Hannover. All committed to symbolics-research.
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
   chatgpt: "Session 12: Reviewed Inference as Policy paper. Key insights: three-payloads concern, distinction-token-vs-form, □_P as temporal/process modality, one-theorem suggestion."
   gemini: "Session 12: Reviewed Inference as Policy paper. Key insights: layer-2-3 collapse, dissolution-vs-gradient rhetoric, policy-fixity not constraint, dyadic-monadic problem (strongest objection), LLM metabolism as temporally segmented."
@@ -1307,6 +1341,18 @@ recent_decisions:
   - id: "ens-paris-confirmed"
     date: "2026-02-13"
     summary: "Accepted to ENS Paris Derrida Today conference (Jul 13-17 2026). Continental philosophy credibility. ENS is target PhD institution."
+  - id: "apq-submitted"
+    date: "2026-02-16"
+    summary: "APQ Values in Science abstract submitted. Holman extended deadline to Mar 15 (target article not yet finished). Will revise after reading target article."
+  - id: "sorbonne-rejected"
+    date: "2026-01-11"
+    summary: "Sorbonne interventionism abstract ('Intervening on Operators') rejected same day — likely filtered on independent researcher status. Foundational rule-intervention framework has no venue."
+  - id: "calq-strategy-revised"
+    date: "2026-02-17"
+    summary: "CALQ Déplacement: split arts-relevant events (Konstanz + Turin + ENS) from Hannover (philosophy of science). Fund Hannover via Canada Council Micro-Grant."
+  - id: "vision-e-near-final"
+    date: "2026-02-17"
+    summary: "VISION_E paper text complete: APA 7, 15 refs, 19,901/20,000 chars, 5 critical-read revisions, images at 300 DPI. Formatting only remaining."
 
 # ============================================================================
 # DECISIONS PENDING
