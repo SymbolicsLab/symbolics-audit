@@ -21,9 +21,9 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-06T12:00:00Z"
-last_session: 12
-last_agent: "Claude Code (Opus 4.5)"
+last_updated: "2026-02-17T22:00:00Z"
+last_session: 14
+last_agent: "Claude Code (Opus 4.6)"
 
 # ============================================================================
 # SESSION 12 DECISIONS
@@ -862,127 +862,536 @@ formalized_agda:
   - "Gap theorem: different policies (selective vs exploratory) produce different outputs — PROVEN"
   - "T-failure: consistency operator is doxastic, not alethic — PROVEN"
   - "Non-explosion: LP policy is paraconsistent — PROVEN"
-  - "Idempotence: PROVEN for LP, deferred for WorldIndexed (needs bucket sortedness lemmas)"
+  - "Idempotence: PROVEN for LP AND FDE WorldIndexed (Session 14 — bucket sortedness lemmas completed)"
   - "Bool subsumption: Cut inclusion check for Bool domain — IMPLEMENTED in Context.agda"
   - "Property counterexamples: Mechanics/Properties/Conjectures.agda documents commutativity/associativity failures"
   - "DSL wiring: Applications/DSL/Runtime/Apply.agda now calls Mechanics.Dynamics.step"
+  - "Val/Truth/FOUR isomorphism: three value representations proven equivalent — PROVEN (Symbolics.Bridge.ValEquiv)"
+  - "Fold unification: Mechanics fold induces FDE normalization — PROVEN (Symbolics.Bridge.FoldEquiv)"
+  - "Modal-Mechanics bridge: step dynamics induces frame theory — PROVEN (Symbolics.Bridge.ModalMechanics)"
+  - "Remainder properties: set-theoretic difference with 6 proven properties — PROVEN (Symbolics.Operations.Remainder)"
+  - "Unfold properties: expansion and incorporation proven — PROVEN (Symbolics.Operations.Unfold)"
+  - "Resilience bounded: perturbation survival ≤ space size — PROVEN (Symbolics.Ecology.Resilience)"
+  - "Settlement: fold produces settled configs (via idempotence) — PROVEN (Symbolics.Ecology.Settlement)"
+  - "Two-body conditions: SharedPressure symmetric, Aligned reflexive/symmetric, Observable reflexive — PROVEN (Symbolics.Emergence.TwoBody)"
 
 formalization_note: >
-  SESSION 8 AGDA AUDIT COMPLETE. Seven parallel domain agents analyzed Core, LP, FDE, LFI, Mechanics,
-  Modal, and Applications. Key findings: (1) Conservativity and contradiction-preservation proven in
-  multiple domains. (2) LP has proven idempotence; WorldIndexed idempotence deferred pending bucket
-  sortedness lemmas. (3) Subsumption check implemented for Bool domain. (4) Properties/Conjectures.agda
-  created with explicit counterexamples for property failures. (5) DSL Runtime wired to Mechanics functions.
-  All files compile with --safe --without-K.
+  SESSION 14 UNIFIED FORMALIZATION COMPLETE. 20 new Agda modules in Symbolics/ module tree,
+  mirroring the theory's conceptual architecture across 7 phases: Bridge (3), Primitive (4),
+  Operations (4), Metabolism (3), Ecology (3), Hierarchy (2), Emergence (1). All compile
+  --safe --without-K with 0 holes, 0 postulates. ~90 new proven theorems. FDE WorldIndexed
+  idempotence proof completed (was the last major stub). Original 73 specs: 64 verified,
+  9 conjectures remaining (7 DNFSoundness compound consistency stubs + 2 Mechanics).
+  Combined: ~154/163 specs verified (~94%, up from 86%). Commit 0d84f9c on main.
 
-# --- CURRENT CONTEXT ---
+# ============================================================================
+# CURRENT CONTEXT (Session 13 — 2026-02-11)
+# ============================================================================
+
 current_context: >
-  Session 9 complete. Two major workstreams: (1) Drafted foundational paper "The Two-Body Problem:
-  Why Distinction Cannot Emerge Alone" in symbolics-research/Papers/two-body-problem/. Full 9-section
-  paper, 6 rounds of Gemini review feedback integrated, 10 objections with replies. Key conceptual
-  moves: differentiation vs. distinction, updating vs. contesting, truth vs. success, misuse vs.
-  failure, laws vs. rules. (2) Vault active notes updated with major theory reframes: distinction
-  is representation (01_Ontology), recursion of distinction / mise en abyme (01_Ontology), medium as
-  index (01_Ontology), cut as representation (02_Operations), remainder as what any distinction
-  excludes (03_Phenomenology), constraint vs. power reframe (04_Ecology — power is the special case
-  of constraint; constraint produces fit; de-naturalization), formalism gap table updated (05_Formalism).
-  Remainder Under Feedback paper also in repo. All pushed to GitHub.
+  Session 14. Major Agda formalization session. (1) Completed the unified Symbolics/ module tree:
+  20 new Agda modules across 7 phases (Bridge, Primitive, Operations, Metabolism, Ecology, Hierarchy,
+  Emergence), all compiling --safe --without-K with 0 holes. ~90 new proven theorems. FDE WorldIndexed
+  idempotence proof completed (was the last major stub from Session 8 audit). Verification rate now
+  ~94% (up from 86%). Commit 0d84f9c. (2) Symbolics Lab site updates: optimized blog images, added
+  OpenGraph/Twitter metadata, added tier grouping and sticky section nav to research page. (3) ENS
+  Paris (Derrida Today, Jul 13-17 2026) confirmed — major credibility win. European circuit now
+  includes 4 stops: Hannover → Portugal → Turin → Konstanz → Paris.
 
-# --- ACTIVE THREADS ---
+# ============================================================================
+# PUBLICATIONS — ALL WRITTEN PIECES
+# ============================================================================
+
+publications:
+  # --- PUBLISHED / ACCEPTED ---
+  accepted:
+    - id: "espace-shimmer"
+      title: "Shimmer: Anthony McCall and the Opacity of Light"
+      coauthor: "Maegan Beck"
+      venue: "ESPACE art actuel, no. 143"
+      status: "forthcoming"
+      discipline: "art criticism"
+      note: "First art-context publication. Counts toward CALQ threshold."
+
+    - id: "unilog-fold"
+      title: "Folding Contradiction: Toward a Post-Dialectical, Paraconsistent Reasoning Architecture"
+      venue: "UNILOG 7, Cusco, Peru, 2025"
+      status: "presented"
+      discipline: "formal logic"
+
+    - id: "unilog-contradiction"
+      title: "Contradiction as Cognitive Resource: Toward a Fold-Based Model of Reasoning"
+      venue: "UNILOG 7, Cusco, Peru, 2025"
+      status: "presented"
+      discipline: "formal logic"
+
+    - id: "hannover-templates"
+      title: "From Borrowed Templates to Working Models"
+      venue: "Model Transfer, Leibniz U Hannover, April 9-10 2026"
+      status: "accepted"
+      discipline: "philosophy of science"
+
+    - id: "konstanz-fold-dialogue"
+      title: "The Fold as Dialogue: Toward a Recursive Formalism"
+      venue: "Forms in Dialogue, U Konstanz, June 11-13 2026"
+      status: "accepted"
+      discipline: "literary/aesthetic theory"
+
+    - id: "vision-e-abstract"
+      title: "Folding with the Machine (abstract)"
+      venue: "VISION_E, Politecnico di Torino"
+      status: "accepted (abstract); full paper under blind review"
+      discipline: "design/AI"
+
+    - id: "ens-derrida-today"
+      title: "The Failure of Reflection (working title)"
+      venue: "Derrida Today, ENS Paris, July 13-17 2026"
+      status: "accepted"
+      discipline: "continental philosophy"
+      note: "ENS is target PhD institution. Presents T-failure as commitment/realization gap."
+
+  # --- IN PROGRESS ---
+  in_progress:
+    - id: "vision-e-paper"
+      title: "Folding with the Machine: Recursive Co-Construction in Large Language Models"
+      location: "symbolics-research/Papers/Visions_Folding-with-the-Machine/Draft.md"
+      words: 3345
+      status: "UNDER BLIND REVIEW — revisions due Feb 22"
+      deadline: "2026-02-22"
+      discipline: "design/AI"
+      note: "Passed first round. Key concepts: depth as again not beneath, interpretive paternalism, T-failure, folding protocol. Thin reference list (11 sources) is a risk."
+
+    - id: "monitor-books"
+      title: "EasyNegative (working title)"
+      location: "symbolics-research/Submissions/Monitor-Books/draft-section-*.md"
+      words: 6578
+      sections: 7
+      status: "DRAFT COMPLETE — needs final polish"
+      deadline: "2026-03-01"
+      discipline: "cultural criticism / art writing"
+      fee: "£5 or GRATIS code"
+      note: "Demonstrates Symbolics without naming it. 24KB file, 132M images, class erasure, apotropaic practice, variance collapse. Publication counts toward CALQ threshold (would be #2)."
+
+    - id: "two-body-problem"
+      title: "The Two-Body Problem: Why Distinction Cannot Emerge Alone"
+      location: "symbolics-research/Book/two-body-problem/draft.md"
+      words: 18169
+      status: "DRAFT COMPLETE — 6 rounds Gemini review integrated"
+      discipline: "philosophy of mind / cognitive science"
+      note: "Foundational piece. 9 sections, 10 objections with replies. Strongest single piece for demonstrating depth. Could be anchor chapter for book proposal."
+
+    - id: "remainder-under-feedback"
+      title: "Remainder Under Feedback: Why Social Categories Resist Stabilization"
+      location: "symbolics-research/Book/remainder-under-feedback/draft.md"
+      words: 5159
+      status: "DRAFT — most immediately publishable piece"
+      discipline: "philosophy of social science"
+      note: "DSM, Census, homelessness as worked examples. Proposes remainder audit as methodological tool. Strongest evidence that Symbolics produces tools, not just theory. Submit independently to journal."
+
+    - id: "inference-as-policy"
+      title: "Inference as Policy"
+      location: "symbolics-research/Book/inference-as-policy/draft.md"
+      words: 14998
+      status: "DRAFT — Session 11 review feedback pending"
+      discipline: "philosophy of logic"
+      note: "Most technically ambitious piece. Inference as stabilization under policy, not rule-governed transition. Session 12 decisions (one-modality, layer collapse, book-not-papers) affect this significantly."
+
+  # --- TOTAL WRITTEN OUTPUT ---
+  total_words: 48249
+  total_pieces: 10
+  disciplines: ["formal logic", "philosophy of mind", "philosophy of social science", "philosophy of logic", "design/AI", "cultural criticism", "art criticism", "philosophy of science", "literary/aesthetic theory"]
+
+# ============================================================================
+# SUBMISSIONS — ACTIVE AND PLANNED
+# ============================================================================
+
+submissions:
+  active:
+    - id: "vision-e-revision"
+      target: "VISION_E (U Bologna / Politecnico di Torino)"
+      deadline: "2026-02-22"
+      status: "REVISING — passed round 1 of blind review"
+      amount: "publication + presentation (~Jun 5)"
+      files: "symbolics-research/Papers/Visions_Folding-with-the-Machine/"
+      priority: "URGENT"
+
+    - id: "monitor-books"
+      target: "Monitor Books"
+      deadline: "2026-03-01"
+      status: "DRAFTING — 7 sections complete, needs final polish"
+      amount: "£5 or GRATIS (publication credibility is the value)"
+      files: "symbolics-research/Submissions/Monitor-Books/"
+      priority: "URGENT"
+
+    - id: "calq-deplacement"
+      target: "CALQ Déplacement — European research circuit"
+      deadline: "2026-03-09"
+      status: "WAITING — needs confirmation letters from Hannover + Konstanz"
+      amount: "$200/day + transport + insurance"
+      files: "symbolics-research/Submissions/CALQ_Deplacement/"
+      priority: "HIGH"
+      blockers: ["Confirmation letter from Hannover (Edoardo Peruzzi)", "Confirmation letter from Konstanz (Irmtraud Huber)"]
+
+    - id: "bogliasco"
+      target: "Bogliasco Foundation Fellowship"
+      deadline: "2026-03-13"
+      status: "TO APPLY"
+      amount: "Fully funded 1-month residency (Genoa)"
+      priority: "HIGH"
+
+  planned:
+    - id: "emergent-ventures"
+      target: "Emergent Ventures (Tyler Cowen / Mercatus)"
+      deadline: "Rolling"
+      status: "DRAFT EXISTS — needs revision to lead with concrete output"
+      amount: "$1K-$50K"
+      files: "symbolics-research/Submissions/Emergent-Ventures/"
+      priority: "HIGH — apply ASAP"
+      note: "Existing draft undersells the project. Should lead with 48K words across 5 disciplines, not just programmatic description."
+
+    - id: "periculum"
+      target: "PERICULUM Production de Discours"
+      deadline: "2026-03-31"
+      status: "REASSESSED — weak fit, current profile may not match"
+      amount: "$33,000"
+      files: "symbolics-research/Submissions/PERICULUM_Production-de-Discours/"
+      priority: "LOW — reconsider viability"
+
+    - id: "whiting"
+      target: "Whiting Creative Nonfiction Grant"
+      deadline: "Spring 2026"
+      status: "TO RESEARCH — exact deadline unknown"
+      amount: "$40,000 USD"
+      priority: "HIGH"
+
+    - id: "isrf"
+      target: "ISRF Independent Scholar Fellowship"
+      deadline: "~October 2026"
+      status: "FUTURE — prepare over summer"
+      amount: "EUR 40,500"
+      priority: "HIGH — tailor-made for current profile"
+
+  detailed_tracker: "symbolics-research/Submissions/funding.md"
+
+# ============================================================================
+# FUNDING STATUS
+# ============================================================================
+
+funding_summary:
+  situation: >
+    Depleting savings. No institutional affiliation. Priority is getting money in the door.
+    Everything else (theory refinement, formalization, vault updates) serves this goal or waits.
+  key_constraints:
+    - "CALQ: NOT ELIGIBLE YET — requires 3 art-context publications or 1 book. Currently have 1 (ESPACE). Monitor Books would be #2."
+    - "Canada Council: accessible via New/Early Career profile once 2 public artistic activities confirmed"
+    - "No university affiliation — eliminates FRQSC, SSHRC, Trudeau, Bronfman"
+    - "Strategic secrecy — Shuttleworth requires openness that may conflict"
+  immediate_targets: ["Emergent Ventures (rolling, fast)", "CALQ Déplacement (Mar 9)", "Bogliasco (Mar 13)", "Whiting (spring)"]
+  medium_targets: ["ISRF (Oct 2026)", "Canada Council (once eligible)", "Guggenheim (Sep 2026)"]
+  strategic_multiplier: "Book proposal to MIT Press / U Minnesota / Verso — a signed contract unlocks Canada Council Concept to Realization ($75K)"
+  concordia_affiliation: "Explore visiting researcher status at alma mater — unlocks SSHRC co-applicant, costs nothing to inquire"
+  detailed_tracker: "symbolics-research/Submissions/funding.md (778+ lines, comprehensive)"
+
+# ============================================================================
+# DEADLINES — NEXT 90 DAYS
+# ============================================================================
+
+deadlines:
+  - date: "2026-02-22"
+    item: "VISION_E paper final revision"
+    priority: "URGENT"
+  - date: "2026-03-01"
+    item: "Monitor Books submission"
+    priority: "URGENT"
+  - date: "2026-03-09"
+    item: "CALQ Déplacement application (needs confirmation letters)"
+    priority: "HIGH"
+  - date: "2026-03-13"
+    item: "Bogliasco Fellowship application"
+    priority: "HIGH"
+  - date: "2026-03-31"
+    item: "PERICULUM Stage 1 (viability uncertain)"
+    priority: "LOW"
+  - date: "2026-04-09"
+    item: "Model Transfer presentation, Leibniz U Hannover"
+    priority: "CONFIRMED"
+  - date: "2026-05-01"
+    item: "Shuttleworth Foundation (if openness ok)"
+    priority: "EVALUATE"
+  - date: "Rolling"
+    item: "Emergent Ventures — apply ASAP"
+    priority: "HIGH"
+
+# ============================================================================
+# ACTIVE THREADS (unified — theory + publications + funding)
+# ============================================================================
+
 active_threads:
-  - id: "two-body-paper"
-    summary: "Foundational paper: The Two-Body Problem"
-    status: "DRAFT COMPLETE"
-    note: "Session 9: 6 rounds of Gemini feedback integrated. Next: final proofread, decide target venue."
+  # --- DEADLINE-DRIVEN (do first) ---
+  - id: "vision-e-revision"
+    summary: "Revise VISION_E paper for second round of blind review"
+    status: "TODO"
+    deadline: "2026-02-22"
     priority: 0
-  - id: "remainder-paper"
-    summary: "Companion paper: Remainder Under Feedback (social ontology bridge)"
-    status: "draft"
-    note: "This paper IS the social ontology bridge — applies distinction/remainder/constraint-produces-fit to institutional categories (DSM, Census, HUD, employment). May need revision to align with refined two-body framework."
+    note: "Paper is strong. Main risks: thin references (11 sources), implicit handling of retention objection. Add 2-3 more references, make temporal asymmetry explicit."
+
+  - id: "monitor-books-polish"
+    summary: "Final polish on EasyNegative essay"
+    status: "NEAR COMPLETE"
+    deadline: "2026-03-01"
     priority: 1
-  - id: "agda-review"
-    summary: "Fresh-context Agda audit through policy-cluster lens"
-    status: "COMPLETE"
-    note: "Session 8: 7 domain agents + 4 implementation agents. All findings documented."
+    note: "7 sections drafted. Needs: final read-through, check section IV (reverse activation), verify submission format."
+
+  - id: "calq-deplacement"
+    summary: "CALQ Déplacement travel grant for European circuit"
+    status: "BLOCKED — waiting on confirmation letters"
+    deadline: "2026-03-09"
+    priority: 2
+    blockers: ["Hannover letter", "Konstanz letter"]
+
+  - id: "emergent-ventures"
+    summary: "Revise and submit Emergent Ventures application"
+    status: "DRAFT EXISTS"
+    deadline: "Rolling — submit ASAP"
     priority: 3
+    note: "Lead with concrete output (48K words, 5 disciplines, 6 accepted pieces) not just programmatic description."
+
+  - id: "bogliasco"
+    summary: "Apply to Bogliasco Foundation Fellowship"
+    status: "TODO"
+    deadline: "2026-03-13"
+    priority: 4
+
+  # --- PUBLICATION STRATEGY (do when deadline-driven work allows) ---
+  - id: "remainder-journal"
+    summary: "Submit Remainder Under Feedback to journal independently"
+    status: "PLANNED"
+    priority: 5
+    note: "Most immediately publishable piece. Targets: Philosophy of the Social Sciences, Social Epistemology, Sociological Theory."
+
+  - id: "two-body-venue"
+    summary: "Decide venue and submit Two-Body Problem"
+    status: "DRAFT COMPLETE — needs proofread + venue selection"
+    priority: 6
+
+  - id: "book-proposal"
+    summary: "Draft book proposal for MIT Press / U Minnesota / Verso"
+    status: "PLANNED"
+    priority: 7
+    note: "A signed contract unlocks Canada Council Concept to Realization ($75K). Strategy doc at symbolics-research/Submissions/book-proposal/strategy.md"
+
+  # --- THEORY (when time allows) ---
+  - id: "inference-as-policy-revision"
+    summary: "Revise Inference as Policy in light of Session 12 decisions"
+    status: "DEFERRED"
+    priority: 8
+    note: "Session 12 decisions (one-modality, layer collapse, book-not-papers) significantly affect this paper. May become book chapter rather than standalone paper."
+
+  - id: "vault-session-12"
+    summary: "Integrate Session 12 decisions into vault documents"
+    status: "DEFERRED"
+    priority: 9
+    note: "One-modality, layer-2-3 collapse, hierarchy unification, policy-fixity gradient. Major updates to 02_Operations and 05_Formalism."
+
   - id: "scattered-insights"
     summary: "Bring in scattered insights from old system"
     status: "ongoing"
-    note: "Must be done through conversation, not migration. Insights earn their way back."
-    priority: 4
-  - id: "metabolism-dynamics"
-    summary: "Fold → Remainder → Unfold → Refold cycle"
-    status: "open_thread"
-    note: "What determines incremental vs catastrophic unfold?"
-    priority: 5
-  - id: "multi-agent-formalization"
-    summary: "Formalize two-body emergence via multi-agent dynamics"
-    status: "open_thread"
-    note: "Two-body paper opens new formalization path: model emergence of distinction through multi-agent dynamics (game theory, coalgebra, or multi-agent active inference). Complements operator-level Agda work by addressing a different level. Three conditions (shared pressure, observability, alignment) are structural enough for formal treatment."
-    priority: 6
-  - id: "bucket-sortedness"
-    summary: "Encode bucket sortedness for WorldIndexed idempotence"
-    status: "deferred"
-    note: "Either Sorted predicate, intrinsic representation (AVL), or direct proof via insertBucket"
-    priority: 7
+    priority: 10
+    note: "Must be done through conversation, not migration."
 
-# --- NEXT ACTIONS ---
+  - id: "formalization-threads"
+    summary: "Agda/DSL work (category theory, remaining 9 conjectures)"
+    status: "MAJOR MILESTONE REACHED — unified formalization complete"
+    priority: 11
+    note: "20 new Symbolics modules, ~94% verification. Bucket sortedness RESOLVED. Remaining: 7 DNFSoundness stubs (by design), 2 Mechanics holes. Category theory deferred."
+
+# ============================================================================
+# EUROPEAN RESEARCH CIRCUIT (April–June 2026)
+# ============================================================================
+
+european_circuit:
+  overview: "Four presentations across four countries and four disciplines"
+  events:
+    - date: "2026-04-09 to 2026-04-10"
+      event: "Model Transfer (ERC-funded)"
+      location: "Leibniz U Hannover"
+      discipline: "philosophy of science"
+      status: "CONFIRMED"
+    - date: "~2026-06-05"
+      event: "VISION_E"
+      location: "Politecnico di Torino"
+      discipline: "design/AI"
+      status: "pending (paper deadline Feb 22)"
+    - date: "2026-06-11 to 2026-06-13"
+      event: "Form in Dialogue (DFG-funded)"
+      location: "U Konstanz"
+      discipline: "literary/aesthetic theory"
+      status: "CONFIRMED"
+    - date: "2026-07-13 to 2026-07-17"
+      event: "Derrida Today"
+      location: "ENS Paris"
+      discipline: "continental philosophy"
+      status: "CONFIRMED"
+      note: "Big credibility win. ENS is target PhD institution."
+  between_conferences: "Portugal (free accommodation at family connection)"
+  funding: "CALQ Déplacement (primary, submit by Mar 9) + Canada Council Micro-Grant (supplementary)"
+
+# ============================================================================
+# NEXT ACTIONS (prioritized)
+# ============================================================================
+
 next_actions:
-  - "Two-Body Problem paper: final proofread, tighten prose, decide target venue"
-  - "Remainder Under Feedback paper: revise in light of two-body framework refinements"
-  - "Ongoing: Bring scattered insights in through conversation (not migration)"
-  - "OPTIONAL: Encode bucket sortedness to complete WorldIndexed idempotence proof"
+  immediate:
+    - "VISION_E revision (due Feb 22) — add references, make retention argument explicit"
+    - "Monitor Books final polish (due Mar 1)"
+    - "Follow up on CALQ Déplacement confirmation letters (Hannover, Konstanz)"
+    - "Revise Emergent Ventures application — lead with concrete output, submit"
+  this_month:
+    - "Apply to Bogliasco (by Mar 13)"
+    - "Check Whiting Creative Nonfiction Grant exact deadline"
+    - "Assess PERICULUM viability honestly"
+  coming_months:
+    - "Submit Remainder Under Feedback to journal"
+    - "Decide venue for Two-Body Problem, submit"
+    - "Draft book proposal (MIT Press, U Minnesota, Verso)"
+    - "Prepare ISRF application (deadline ~Oct 2026)"
+  deferred:
+    - "Integrate Session 12 decisions into vault"
+    - "Revise Inference as Policy"
+    - "Agda/DSL formalization work"
 
-# --- AGENT LAST ACTIONS ---
+# ============================================================================
+# AGENT STATUS
+# ============================================================================
+
 agent_status:
-  claude_code: "Session 9: Drafted Two-Body Problem paper (9 sections, ~110KB). Integrated 6 rounds of Gemini feedback. Created state.yaml and updated README in symbolics-research. Pushed to GitHub."
+  claude_code: >
+    Session 14 (2026-02-17): Unified Agda formalization — 20 new Symbolics/ modules across
+    7 phases (Bridge, Primitive, Operations, Metabolism, Ecology, Hierarchy, Emergence). ~90
+    new proven theorems, 0 holes. FDE WorldIndexed idempotence completed. Verification rate
+    ~94% (was 86%). Symbolics Lab site: OG metadata, optimized images, research page tier
+    grouping + sticky section nav. All committed and pushed.
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
-  cowork: "Not used post-restructure."
-  chatgpt: "Not used this session."
-  gemini: "Session 9: 6 rounds of critical review on Two-Body Problem paper. Identified and resolved: triviality objection, coupling-constitution, truth/success framing, misuse/failure, RLHF standing argument, NSL two-scale distinction, wild ape boundary cases, and more."
-  codex: "Not used."
+  chatgpt: "Session 12: Reviewed Inference as Policy paper. Key insights: three-payloads concern, distinction-token-vs-form, □_P as temporal/process modality, one-theorem suggestion."
+  gemini: "Session 12: Reviewed Inference as Policy paper. Key insights: layer-2-3 collapse, dissolution-vs-gradient rhetoric, policy-fixity not constraint, dyadic-monadic problem (strongest objection), LLM metabolism as temporally segmented."
 
-# --- RECENT DECISIONS (full history in decision-log.md) ---
+# ============================================================================
+# RECENT DECISIONS (full history in decision-log.md)
+# ============================================================================
+
 recent_decisions:
-  - id: "distinction-is-representation"
-    date: "2026-02-03"
-    summary: "Distinction and representation are the same phenomenon. Distinction emphasizes partitioning; representation emphasizes partiality. Remainder unifies them."
-  - id: "recursion-mise-en-abyme"
-    date: "2026-02-03"
-    summary: "Distinction is inherently recursive: each requires an index, each index parameter is a distinction, all the way down. No atomic foundation. Stabilization arrests the recursion."
-  - id: "constraint-vs-power"
-    date: "2026-02-03"
-    summary: "Power is the special case of constraint (constraint wielded by agent for asymmetric benefit). Much apparatus has no agent. Constraint produces fit; de-naturalization recognizes fit was produced."
-  - id: "two-body-paper-drafted"
-    date: "2026-02-03"
-    summary: "Full draft of Two-Body Problem paper complete with 6 rounds of Gemini review. 9 sections, 10 objections, 3 thematic groups of theoretical allies."
-  - id: "truth-vs-success"
-    date: "2026-02-03"
-    summary: "Key conceptual move: success is a biological constraint (solitary), truth is a social norm (dyadic). Separation of these axes distinguishes differentiation from distinction."
-  - id: "agda-audit-complete"
-    date: "2026-02-03"
-    summary: "Session 8 audit confirms policy-cluster interpretation; conservativity/contradiction-preservation proven across domains"
+  - id: "book-not-papers"
+    date: "2026-02-06"
+    summary: "Theory needs a book, not papers. Book structure: Pressure → Distinction → Nature of Distinction → Hierarchy → Metabolism → Self → World."
+  - id: "one-modality"
+    date: "2026-02-06"
+    summary: "Collapse two modalities (□ and □_P) into one. Resilience is the measure, not a second kind of necessity."
+  - id: "layer-2-3-collapse"
+    date: "2026-02-06"
+    summary: "Collapse Layer 3 (conflict-resolution) into Layer 2 (consequence). New: 4 layers + interface."
+  - id: "hierarchy-unification"
+    date: "2026-02-06"
+    summary: "Policy stratification and Organizational Hierarchy are the same structure. Index IS Level 2."
+  - id: "calq-threshold"
+    date: "2026-02-11"
+    summary: "CALQ requires 3 art-context publications or 1 book. Currently have 1 (ESPACE). Not yet eligible."
+  - id: "periculum-reassessed"
+    date: "2026-02-11"
+    summary: "PERICULUM reassessed as weak fit. Current profile may not match committee expectations."
+  - id: "funding-strategy-revised"
+    date: "2026-02-11"
+    summary: "Priority: EV (fast), Canada Council New/Early Career, Whiting, ISRF. CALQ deferred until threshold met."
+  - id: "unified-formalization"
+    date: "2026-02-17"
+    summary: "Unified Symbolics/ Agda formalization complete. 20 modules, ~90 new proofs, 0 holes. FDE idempotence resolved. ~94% verified."
+  - id: "ens-paris-confirmed"
+    date: "2026-02-13"
+    summary: "Accepted to ENS Paris Derrida Today conference (Jul 13-17 2026). Continental philosophy credibility. ENS is target PhD institution."
 
-# --- DECISIONS PENDING ---
+# ============================================================================
+# DECISIONS PENDING
+# ============================================================================
+
 decisions_pending:
-  - id: "social-phenomenon"
-    question: "Which social phenomenon to develop first for the bridge?"
-    status: "resolved"
-    note: "Resolved: Remainder Under Feedback paper serves as the social ontology bridge, applying the theory to institutional measurement categories (DSM, Census, HUD, employment). No separate 06_Social_Ontology.md needed."
+  - id: "periculum-viability"
+    question: "Is PERICULUM worth applying to with current profile?"
+    status: "leaning no"
+    deadline: "2026-03-31"
+  - id: "shuttleworth-openness"
+    question: "Does Shuttleworth's open-knowledge requirement conflict with secrecy strategy?"
+    status: "needs evaluation"
+    deadline: "2026-05-01"
+  - id: "book-vs-papers"
+    question: "How to reconcile Session 12 book-not-papers decision with immediate need for journal publications (for CALQ threshold)?"
+    status: "open"
+    note: "Tension: theory says book, funding says papers. Possible resolution: submit chapters as standalone papers, later collect into book."
   - id: "category-theory"
     question: "When to pursue category-theoretic formalization of fold-as-relation?"
     status: "deferred"
-    note: "After current plan completes"
   - id: "bucket-sortedness"
     question: "How to encode bucket sortedness for WorldIndexed idempotence?"
-    status: "deferred"
-    note: "Options: Sorted predicate, AVL trees, direct proof via insertBucket structure"
+    status: "RESOLVED (Session 14) — sortedness lemmas completed, fold-idempotent proven"
 
-# --- FLAGS ---
+# ============================================================================
+# FILE MAP — ALL FOUR REPOS
+# ============================================================================
+
+file_map:
+  workspace: "~/Developer/Symbolics/"
+
+  symbolics_research:
+    repo: "github.com/SymbolicsLab/symbolics-research"
+    vault: "Vault/Active/ — 5 living documents (01_Ontology through 05_Formalism)"
+    vault_archive: "Vault/_Archive/Legacy_2026-02/ — 80 legacy files"
+    book_chapters:
+      - "Book/two-body-problem/draft.md (18,169 words)"
+      - "Book/inference-as-policy/draft.md (14,998 words)"
+      - "Book/remainder-under-feedback/draft.md (5,159 words)"
+    papers:
+      - "Papers/Visions_Folding-with-the-Machine/Draft.md (3,345 words)"
+    submissions:
+      - "Submissions/Monitor-Books/ (7 section drafts, ~6,578 words)"
+      - "Submissions/Emergent-Ventures/ (draft + notes)"
+      - "Submissions/PERICULUM_Production-de-Discours/ (draft)"
+      - "Submissions/CALQ_Deplacement/"
+      - "Submissions/CV/ (English + French)"
+      - "Submissions/book-proposal/ (strategy doc)"
+      - "Submissions/Accepted/ (6 accepted pieces)"
+      - "Submissions/funding.md (comprehensive funding tracker)"
+
+  symbolics_core:
+    repo: "github.com/SymbolicsLab/symbolics-core"
+    language: "Agda (--safe --without-K)"
+    modules: "Core, LP, FDE, LFI, Mechanics, Modal, Applications, Symbolics (Bridge, Primitive, Operations, Metabolism, Ecology, Hierarchy, Emergence)"
+    status: "All compiles. ~94% verification rate (~154/163 specs). 20 new Symbolics modules (Session 14). FDE idempotence completed."
+
+  symbolics_dsl:
+    repo: "github.com/SymbolicsLab/symbolics-dsl"
+    language: "TypeScript"
+    modules: "belnap.ts, side.ts, context.ts, policy.ts"
+    status: "Core functional. Additive Evidence Bound proven. Metabolic tension results INVALIDATED."
+
+  symbolics_audit:
+    repo: "github.com/SymbolicsLab/symbolics-audit"
+    integration: "INTEGRATION/ — state.yaml, MASTER-PLAN.md, decision-log.md, core-principles.md"
+    spec: "spec/registry.yaml — cross-layer contract"
+    scripts: "scripts/audit.py"
+
+  research_dossier:
+    location: "/Users/vivianesauriol/Documents/RESEARCH/Research Dossier/"
+    contents: "Pre-Pentad theory (Synthesis parts 1-6, New Insight parts 1-3). Lost architectures: Locus Hierarchy, Temporal Hierarchy, Metabolic Regimes, Levels 5-6, Filter Equation."
+
+# ============================================================================
+# FLAGS
+# ============================================================================
+
 flags:
-  - "SESSION 9 COMPLETE: Two-Body Problem paper + Vault theory updates"
-  - "PAPER STATUS: 6 rounds of Gemini review integrated; ready for final proofread"
-  - "VAULT UPDATED: distinction-as-representation, recursion, constraint-vs-power reframes"
-  - "KEY MOVES: differentiation/distinction, updating/contesting, truth/success, misuse/failure, laws/rules"
-  - "ALL CODE COMPILES: --safe --without-K (from Session 8)"
-  - "SOCIAL ONTOLOGY BRIDGE: Remainder Under Feedback paper serves this role; no separate vault doc needed"
+  - "FUNDING IS THE BOTTLENECK — theory is strong, publications exist, money is urgent"
+  - "CALQ NOT YET ELIGIBLE — need 2 more art-context publications"
+  - "VISION_E DUE FEB 22 — most urgent deadline"
+  - "MONITOR BOOKS DUE MAR 1 — draft complete, needs polish"
+  - "EV APPLICATION SHOULD GO OUT ASAP — rolling, low effort, high potential"
+  - "SESSION 12 DECISIONS NOT YET IN VAULT — one-modality, layer collapse, hierarchy unification"
+  - "AGDA UNIFIED FORMALIZATION COMPLETE — 20 new Symbolics modules, ~94% verified, --safe --without-K (Session 14)"
+  - "48K+ WORDS WRITTEN across 5 disciplines — undersold in current applications"
+  - "ENS PARIS CONFIRMED — Derrida Today, Jul 13-17 2026. Big credibility win."
