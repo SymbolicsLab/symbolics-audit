@@ -21,8 +21,8 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-18T02:00:00Z"
-last_session: 16
+last_updated: "2026-02-18T18:00:00Z"
+last_session: 17
 last_agent: "Claude Code (Opus 4.6)"
 
 # ============================================================================
@@ -889,18 +889,20 @@ formalization_note: >
 # ============================================================================
 
 current_context: >
-  Session 15. VISION_E revision + submissions review. (1) VISION_E paper near-final: APA 7 compliance
-  (dual dates for translated works, 3 missing DOIs added), 5 critical-read revisions (explicit framework
-  visibility claim, paradigm case epistemic status clarified, structural-not-generational asymmetry,
-  Digital Atlas reference cut, hallucination tone softened). Body at 19,901/20,000 chars, 15 references.
-  Images at 920x920 300 DPI, Gemini logo removed. Remaining: Word template, anonymization, image ZIP.
-  (2) APQ "Where Values Enter" abstract reviewed — strong. Holman extended deadline to Mar 15 (target
-  article not yet finished). Will request target article and revise. (3) Sorbonne interventionism
-  abstract ("Intervening on Operators") reviewed — rejected same day as submission, likely due to
-  independent researcher status. The foundational rule-intervention framework has no venue yet.
-  (4) CALQ Déplacement strategy revised: split Hannover (philosophy of science, fund via Canada Council
-  Micro-Grant) from arts-relevant bundle (Konstanz + Turin + ENS for CALQ). Konstanz confirmation
-  letter received. ENS confirmation expected shortly.
+  Session 17. Chapter III ("The Nature of Distinction") first draft completed. 12,552 words across
+  9 sections. Core thesis: entanglement is default; standalone concepts are achievements produced by
+  naturalizing entanglement into invisibility. New theoretical machinery: cut visibility (degree to
+  which partition remains present in distinction's phenomenology), remainder topology (concentrated
+  vs distributed), locus inaccessibility (distinct from opacity — full index visible but locus
+  unoccupiable), entanglement naturalization (second form of naturalization — co-constitution
+  appearing as asymmetry), shared index (one index generates both poles of co-constitutive pairs),
+  phi/psi notation for co-constitutive pairs. Five workaround strategies for locus inaccessibility:
+  limit (Kant), trace (Derrida), anticipation (Heidegger), apophasis (negative theology), eigenvalue
+  (Von Foerster). Tradition engagement: Spencer-Brown, Derrida, Hegel, Deleuze, Luhmann, Buddhist
+  logic, Peirce. Section 1 revised based on user feedback (6 fixes: fold explained without jargon,
+  "dog" example grounded in recursion, metacommentary eliminated, QM clarification removed, consciousness/
+  unconscious paired, awkward phrasing fixed). Deep dive research report also produced (502 lines,
+  4 parallel agents synthesized). Previous: Session 16 completed full vault integration pass.
 
 # ============================================================================
 # PUBLICATIONS — ALL WRITTEN PIECES
@@ -992,6 +994,14 @@ publications:
       discipline: "philosophy of social science"
       note: "DSM, Census, homelessness as worked examples. Proposes remainder audit as methodological tool. Strongest evidence that Symbolics produces tools, not just theory. Submit independently to journal."
 
+    - id: "nature-of-distinction"
+      title: "The Nature of Distinction"
+      location: "symbolics-research/Book/nature-of-distinction/draft.md"
+      words: 12552
+      status: "FIRST DRAFT — §1 revised, §2-§9 awaiting review"
+      discipline: "philosophy (ontology / theory of distinction)"
+      note: "Chapter III of seven. Entanglement as default, standalone as achievement. New machinery: cut visibility, remainder topology, locus inaccessibility, entanglement naturalization, shared index. Tradition: Spencer-Brown, Derrida, Hegel, Deleuze, Luhmann, Buddhist logic, Peirce."
+
     - id: "inference-as-policy"
       title: "Inference as Policy"
       location: "symbolics-research/Book/inference-as-policy/draft.md"
@@ -1017,8 +1027,8 @@ publications:
       note: "The pure framework (extending Woodward to rule-interventions). APQ abstract is the application. Same-day rejection, likely affiliation filter."
 
   # --- TOTAL WRITTEN OUTPUT ---
-  total_words: 50249
-  total_pieces: 12
+  total_words: 62801
+  total_pieces: 13
   disciplines: ["formal logic", "philosophy of mind", "philosophy of social science", "philosophy of logic", "design/AI", "cultural criticism", "art criticism", "philosophy of science", "literary/aesthetic theory", "continental philosophy"]
 
 # ============================================================================
@@ -1300,12 +1310,13 @@ next_actions:
 
 agent_status:
   claude_code: >
-    Session 16 (2026-02-17): Full vault integration pass. All 5 active vault documents updated to
-    reflect Session 12 decisions (one-modality, hierarchy unification, layer collapse, metabolic arrest,
-    policy-fixity gradient, remainder-not-parametric, dyadic-monadic resolution) + Session 10 insights
-    (Peirce connection, classical logic bias owned, policy stratification) + Session 14 Agda milestone.
-    Level renumbering across all documents (Layer→Level). MASTER-PLAN.md updated throughout. Final
-    coherence read-through: 3 additional fixes. All committed to symbolics-research and symbolics-audit.
+    Session 17 (2026-02-18): Chapter III first draft ("The Nature of Distinction") — 12,552 words,
+    9 sections. Deep dive research report produced (4 parallel agents: entangled concepts, QM analogies,
+    vault gaps, speculative theory). Voice-matched draft using 3 background agents (style analysis,
+    tradition quotes, archive search). §1 revised after user feedback (6 fixes). New theoretical
+    machinery introduced: cut visibility, remainder topology, locus inaccessibility, entanglement
+    naturalization, shared index, phi/psi notation. Worksheet (_WORKSHEET_CH3.md) updated.
+    Previous: Session 16 — full vault integration pass.
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
   chatgpt: "Session 12: Reviewed Inference as Policy paper. Key insights: three-payloads concern, distinction-token-vs-form, □_P as temporal/process modality, one-theorem suggestion."
   gemini: "Session 12: Reviewed Inference as Policy paper. Key insights: layer-2-3 collapse, dissolution-vs-gradient rhetoric, policy-fixity not constraint, dyadic-monadic problem (strongest objection), LLM metabolism as temporally segmented."
@@ -1357,6 +1368,9 @@ recent_decisions:
   - id: "vault-integration-session-16"
     date: "2026-02-17"
     summary: "Full vault integration pass. All 5 docs updated for Session 12 decisions + Session 10 insights + Session 14 Agda milestone. MASTER-PLAN updated. Level renumbering. Coherence verified."
+  - id: "chapter-iii-first-draft"
+    date: "2026-02-18"
+    summary: "Chapter III ('The Nature of Distinction') first draft completed. 12,552 words. Entanglement as default; standalone as achievement. New machinery: cut visibility, remainder topology, locus inaccessibility, entanglement naturalization, shared index."
 
 # ============================================================================
 # DECISIONS PENDING
@@ -1395,6 +1409,7 @@ file_map:
     vault_archive: "Vault/_Archive/Legacy_2026-02/ — 80 legacy files"
     book_chapters:
       - "Book/two-body-problem/draft.md (18,169 words)"
+      - "Book/nature-of-distinction/draft.md (12,552 words)"
       - "Book/inference-as-policy/draft.md (14,998 words)"
       - "Book/remainder-under-feedback/draft.md (5,159 words)"
     papers:
