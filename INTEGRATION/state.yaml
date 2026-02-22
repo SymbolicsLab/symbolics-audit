@@ -21,8 +21,8 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-18T18:00:00Z"
-last_session: 17
+last_updated: "2026-02-21T23:00:00Z"
+last_session: 22
 last_agent: "Claude Code (Opus 4.6)"
 
 # ============================================================================
@@ -889,20 +889,15 @@ formalization_note: >
 # ============================================================================
 
 current_context: >
-  Session 17. Chapter III ("The Nature of Distinction") first draft completed. 12,552 words across
-  9 sections. Core thesis: entanglement is default; standalone concepts are achievements produced by
-  naturalizing entanglement into invisibility. New theoretical machinery: cut visibility (degree to
-  which partition remains present in distinction's phenomenology), remainder topology (concentrated
-  vs distributed), locus inaccessibility (distinct from opacity — full index visible but locus
-  unoccupiable), entanglement naturalization (second form of naturalization — co-constitution
-  appearing as asymmetry), shared index (one index generates both poles of co-constitutive pairs),
-  phi/psi notation for co-constitutive pairs. Five workaround strategies for locus inaccessibility:
-  limit (Kant), trace (Derrida), anticipation (Heidegger), apophasis (negative theology), eigenvalue
-  (Von Foerster). Tradition engagement: Spencer-Brown, Derrida, Hegel, Deleuze, Luhmann, Buddhist
-  logic, Peirce. Section 1 revised based on user feedback (6 fixes: fold explained without jargon,
-  "dog" example grounded in recursion, metacommentary eliminated, QM clarification removed, consciousness/
-  unconscious paired, awkward phrasing fixed). Deep dive research report also produced (502 lines,
-  4 parallel agents synthesized). Previous: Session 16 completed full vault integration pass.
+  Session 20. Massive submission expansion: 10 new submission folders created (total 11 new CFPs tracked).
+  CSIC Madrid abstract SENT. New submissions span 7 venues across cognitive science, philosophy of mind,
+  philosophy of risk, social science, philosophy of science, ethics, causality, and philosophy of psychology.
+  4 Synthese topical collections now targeted (Self-Individuation, Social Science Understanding, Risk,
+  Science-Policy). Three Feb 28 deadlines (Zhejiang grief, two Synthese full papers). Affiliation decision:
+  Symbolics Lab across all submissions. Signature protocol: personal site for philosophy venues, Lab site
+  for design/AI venues. Phil Psych creativity paper upgraded from planned to active with full abstract +
+  outline. Session 19: Created Open Philosophy Kant and CSIC Madrid folders. Session 17: Chapter III
+  first draft (12,552 words). Previous: Session 16 completed full vault integration pass.
 
 # ============================================================================
 # PUBLICATIONS — ALL WRITTEN PIECES
@@ -960,16 +955,16 @@ publications:
   in_progress:
     - id: "vision-e-paper"
       title: "Folding with the Machine: Recursive Co-Construction in Large Language Models"
-      location: "symbolics-research/Papers/Visions_Folding-with-the-Machine/Draft.md"
+      location: "symbolics-research/Papers/VISIONE_Folding-with-the-Machine/Draft.md"
       words: 3345
-      status: "NEAR FINAL — formatting remaining (Word template, anonymization, image ZIP)"
+      status: "SUBMITTED — uploaded to CMT 2026-02-21"
       deadline: "2026-02-22"
       discipline: "design/AI"
-      note: "APA 7 compliant, 15 references (was 12), 19,901/20,000 chars. 5 critical-read revisions applied. Images 920x920 at 300 DPI."
+      note: "APA 7 compliant, 16 references, ~20,000 chars. Grammar + reference fixes applied. Images 4267x4267 at 300 DPI. Blind PDF anonymization verified (12/12 checks). Results due Mar 20."
 
     - id: "monitor-books"
       title: "EasyNegative (working title)"
-      location: "symbolics-research/Submissions/Monitor-Books/draft-section-*.md"
+      location: "symbolics-research/Submissions/2026-03-01_Monitor-Books/draft-section-*.md"
       words: 6578
       sections: 7
       status: "DRAFT COMPLETE — needs final polish"
@@ -1012,7 +1007,7 @@ publications:
 
     - id: "apq-values"
       title: "Where Values Enter: Rule-Interventions, Stabilization Operators, and the Job-Relativity of Epistemic Ideals"
-      location: "symbolics-research/Submissions/American-Philosophical-Quarterly/abstract.md"
+      location: "symbolics-research/Submissions/2026-03-15_American-Philosophical-Quarterly/abstract.md"
       words: 500
       status: "SUBMITTED — will revise after target article (deadline Mar 15)"
       discipline: "philosophy of science (values in science)"
@@ -1026,9 +1021,18 @@ publications:
       discipline: "metaphysics / philosophy of science"
       note: "The pure framework (extending Woodward to rule-interventions). APQ abstract is the application. Same-day rejection, likely affiliation filter."
 
+    - id: "vie-des-arts-duo"
+      title: "Le premier mot ne se construit pas seul (working title)"
+      location: "symbolics-research/Submissions/2026-03-01_Vie-des-arts/abstract-draft.md"
+      words: 307
+      status: "NOTE D'INTENTION DRAFTED — ready for review and submission"
+      deadline: "2026-03-01"
+      discipline: "art criticism / art theory"
+      note: "Deploys two-body hypothesis without naming Symbolics. Octopus opening, Abramović/Ulay inversion (The Artist is Present as internalized duo). Vie des arts nº 281 'Duo' issue. Publication counts toward CALQ threshold (would be #2 or #3)."
+
   # --- TOTAL WRITTEN OUTPUT ---
-  total_words: 62801
-  total_pieces: 13
+  total_words: 86978
+  total_pieces: 16
   disciplines: ["formal logic", "philosophy of mind", "philosophy of social science", "philosophy of logic", "design/AI", "cultural criticism", "art criticism", "philosophy of science", "literary/aesthetic theory", "continental philosophy"]
 
 # ============================================================================
@@ -1040,17 +1044,17 @@ submissions:
     - id: "vision-e-revision"
       target: "VISION_E (Politecnico di Torino)"
       deadline: "2026-02-22"
-      status: "NEAR FINAL — formatting only (Word template, anonymization, image ZIP)"
+      status: "SUBMITTED — uploaded to CMT 2026-02-21. Peer review results Mar 20."
       amount: "publication + presentation (~Jun 5)"
-      files: "symbolics-research/Papers/Visions_Folding-with-the-Machine/"
-      priority: "URGENT"
+      files: "symbolics-research/Papers/VISIONE_Folding-with-the-Machine/"
+      priority: "DONE"
 
     - id: "apq-values-in-science"
       target: "American Philosophical Quarterly — Special Issue: Values in Science"
       deadline: "2026-03-15"
       status: "SUBMITTED — will revise after target article distributed"
       amount: "publication (6 invited for full papers)"
-      files: "symbolics-research/Submissions/American-Philosophical-Quarterly/"
+      files: "symbolics-research/Submissions/2026-03-15_American-Philosophical-Quarterly/"
       priority: "HIGH"
       note: "Guest editors: Holman (Yonsei) + Wilholt (Hannover). Deadline extended from Feb 15. Target article not yet distributed. Rule-intervention / stabilization operator framework applied to New Demarcation Problem."
 
@@ -1059,7 +1063,7 @@ submissions:
       deadline: "2026-03-01"
       status: "DRAFTING — 7 sections complete, needs final polish"
       amount: "£5 or GRATIS (publication credibility is the value)"
-      files: "symbolics-research/Submissions/Monitor-Books/"
+      files: "symbolics-research/Submissions/2026-03-01_Monitor-Books/"
       priority: "URGENT"
 
     - id: "calq-deplacement"
@@ -1067,7 +1071,7 @@ submissions:
       deadline: "TBD (recalculate — first event is Turin ~Jun 5, not Hannover Apr 9)"
       status: "STRATEGY REVISED — bundle Konstanz + Turin + ENS (arts-relevant); Hannover separately via Canada Council"
       amount: "$200/day + transport + insurance"
-      files: "symbolics-research/Submissions/CALQ_Deplacement/"
+      files: "symbolics-research/Submissions/TBD_CALQ_Deplacement/"
       priority: "HIGH"
       blockers: ["ENS confirmation letter (expected shortly)"]
       note: "Konstanz confirmation received. Hannover excluded from CALQ (philosophy of science, not arts). Fund Hannover via Canada Council Micro-Grant."
@@ -1079,13 +1083,139 @@ submissions:
       amount: "Fully funded 1-month residency (Genoa)"
       priority: "HIGH"
 
+    - id: "vie-des-arts-duo"
+      target: "Vie des arts nº 281 (Duo)"
+      deadline: "2026-03-01"
+      status: "NOTE D'INTENTION DRAFTED — ready for review and submission"
+      amount: "publication (art-context — counts toward CALQ threshold)"
+      files: "symbolics-research/Submissions/2026-03-01_Vie-des-arts/"
+      priority: "HIGH"
+      note: "350-word note d'intention. Deploys two-body hypothesis via Abramović/Ulay inversion (The Artist is Present as internalized duo). If accepted, would be art-context publication #2 or #3 (after ESPACE, alongside Monitor Books). Same deadline as Monitor Books."
+
+    - id: "creat-hexagram"
+      target: "Colloque CREAT × Hexagram (Rencontres interdisciplinaires 2026)"
+      deadline: "2026-02-20"
+      status: "PROPOSAL READY — PDF formatted, ready to send"
+      amount: "presentation + publication encouraged (art-context — counts toward CALQ threshold)"
+      files: "symbolics-research/Submissions/2026-02-20_CREAT-Hexagram/"
+      priority: "URGENT"
+      note: "250-word proposal for Theme 2 (Processus, outils et technologies). EasyNegative as case study: apotropaic practice, reverse activation paradox, class erasure via blanchiment, variance collapse feedback loop. Submit to mdgagnon@uqac.ca. Symposium May 21-22, Montreal, free, in-person. Publication would count toward CALQ threshold."
+
+    - id: "csic-growing-up-ai"
+      target: "Growing Up with AI Workshop — Instituto de Filosofia, CSIC (Madrid)"
+      deadline: "2026-02-20"
+      status: "SENT — submitted to gloria.andrada@cchs.csic.es"
+      amount: "presentation (40 min + 20 Q&A, 8 slots)"
+      files: "symbolics-research/Submissions/2026-02-20_CSIC-Madrid_Growing-Up-AI/"
+      priority: "URGENT"
+      note: "907-word abstract. 'From smoothing to stability' — deploys folding as normative framework + pedagogical protocol for structured friction in AI-saturated development. Cognitive smoothing + affective flattening diagnosis. Han, Dewey, Bjork, Tronick. Three interventions (Fold-Writing, Fold-Reasoning, Fold-Companionship). Submit anonymized PDF to gloria.andrada@cchs.csic.es. Workshop Jun 23-24 Madrid — fits European circuit between Konstanz and Paris."
+
+    - id: "open-philosophy-kant"
+      target: "Open Philosophy — Kant's Concept of Spontaneity (De Gruyter)"
+      deadline: "2026-03-31"
+      status: "NOTES ONLY — full paper required"
+      amount: "publication (Open Access, peer-reviewed)"
+      files: "symbolics-research/Submissions/2026-03-31_Open-Philosophy_Kant-Spontaneity/"
+      priority: "MEDIUM"
+      note: "Spontaneity Without Presence: Kant, Commitment, and the Temporal Structure of Subjectivity. Deploys stabilization framework (failure of reflection, □φ → φ) in Kantian context. Overlaps ENS talk angle. APC waiver available — contact editor before submitting."
+
+    - id: "zhejiang-grief"
+      target: "5th Workshop on Philosophy of Emotions — Zhejiang University"
+      deadline: "2026-02-28"
+      status: "ABSTRACT READY — 962 words"
+      amount: "presentation (accommodation + meals covered)"
+      files: "symbolics-research/Submissions/2026-02-28_Zhejiang_Philosophy-of-Emotions/"
+      priority: "URGENT"
+      note: "Grief at the Loss of Encounter. Replika case study, bounded opacity as governance standard. Workshop Jun 4-5, Hangzhou. Cholbi keynote. Possible travel conflict with Turin (~Jun 5)."
+
+    - id: "synthese-self-individuation"
+      target: "Synthese — Individual Self and Self-individuation"
+      deadline: "2026-02-28"
+      status: "FULL DRAFT COMPLETE — ~11,870 words, 29 references. User re-reading with fresh eyes."
+      amount: "publication (Springer, peer-reviewed)"
+      files: "symbolics-research/Submissions/2026-02-28_Synthese_Self-Individuation/"
+      priority: "URGENT"
+      note: "The Second Body: Why Self-Individuation Cannot Be a Solitary Achievement. Retitled from 'Recursive Individuation.' Functional normativity vs recognitive normativity. Davidsonian triangulation + Wittgensteinian private language + Brandomian scorekeeping. Zahavi/Thompson treated with full charity (self-differentiation vs self-individuation scope distinction). Independence argument in §2.3. Cautious/investigative tone throughout."
+
+    - id: "synthese-social-science"
+      target: "Synthese — Explanation, Narrative, and Understanding in the Social Sciences"
+      deadline: "2026-02-28"
+      status: "FULL DRAFT COMPLETE — 12,000 words, 20 references. User re-reading with fresh eyes."
+      amount: "publication (Springer, peer-reviewed)"
+      files: "symbolics-research/Submissions/2026-02-28_Synthese_Social-Science-Understanding/"
+      priority: "URGENT"
+      note: "Understanding Without Closure. Remainder, index, stabilization framework. Narrative as subject-constitution (challenge to Morgan/Currie/Beatty rehabilitation). Two-level Hacking distinction (structural vs dynamic remainder). Remainder audit as epistemic justification condition. Extends Hacking + Chang. Positioned as philosophy of measurement, not Continental sociology. Editors: Shan + Wang (HKUST)."
+
+    - id: "seville-causality"
+      target: "16th Causality in the Sciences — University of Seville"
+      deadline: "2026-03-08"
+      status: "ABSTRACT READY — 510 words (needs 10-word trim to 500 limit)"
+      amount: "presentation"
+      files: "symbolics-research/Submissions/2026-03-08_Seville_Causality-Medicine/"
+      priority: "HIGH"
+      note: "Beyond Causes We Can Manipulate: A Recursive Constraint Model. Names Cut, Fold, Transition, Collapse explicitly — most formally exposed submission. Conference Oct 8-9. HIGH secrecy concern."
+
+    - id: "ucla-humanistic-ethics"
+      target: "LA Workshop in Humanistic Ethics II — UCLA"
+      deadline: "2026-03-15"
+      status: "ABSTRACT READY — ~1000 words, polished"
+      amount: "presentation (travel + accommodation covered by UCLA)"
+      files: "symbolics-research/Submissions/2026-03-15_UCLA_Humanistic-Ethics/"
+      priority: "HIGH"
+      note: "Keeping Opacity: Attention, Acknowledgment, and the Ethics of Frictionless Life. Best fit in the batch. Word format required (.docx). Rolling review — submit early. Workshop Mar 8-10, 2027."
+
+    - id: "synthese-risk"
+      target: "Synthese — Philosophy of Risk"
+      deadline: "2026-03-31"
+      status: "ABSTRACT + OUTLINE EXISTS — full paper required"
+      amount: "publication (Springer, peer-reviewed)"
+      files: "symbolics-research/Submissions/2026-03-31_Synthese_Risk/"
+      priority: "HIGH"
+      note: "Risk as Prospective Necessity. T-failure deployed as theory of risk. Tightest conceptual core. Editors: Ongaro, Zanotti, Janda, Chiffi (Politecnico di Milano)."
+
+    - id: "estudios-inferences"
+      target: "Estudios de Filosofía — What Are Inferences?"
+      deadline: "2026-04-01"
+      status: "ABSTRACT + OUTLINE EXISTS — full paper required"
+      amount: "publication (SCOPUS, open access, no fees)"
+      files: "symbolics-research/Submissions/2026-04-01_Estudios_Inferences/"
+      priority: "MEDIUM"
+      note: "Inference as Stabilization: Beyond Belief Transitions and Rule Following. Most theory-central submission. Source: Inference as Policy (15K words). Coordination needed with Synthese Science-Policy."
+
+    - id: "synthese-science-policy"
+      target: "Synthese — Philosophy of Science in Public Policy"
+      deadline: "2026-04-10"
+      status: "ABSTRACT + OUTLINE EXISTS — full paper required"
+      amount: "publication (Springer, peer-reviewed)"
+      files: "symbolics-research/Submissions/2026-04-10_Synthese_Science-Policy/"
+      priority: "MEDIUM"
+      note: "Why Evidence Fails to Decide: Value-Level Constraints and Stabilization in Evidence-Based Policy. Leonelli as guest editor. Source: Inference as Policy."
+
+    - id: "rifp-post-cognitivism"
+      target: "RIFP — A Post-Cognitivist Cognitive Science?"
+      deadline: "2026-04-30"
+      status: "OUTLINE EXISTS — abstract + full paper (11,000 words) to write"
+      amount: "publication (SCOPUS, WoS, open access, no fees)"
+      files: "symbolics-research/Submissions/2026-04-30_RIFP_Post-Cognitivism/"
+      priority: "MEDIUM"
+      note: "Cognition Without Representation. Submission code 'Post-cognitivism2026'. Source: Two-Body Problem + Inference as Policy. Invited contributors: Heras-Escribano, Raja, Milkowski."
+
+    - id: "phil-psych-creativity"
+      target: "Philosophical Psychology — Imagination, Creativity and AI"
+      deadline: "2026-05-31"
+      status: "ABSTRACT + OUTLINE EXISTS — full paper (7000-8000 words) to write"
+      amount: "publication (Taylor & Francis, peer-reviewed)"
+      files: "symbolics-research/Submissions/2026-05-31_Phil-Psych_Imagination-Creativity-AI/"
+      priority: "MEDIUM"
+      note: "Creativity as the Production of Necessity. Stale necessity concept. Editors: Miyazono (Hokkaido) + Salis (York). Most comfortable timeline."
+
   planned:
     - id: "emergent-ventures"
       target: "Emergent Ventures (Tyler Cowen / Mercatus)"
       deadline: "Rolling"
       status: "DRAFT EXISTS — needs revision to lead with concrete output"
       amount: "$1K-$50K"
-      files: "symbolics-research/Submissions/Emergent-Ventures/"
+      files: "symbolics-research/Submissions/ROLLING_Emergent-Ventures/"
       priority: "HIGH — apply ASAP"
       note: "Existing draft undersells the project. Should lead with 48K words across 5 disciplines, not just programmatic description."
 
@@ -1094,7 +1224,7 @@ submissions:
       deadline: "2026-03-31"
       status: "REASSESSED — weak fit, current profile may not match"
       amount: "$33,000"
-      files: "symbolics-research/Submissions/PERICULUM_Production-de-Discours/"
+      files: "symbolics-research/Submissions/2026-03-31_PERICULUM_Production-de-Discours/"
       priority: "LOW — reconsider viability"
 
     - id: "whiting"
@@ -1122,7 +1252,7 @@ funding_summary:
     Depleting savings. No institutional affiliation. Priority is getting money in the door.
     Everything else (theory refinement, formalization, vault updates) serves this goal or waits.
   key_constraints:
-    - "CALQ: NOT ELIGIBLE YET — requires 3 art-context publications or 1 book. Currently have 1 (ESPACE). Monitor Books would be #2."
+    - "CALQ: NOT ELIGIBLE YET — requires 3 art-context publications or 1 book. Currently have 1 (ESPACE). Monitor Books would be #2. Vie des arts and CREAT-Hexagram would be #3 or #4."
     - "Canada Council: accessible via New/Early Career profile once 2 public artistic activities confirmed"
     - "No university affiliation — eliminates FRQSC, SSHRC, Trudeau, Bronfman"
     - "Strategic secrecy — Shuttleworth requires openness that may conflict"
@@ -1137,30 +1267,72 @@ funding_summary:
 # ============================================================================
 
 deadlines:
+  - date: "2026-02-20"
+    item: "CREAT × Hexagram proposal submission"
+    priority: "URGENT"
+  - date: "2026-02-20"
+    item: "CSIC Growing Up with AI — SENT"
+    priority: "DONE"
   - date: "2026-02-22"
-    item: "VISION_E paper submission (formatting only — text complete)"
+    item: "VISION_E paper — SUBMITTED Feb 21"
+    priority: "DONE"
+  - date: "2026-02-28"
+    item: "Zhejiang Philosophy of Emotions abstract (grief, 962 words)"
+    priority: "URGENT"
+  - date: "2026-02-28"
+    item: "Synthese Self-Individuation FULL PAPER"
+    priority: "URGENT"
+  - date: "2026-02-28"
+    item: "Synthese Social Science Understanding FULL PAPER"
     priority: "URGENT"
   - date: "2026-03-01"
     item: "Monitor Books submission"
     priority: "URGENT"
+  - date: "2026-03-01"
+    item: "Vie des arts note d'intention (Duo issue)"
+    priority: "HIGH"
+  - date: "2026-03-08"
+    item: "Seville Causality in Medicine abstract (500 words)"
+    priority: "HIGH"
   - date: "2026-03-13"
     item: "Bogliasco Fellowship application"
     priority: "HIGH"
   - date: "2026-03-15"
     item: "APQ Values in Science revised abstract (wait for target article)"
     priority: "HIGH"
+  - date: "2026-03-15"
+    item: "UCLA Humanistic Ethics abstract (rolling review — submit early)"
+    priority: "HIGH"
+  - date: "2026-03-31"
+    item: "Open Philosophy Kant spontaneity full paper"
+    priority: "MEDIUM"
+  - date: "2026-03-31"
+    item: "Synthese Risk full paper"
+    priority: "HIGH"
   - date: "2026-03-31"
     item: "PERICULUM Stage 1 (viability uncertain)"
     priority: "LOW"
+  - date: "2026-04-01"
+    item: "Estudios Inferences full paper"
+    priority: "MEDIUM"
   - date: "2026-04-09"
     item: "Model Transfer presentation, Leibniz U Hannover"
     priority: "CONFIRMED"
-  - date: "TBD"
-    item: "CALQ Déplacement — arts bundle (Konstanz + Turin + ENS)"
-    priority: "HIGH"
+  - date: "2026-04-10"
+    item: "Synthese Science-Policy full paper"
+    priority: "MEDIUM"
+  - date: "2026-04-30"
+    item: "RIFP Post-Cognitivism full paper (11,000 words)"
+    priority: "MEDIUM"
   - date: "2026-05-01"
     item: "Shuttleworth Foundation (if openness ok)"
     priority: "EVALUATE"
+  - date: "2026-05-31"
+    item: "Phil Psych Creativity full paper (7000-8000 words)"
+    priority: "MEDIUM"
+  - date: "TBD"
+    item: "CALQ Déplacement — arts bundle (Konstanz + Turin + ENS)"
+    priority: "HIGH"
   - date: "Rolling"
     item: "Emergent Ventures — apply ASAP"
     priority: "HIGH"
@@ -1172,11 +1344,11 @@ deadlines:
 active_threads:
   # --- DEADLINE-DRIVEN (do first) ---
   - id: "vision-e-revision"
-    summary: "Format VISION_E for submission (Word template, anonymization, image ZIP)"
-    status: "NEAR FINAL — text complete, formatting only"
+    summary: "VISION_E submitted to CMT 2026-02-21"
+    status: "DONE — awaiting peer review results Mar 20"
     deadline: "2026-02-22"
-    priority: 0
-    note: "APA 7 compliant, 15 refs, 19,901/20,000 chars. 5 critical-read revisions applied. Images ready (920x920, 300 DPI)."
+    priority: 99
+    note: "16 refs, ~20,000 chars, grammar + ref fixes, blind PDF verified, metadata stripped. Next: Mar 20 review results, Apr 3 final version if accepted."
 
   - id: "monitor-books-polish"
     summary: "Final polish on EasyNegative essay"
@@ -1185,11 +1357,74 @@ active_threads:
     priority: 1
     note: "7 sections drafted. Needs: final read-through, check section IV (reverse activation), verify submission format."
 
+  - id: "creat-hexagram"
+    summary: "Send CREAT × Hexagram proposal (EasyNegative, Theme 2)"
+    status: "READY TO SEND"
+    deadline: "2026-02-20"
+    priority: 1
+    note: "250-word proposal, PDF formatted. Email to mdgagnon@uqac.ca. Symposium May 21-22 Montreal. Publication encouraged — counts toward CALQ."
+
+  - id: "csic-growing-up-ai"
+    summary: "CSIC Growing Up with AI abstract — SENT"
+    status: "SENT"
+    deadline: "2026-02-20"
+    priority: 1
+    note: "Submitted to gloria.andrada@cchs.csic.es. Workshop Jun 23-24 Madrid."
+
+  - id: "zhejiang-grief"
+    summary: "Submit Zhejiang Philosophy of Emotions abstract (grief, 962 words)"
+    status: "ABSTRACT READY — submit"
+    deadline: "2026-02-28"
+    priority: 1
+    note: "Grief at the Loss of Encounter. Replika case study, bounded opacity. Cholbi keynote. Jun 4-5 Hangzhou. Accommodation covered. Travel conflict with Turin."
+
+  - id: "synthese-self-individuation"
+    summary: "Synthese Self-Individuation — FULL DRAFT COMPLETE, user re-reading"
+    status: "DRAFT COMPLETE — ~11,870 words, 29 refs. Final review before submission."
+    deadline: "2026-02-28"
+    priority: 1
+    note: "The Second Body. 3 rounds of substantive revision. Tone shift, analytic tightening, Zahavi/Thompson charity, body definition, independence argument, pure I/Ego amplified. Ready for final user review."
+
+  - id: "synthese-social-science"
+    summary: "Synthese Social Science Understanding — FULL DRAFT COMPLETE, user re-reading"
+    status: "DRAFT COMPLETE — 12,000 words, 20 refs. Final review before submission."
+    deadline: "2026-02-28"
+    priority: 1
+    note: "Understanding Without Closure. 3 rounds of substantive revision + trimming pass. Narrative as subject-constitution challenge. Two-level Hacking distinction. Remainder audit as epistemic justification condition. Stabilization ≠ pragmatic convergence argument. Scope restriction to human kinds. Remainder as formal property of distinction. Ready for final user review."
+
+  - id: "seville-causality"
+    summary: "Submit Seville Causality abstract (trim to 500 words)"
+    status: "ABSTRACT READY — needs 10-word trim"
+    deadline: "2026-03-08"
+    priority: 2
+    note: "Beyond Causes We Can Manipulate. Names operations explicitly — most formally exposed. Oct 8-9 Seville."
+
+  - id: "ucla-humanistic-ethics"
+    summary: "Submit UCLA Humanistic Ethics abstract (convert to Word format)"
+    status: "ABSTRACT READY — Word format required"
+    deadline: "2026-03-15"
+    priority: 2
+    note: "Keeping Opacity. Best fit in the batch. Rolling review — submit early. Travel + accommodation covered. Workshop Mar 2027."
+
+  - id: "synthese-risk"
+    summary: "Write Synthese Risk full paper"
+    status: "ABSTRACT + OUTLINE EXISTS — full paper needed"
+    deadline: "2026-03-31"
+    priority: 3
+    note: "Risk as Prospective Necessity. T-failure as theory of risk. Tightest conceptual core."
+
+  - id: "vie-des-arts-duo"
+    summary: "Review and submit Vie des arts note d'intention (Duo issue)"
+    status: "DRAFTED — review with fresh eyes, then submit"
+    deadline: "2026-03-01"
+    priority: 2
+    note: "Deploys two-body hypothesis via Abramović/Ulay inversion. ~337 words with dictionary metaphor. Counts toward CALQ threshold."
+
   - id: "calq-deplacement"
     summary: "CALQ Déplacement — arts-relevant bundle (Konstanz + Turin + ENS)"
     status: "WAITING — ENS confirmation letter expected"
     deadline: "TBD (recalculate based on first event ~Jun 5)"
-    priority: 2
+    priority: 3
     blockers: ["ENS confirmation letter"]
     note: "Strategy revised: Hannover (phil of science) split out, fund via Canada Council Micro-Grant. Konstanz confirmed."
 
@@ -1222,7 +1457,7 @@ active_threads:
     summary: "Draft book proposal for MIT Press / U Minnesota / Verso"
     status: "PLANNED"
     priority: 7
-    note: "A signed contract unlocks Canada Council Concept to Realization ($75K). Strategy doc at symbolics-research/Submissions/book-proposal/strategy.md"
+    note: "A signed contract unlocks Canada Council Concept to Realization ($75K). Strategy doc at symbolics-research/Submissions/NO-DATE_book-proposal/strategy.md"
 
   # --- THEORY (when time allows) ---
   - id: "inference-as-policy-revision"
@@ -1254,13 +1489,19 @@ active_threads:
 # ============================================================================
 
 european_circuit:
-  overview: "Four presentations across four countries and four disciplines"
+  overview: "Four confirmed + two pending across six countries and seven disciplines"
   events:
     - date: "2026-04-09 to 2026-04-10"
       event: "Model Transfer (ERC-funded)"
       location: "Leibniz U Hannover"
       discipline: "philosophy of science"
       status: "CONFIRMED"
+    - date: "~2026-06-04 to 2026-06-05"
+      event: "5th Workshop on Philosophy of Emotions"
+      location: "Zhejiang University, Hangzhou"
+      discipline: "philosophy of emotions"
+      status: "pending (abstract deadline Feb 28)"
+      note: "Grief at the Loss of Encounter. Cholbi keynote. Accommodation + meals covered. TRAVEL CONFLICT: overlaps with Turin (~Jun 5). May need to choose."
     - date: "~2026-06-05"
       event: "VISION_E"
       location: "Politecnico di Torino"
@@ -1271,12 +1512,30 @@ european_circuit:
       location: "U Konstanz"
       discipline: "literary/aesthetic theory"
       status: "CONFIRMED"
+    - date: "2026-06-23 to 2026-06-24"
+      event: "Growing Up with AI"
+      location: "Instituto de Filosofia, CSIC Madrid"
+      discipline: "developmental psychology / philosophy of education"
+      status: "pending (abstract SENT Feb 18)"
+      note: "Folding as structured friction. Fits between Konstanz and Paris."
     - date: "2026-07-13 to 2026-07-17"
       event: "Derrida Today"
       location: "ENS Paris"
       discipline: "continental philosophy"
       status: "CONFIRMED"
       note: "Big credibility win. ENS is target PhD institution."
+  other_events:
+    - date: "2026-10-08 to 2026-10-09"
+      event: "16th Causality in the Sciences"
+      location: "University of Seville"
+      discipline: "philosophy of science / medicine"
+      status: "pending (abstract deadline Mar 8)"
+      note: "Not on European circuit (October). Separate travel."
+    - date: "2027-03-08 to 2027-03-10"
+      event: "LA Workshop in Humanistic Ethics II"
+      location: "UCLA"
+      status: "pending (abstract deadline Mar 15)"
+      note: "Travel + accommodation covered by UCLA."
   between_conferences: "Portugal (free accommodation at family connection)"
   funding: "CALQ Déplacement (primary, submit by Mar 9) + Canada Council Micro-Grant (supplementary)"
 
@@ -1286,16 +1545,27 @@ european_circuit:
 
 next_actions:
   immediate:
-    - "VISION_E formatting (due Feb 22) — Word template, anonymization check, image ZIP"
+    - "Synthese Self-Individuation — USER FINAL REVIEW, then submit by Feb 28"
+    - "Synthese Social Science Understanding — USER FINAL REVIEW, then submit by Feb 28"
+    - "Zhejiang grief abstract — submit by Feb 28"
     - "Monitor Books final polish (due Mar 1)"
+    - "Vie des arts note d'intention — review, submit by Mar 1"
     - "Revise Emergent Ventures application — lead with concrete output, submit"
   this_month:
+    - "Seville Causality abstract — trim to 500 words, submit by Mar 8"
     - "Apply to Bogliasco (by Mar 13)"
+    - "UCLA Humanistic Ethics — convert to Word format, submit by Mar 15 (rolling review, submit early)"
     - "APQ: wait for target article from Holman, revise abstract (by Mar 15)"
-    - "CALQ Déplacement: wait for ENS confirmation letter, recalculate deadline for arts bundle"
-    - "Canada Council Micro-Grant for Hannover travel (submit ASAP)"
+    - "CALQ Déplacement: wait for ENS confirmation letter"
+    - "Canada Council Micro-Grant for Hannover travel"
     - "Check Whiting Creative Nonfiction Grant exact deadline"
+    - "Open Philosophy Kant — begin full paper (due Mar 31)"
+    - "Synthese Risk — write full paper (due Mar 31)"
   coming_months:
+    - "Estudios Inferences full paper (due Apr 1)"
+    - "Synthese Science-Policy full paper (due Apr 10)"
+    - "RIFP Post-Cognitivism — draft abstract + full paper 11K words (due Apr 30)"
+    - "Phil Psych Creativity — write full paper 7-8K words (due May 31)"
     - "Submit Remainder Under Feedback to journal"
     - "Decide venue for Two-Body Problem, submit"
     - "Draft book proposal (MIT Press, U Minnesota, Verso)"
@@ -1310,13 +1580,17 @@ next_actions:
 
 agent_status:
   claude_code: >
-    Session 17 (2026-02-18): Chapter III first draft ("The Nature of Distinction") — 12,552 words,
-    9 sections. Deep dive research report produced (4 parallel agents: entangled concepts, QM analogies,
-    vault gaps, speculative theory). Voice-matched draft using 3 background agents (style analysis,
-    tradition quotes, archive search). §1 revised after user feedback (6 fixes). New theoretical
-    machinery introduced: cut visibility, remainder topology, locus inaccessibility, entanglement
-    naturalization, shared index, phi/psi notation. Worksheet (_WORKSHEET_CH3.md) updated.
-    Previous: Session 16 — full vault integration pass.
+    Session 22 (2026-02-21): Both Synthese full papers drafted and revised. Self-Individuation (~11,870 words,
+    29 refs): 3 rounds of revision — tone shift to cautious/investigative, analytic argument sequences,
+    Zahavi/Thompson charitable treatment, body definition via recognitive normativity, independence argument,
+    pure I/Ego amplification, Girard reference. Social Science Understanding (12,000 words, 20 refs): 3 rounds
+    of revision + trimming — narrative as subject-constitution (challenge to Morgan/Currie/Beatty), two-level
+    Hacking distinction, remainder audit as epistemic justification condition, stabilization ≠ pragmatic
+    convergence, scope restriction to human kinds, remainder as formal property of distinction, index defended
+    as active pointing. Both papers ready for user final review before Feb 28 submission.
+    Session 21 (2026-02-21): VISION_E submitted. Self-Individuation paper initial drafting.
+    Session 20 (2026-02-18): 10 new submission folders created.
+    Previous: Session 17 — Chapter III first draft.
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
   chatgpt: "Session 12: Reviewed Inference as Policy paper. Key insights: three-payloads concern, distinction-token-vs-form, □_P as temporal/process modality, one-theorem suggestion."
   gemini: "Session 12: Reviewed Inference as Policy paper. Key insights: layer-2-3 collapse, dissolution-vs-gradient rhetoric, policy-fixity not constraint, dyadic-monadic problem (strongest objection), LLM metabolism as temporally segmented."
@@ -1372,6 +1646,71 @@ recent_decisions:
     date: "2026-02-18"
     summary: "Chapter III ('The Nature of Distinction') first draft completed. 12,552 words. Entanglement as default; standalone as achievement. New machinery: cut visibility, remainder topology, locus inaccessibility, entanglement naturalization, shared index."
 
+  - id: "vie-des-arts-drafted"
+    date: "2026-02-18"
+    summary: "Vie des arts nº 281 (Duo) note d'intention drafted. Deploys two-body hypothesis via Abramović/Ulay inversion: The Artist is Present read as internalized duo, not solo work. Art-context publication — counts toward CALQ threshold."
+
+  - id: "creat-hexagram-proposal"
+    date: "2026-02-18"
+    summary: "CREAT × Hexagram proposal drafted and formatted (PDF). 250 words, Theme 2. EasyNegative as case study for normative frameworks in AI image generation. Apotropaic practice, reverse activation paradox (Ban et al. ECCV 2024), blanchiment of social traces, variance collapse feedback loop. Symposium May 21-22 Montreal. Publication counts toward CALQ threshold."
+
+  - id: "phil-psych-creativity-paper"
+    date: "2026-02-18"
+    summary: "Identified Philosophical Psychology special issue (Imagination, Creativity and AI, deadline May 31 2026). Abstract + full outline exists for 'Creativity as the Production of Necessity' (7000-8000 words). Stale necessity concept. Kept separate from CREAT submission — different audience, different register."
+
+  - id: "synthese-self-individuation-drafted"
+    date: "2026-02-21"
+    summary: >
+      Synthese Self-Individuation full paper drafted and revised. 'The Second Body: Why Self-Individuation
+      Cannot Be a Solitary Achievement.' ~11,870 words, 29 references. Core argument: self-differentiation
+      (maintaining boundary) is solitary; self-individuation (becoming recognizable particular) requires
+      two bodies under shared pressure. Functional normativity (success/failure) vs recognitive normativity
+      (identity/misrecognition) — shown to be independent. Davidsonian triangulation, Wittgensteinian
+      private language, and Brandomian scorekeeping applied to selfhood. Zahavi/Thompson treated as
+      self-differentiation infrastructure, not refuted but reframed. Three rounds of revision: tone shift,
+      analytic tightening, body definition, pure I/Ego amplification, Girard added.
+
+  - id: "synthese-social-science-drafted"
+    date: "2026-02-21"
+    summary: >
+      Synthese Social Science Understanding full paper drafted and revised. 'Understanding Without Closure:
+      Remainder, Narrative, and Stabilization in the Social Sciences.' 12,000 words, 20 references. Core
+      argument: understanding in social science is stabilization under feedback, not convergence. Key
+      innovations: remainder as formal property of distinction-making (not just social observation), narrative
+      as subject-constitution (challenge to existing rehabilitation literature), two-level Hacking distinction
+      (structural remainder prior to social dynamics vs dynamic remainder via feedback), remainder audit as
+      epistemic justification condition, stabilization ≠ pragmatic convergence (categories must eventually
+      fail — cyclical not asymptotic). Positioned as extending Hacking + Chang, not Continental sociology.
+      Three rounds of revision plus trimming pass from 12,874 to 12,000 words.
+
+  - id: "vision-e-submitted"
+    date: "2026-02-21"
+    summary: >
+      VISION_E paper submitted to CMT. Final fixes: 5 missing articles, 1 grammar fix ("is reframed"),
+      Agre ref corrected (full title, Lawrence Erlbaum, editor order), Deterding initials (S. not C.S.),
+      Chang + Ingold DOIs added, Glissant English translation cited, AI model name "Google Gemini 3 Deep Think",
+      (Fig. 1) callout added. Blind PDF anonymization verified (12/12 checks), metadata stripped.
+      16 references, ~20,000 chars. Three files: DOCX (non-blind), PDF (blind), ZIP (images).
+      Peer review results due Mar 20. Final version Apr 3. Conference Jun 5 Turin.
+
+  - id: "csic-growing-up-ai"
+    date: "2026-02-18"
+    summary: "CSIC Growing Up with AI abstract drafted and refined. 'From smoothing to stability' — deploys folding as normative framework for structured friction in AI-saturated development. Philosophical register: Han (palliative society), Dewey (thinking requires obstacle), Bjork (desirable difficulty), Tronick (rupture-and-repair). Three interventions. Workshop Jun 23-24 Madrid — fits European circuit between Konstanz and Paris. 5th disciplinary deployment of folding (after design/AI, continental philosophy, aesthetic theory, formal logic)."
+
+  - id: "open-philosophy-kant-folder"
+    date: "2026-02-18"
+    summary: "Created submission folder for Open Philosophy special issue on Kant's spontaneity (deadline Mar 31). Working title: 'Spontaneity Without Presence.' Deploys stabilization framework without naming symbolics. Full paper required."
+
+  - id: "session-20-submission-expansion"
+    date: "2026-02-18"
+    summary: >
+      Massive submission expansion: 10 new folders created. Zhejiang grief (Feb 28), Synthese Self-Individuation
+      (Feb 28), Synthese Social Science Understanding (Feb 28), Seville Causality (Mar 8), UCLA Humanistic
+      Ethics (Mar 15), Synthese Risk (Mar 31), Estudios Inferences (Apr 1), Synthese Science-Policy (Apr 10),
+      RIFP Post-Cognitivism (Apr 30), Phil Psych Creativity (May 31, upgraded from planned). CSIC Madrid
+      abstract SENT. Affiliation: Symbolics Lab across all submissions. 4 Synthese topical collections now
+      targeted. Total active submissions: ~22 (10 new + 12 existing).
+
 # ============================================================================
 # DECISIONS PENDING
 # ============================================================================
@@ -1413,16 +1752,33 @@ file_map:
       - "Book/inference-as-policy/draft.md (14,998 words)"
       - "Book/remainder-under-feedback/draft.md (5,159 words)"
     papers:
-      - "Papers/Visions_Folding-with-the-Machine/Draft.md (3,345 words)"
+      - "Papers/VISIONE_Folding-with-the-Machine/Draft.md (3,345 words — SUBMITTED)"
+      - "Submissions/2026-02-28_Synthese_Self-Individuation/draft.md (11,870 words — DRAFT COMPLETE)"
+      - "Submissions/2026-02-28_Synthese_Social-Science-Understanding/draft.md (12,000 words — DRAFT COMPLETE)"
     submissions:
-      - "Submissions/Monitor-Books/ (7 section drafts, ~6,578 words)"
-      - "Submissions/Emergent-Ventures/ (draft + notes)"
-      - "Submissions/PERICULUM_Production-de-Discours/ (draft)"
-      - "Submissions/CALQ_Deplacement/"
+      - "Submissions/2026-03-01_Monitor-Books/ (7 section drafts, ~6,578 words)"
+      - "Submissions/ROLLING_Emergent-Ventures/ (draft + notes)"
+      - "Submissions/2026-03-31_PERICULUM_Production-de-Discours/ (draft)"
+      - "Submissions/TBD_CALQ_Deplacement/"
       - "Submissions/CV/ (English + French)"
-      - "Submissions/book-proposal/ (strategy doc)"
+      - "Submissions/NO-DATE_book-proposal/ (strategy doc)"
       - "Submissions/Accepted/ (6 accepted pieces)"
       - "Submissions/funding.md (comprehensive funding tracker)"
+      - "Submissions/2026-03-15_American-Philosophical-Quarterly/"
+      - "Submissions/2026-03-01_Vie-des-arts/"
+      - "Submissions/2026-02-20_CREAT-Hexagram/"
+      - "Submissions/2026-02-20_CSIC-Madrid_Growing-Up-AI/"
+      - "Submissions/2026-03-31_Open-Philosophy_Kant-Spontaneity/"
+      - "Submissions/2026-02-28_Zhejiang_Philosophy-of-Emotions/"
+      - "Submissions/2026-02-28_Synthese_Self-Individuation/"
+      - "Submissions/2026-02-28_Synthese_Social-Science-Understanding/"
+      - "Submissions/2026-03-08_Seville_Causality-Medicine/"
+      - "Submissions/2026-03-15_UCLA_Humanistic-Ethics/"
+      - "Submissions/2026-04-10_Synthese_Science-Policy/"
+      - "Submissions/2026-04-01_Estudios_Inferences/"
+      - "Submissions/2026-03-31_Synthese_Risk/"
+      - "Submissions/2026-04-30_RIFP_Post-Cognitivism/"
+      - "Submissions/2026-05-31_Phil-Psych_Imagination-Creativity-AI/"
 
   symbolics_core:
     repo: "github.com/SymbolicsLab/symbolics-core"
@@ -1453,10 +1809,14 @@ file_map:
 flags:
   - "FUNDING IS THE BOTTLENECK — theory is strong, publications exist, money is urgent"
   - "CALQ NOT YET ELIGIBLE — need 2 more art-context publications"
-  - "VISION_E DUE FEB 22 — most urgent deadline"
+  - "TWO SYNTHESE PAPERS DRAFTED — Self-Individuation (11,870 words) and Social Science (12,000 words), both awaiting final user review before Feb 28 submission"
+  - "THREE FEB 28 DEADLINES — Zhejiang grief abstract, Synthese Self-Individuation, Synthese Social Science"
+  - "VISION_E SUBMITTED FEB 21 — peer review results Mar 20"
   - "MONITOR BOOKS DUE MAR 1 — draft complete, needs polish"
+  - "4 SYNTHESE TOPICAL COLLECTIONS TARGETED — Self-Individuation, Social Science, Risk, Science-Policy"
   - "EV APPLICATION SHOULD GO OUT ASAP — rolling, low effort, high potential"
-  - "SESSION 12 DECISIONS INTEGRATED INTO VAULT (Session 16) — one-modality, layer collapse, hierarchy unification, metabolic arrest, Peirce, dyadic-monadic, remainder anti-parametric"
-  - "AGDA UNIFIED FORMALIZATION COMPLETE — 20 new Symbolics modules, ~94% verified, --safe --without-K (Session 14)"
-  - "48K+ WORDS WRITTEN across 5 disciplines — undersold in current applications"
-  - "ENS PARIS CONFIRMED — Derrida Today, Jul 13-17 2026. Big credibility win."
+  - "SESSION 12 DECISIONS INTEGRATED INTO VAULT (Session 16)"
+  - "AGDA UNIFIED FORMALIZATION COMPLETE — ~94% verified (Session 14)"
+  - "87K+ WORDS WRITTEN across 10+ disciplines (16 pieces)"
+  - "ENS PARIS CONFIRMED — Derrida Today, Jul 13-17 2026"
+  - "AFFILIATION: Symbolics Lab across all submissions"
