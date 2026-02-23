@@ -21,8 +21,8 @@
 # - All dates in ISO format (YYYY-MM-DD or YYYY-MM-DDTHH:MM:SSZ).
 # - This file is the single source of current project state.
 
-last_updated: "2026-02-21T23:00:00Z"
-last_session: 22
+last_updated: "2026-02-22T12:00:00Z"
+last_session: 23
 last_agent: "Claude Code (Opus 4.6)"
 
 # ============================================================================
@@ -889,15 +889,15 @@ formalization_note: >
 # ============================================================================
 
 current_context: >
-  Session 20. Massive submission expansion: 10 new submission folders created (total 11 new CFPs tracked).
-  CSIC Madrid abstract SENT. New submissions span 7 venues across cognitive science, philosophy of mind,
-  philosophy of risk, social science, philosophy of science, ethics, causality, and philosophy of psychology.
-  4 Synthese topical collections now targeted (Self-Individuation, Social Science Understanding, Risk,
-  Science-Policy). Three Feb 28 deadlines (Zhejiang grief, two Synthese full papers). Affiliation decision:
-  Symbolics Lab across all submissions. Signature protocol: personal site for philosophy venues, Lab site
-  for design/AI venues. Phil Psych creativity paper upgraded from planned to active with full abstract +
-  outline. Session 19: Created Open Philosophy Kant and CSIC Madrid folders. Session 17: Chapter III
-  first draft (12,552 words). Previous: Session 16 completed full vault integration pass.
+  Session 23. Comprehensive abstract inventory created (abstract-log.md — 54 entries across all submissions
+  ever written, including ~30 from old /Documents/RESEARCH/ folders). CFP matching research completed
+  (cfp-matches.md — matched venues organized by deadline). European circuit presentation folders created
+  (Hannover, Konstanz, ENS Paris) with notes files. Both Synthese papers (Self-Individuation, Social Science)
+  fully drafted and revised in Sessions 21-22. VISION_E submitted Feb 21. PERICULUM drafts revised.
+  Zhejiang anonymized PDFs prepared. Diffractions rejection documented (genre mismatch). Esse rejection
+  noted (do not resubmit). Key CFP matches identified: EJPS Causality Mar 31, BlackFlash Apr 7 (CALQ),
+  Inquiry AI Agents May 10, PSA 2026 Mar 15. Three Feb 28 deadlines remain: Zhejiang grief abstract,
+  two Synthese full papers.
 
 # ============================================================================
 # PUBLICATIONS — ALL WRITTEN PIECES
@@ -1095,11 +1095,11 @@ submissions:
     - id: "creat-hexagram"
       target: "Colloque CREAT × Hexagram (Rencontres interdisciplinaires 2026)"
       deadline: "2026-02-20"
-      status: "PROPOSAL READY — PDF formatted, ready to send"
+      status: "SENT — submitted Feb 20"
       amount: "presentation + publication encouraged (art-context — counts toward CALQ threshold)"
       files: "symbolics-research/Submissions/2026-02-20_CREAT-Hexagram/"
-      priority: "URGENT"
-      note: "250-word proposal for Theme 2 (Processus, outils et technologies). EasyNegative as case study: apotropaic practice, reverse activation paradox, class erasure via blanchiment, variance collapse feedback loop. Submit to mdgagnon@uqac.ca. Symposium May 21-22, Montreal, free, in-person. Publication would count toward CALQ threshold."
+      priority: "DONE"
+      note: "250-word proposal for Theme 2 (Processus, outils et technologies). EasyNegative as case study: apotropaic practice, reverse activation paradox, class erasure via blanchiment, variance collapse feedback loop. Symposium May 21-22, Montreal, free, in-person. Publication would count toward CALQ threshold."
 
     - id: "csic-growing-up-ai"
       target: "Growing Up with AI Workshop — Instituto de Filosofia, CSIC (Madrid)"
@@ -1268,8 +1268,8 @@ funding_summary:
 
 deadlines:
   - date: "2026-02-20"
-    item: "CREAT × Hexagram proposal submission"
-    priority: "URGENT"
+    item: "CREAT × Hexagram proposal submission — SENT"
+    priority: "DONE"
   - date: "2026-02-20"
     item: "CSIC Growing Up with AI — SENT"
     priority: "DONE"
@@ -1358,11 +1358,11 @@ active_threads:
     note: "7 sections drafted. Needs: final read-through, check section IV (reverse activation), verify submission format."
 
   - id: "creat-hexagram"
-    summary: "Send CREAT × Hexagram proposal (EasyNegative, Theme 2)"
-    status: "READY TO SEND"
+    summary: "CREAT × Hexagram proposal — SENT Feb 20"
+    status: "SENT"
     deadline: "2026-02-20"
-    priority: 1
-    note: "250-word proposal, PDF formatted. Email to mdgagnon@uqac.ca. Symposium May 21-22 Montreal. Publication encouraged — counts toward CALQ."
+    priority: 99
+    note: "Submitted to mdgagnon@uqac.ca. Symposium May 21-22 Montreal. Publication encouraged — counts toward CALQ."
 
   - id: "csic-growing-up-ai"
     summary: "CSIC Growing Up with AI abstract — SENT"
@@ -1580,15 +1580,14 @@ next_actions:
 
 agent_status:
   claude_code: >
-    Session 22 (2026-02-21): Both Synthese full papers drafted and revised. Self-Individuation (~11,870 words,
-    29 refs): 3 rounds of revision — tone shift to cautious/investigative, analytic argument sequences,
-    Zahavi/Thompson charitable treatment, body definition via recognitive normativity, independence argument,
-    pure I/Ego amplification, Girard reference. Social Science Understanding (12,000 words, 20 refs): 3 rounds
-    of revision + trimming — narrative as subject-constitution (challenge to Morgan/Currie/Beatty), two-level
-    Hacking distinction, remainder audit as epistemic justification condition, stabilization ≠ pragmatic
-    convergence, scope restriction to human kinds, remainder as formal property of distinction, index defended
-    as active pointing. Both papers ready for user final review before Feb 28 submission.
-    Session 21 (2026-02-21): VISION_E submitted. Self-Individuation paper initial drafting.
+    Session 23 (2026-02-22): Created comprehensive abstract inventory (abstract-log.md — 54 entries covering
+    all submissions ever written, including ~30 recovered from old /Documents/RESEARCH/ folders). Web-researched
+    CFP matches for strongest abstracts (cfp-matches.md — organized by deadline, priority for journals over
+    conferences). Created European circuit presentation folders (Hannover, Konstanz, ENS Paris) with detailed
+    notes files. Documented Diffractions rejection (genre mismatch) and Esse rejection (do not resubmit).
+    Key CFP discoveries: EJPS Causality Mar 31 (Operators paper), BlackFlash Apr 7 (Tongue as Fold — CALQ),
+    Inquiry AI Agents May 10, PSA 2026 Mar 15. Updated state.yaml, committed and pushed.
+    Session 22 (2026-02-21): Both Synthese full papers drafted and revised. VISION_E submitted.
     Session 20 (2026-02-18): 10 new submission folders created.
     Previous: Session 17 — Chapter III first draft.
   claude_chat: "Session 5: Index reframe, vault restructure proposal."
@@ -1697,6 +1696,50 @@ recent_decisions:
     date: "2026-02-18"
     summary: "CSIC Growing Up with AI abstract drafted and refined. 'From smoothing to stability' — deploys folding as normative framework for structured friction in AI-saturated development. Philosophical register: Han (palliative society), Dewey (thinking requires obstacle), Bjork (desirable difficulty), Tronick (rupture-and-repair). Three interventions. Workshop Jun 23-24 Madrid — fits European circuit between Konstanz and Paris. 5th disciplinary deployment of folding (after design/AI, continental philosophy, aesthetic theory, formal logic)."
 
+  - id: "abstract-log-created"
+    date: "2026-02-22"
+    summary: >
+      Created comprehensive abstract inventory (Submissions/abstract-log.md). 54 entries covering all
+      submissions ever written: 7 accepted/presented, 3 under review, 10 active submissions, 30 past
+      submissions recovered from old /Documents/RESEARCH/ folders (including rejections from Sorbonne,
+      Diffractions, Esse, and ~20 others), 4 not submitted/standalone. Organized by status with full
+      abstract text, discipline tags, and reuse potential ratings. Key discoveries: Edinburgh Measurement
+      abstract (no response — strong piece), multiple reusable formal epistemology abstracts.
+
+  - id: "cfp-matches-created"
+    date: "2026-02-22"
+    summary: >
+      Created CFP matching file (Submissions/cfp-matches.md). Web-researched venues for strongest
+      unplaced abstracts. Key matches: EJPS "Causality in Complex Systems" Mar 31 (for Operators paper),
+      BlackFlash Apr 7 (for Tongue as Fold — CALQ-qualifying), Inquiry "AI Agents" May 10 (multiple
+      pieces), PSA 2026 Mar 15 (phil-sci pieces), CogSci Apr 10 (Stabilization/Reasoning). Rolling
+      high-value journal targets: Phil Studies, Mind & Language, Erkenntnis, BJPS. Priority for
+      journals/publishing over conferences.
+
+  - id: "presentation-folders-created"
+    date: "2026-02-22"
+    summary: >
+      Created European circuit presentation folders with detailed notes: Hannover Model Transfer
+      (Apr 9-10, policy layer concept, three cultural evolution cases, adjacent causation paper),
+      Konstanz Forms in Dialogue (Jun 11-13, fold as dialogue, Synecdoche/Toni Erdmann analysis),
+      ENS Paris Derrida Today (Jul 13-17, T-failure as commitment/realization gap).
+
+  - id: "creat-hexagram-sent"
+    date: "2026-02-20"
+    summary: "CREAT × Hexagram proposal sent to mdgagnon@uqac.ca. Symposium May 21-22 Montreal."
+
+  - id: "diffractions-rejection-documented"
+    date: "2026-02-22"
+    summary: >
+      Diffractions rejection documented. 'The Narrative of Contradiction' abstract submitted Nov 2025,
+      rejected Jan 5 2026. Review form checked 'No' on framework and academic language but comment was
+      generic 'high volume.' Diagnosed as genre mismatch: theoretical/philosophical register vs empirical
+      humanities format. Abstract strong — needs different venue.
+
+  - id: "esse-rejection-documented"
+    date: "2026-02-22"
+    summary: "Esse 'Tongue as Fold' rejection documented. Review letter incoherent. Do not resubmit to Esse. BlackFlash identified as alternative CALQ-qualifying venue (Apr 7 deadline)."
+
   - id: "open-philosophy-kant-folder"
     date: "2026-02-18"
     summary: "Created submission folder for Open Philosophy special issue on Kant's spontaneity (deadline Mar 31). Working title: 'Spontaneity Without Presence.' Deploys stabilization framework without naming symbolics. Full paper required."
@@ -1762,7 +1805,9 @@ file_map:
       - "Submissions/TBD_CALQ_Deplacement/"
       - "Submissions/CV/ (English + French)"
       - "Submissions/NO-DATE_book-proposal/ (strategy doc)"
-      - "Submissions/Accepted/ (6 accepted pieces)"
+      - "Submissions/Accepted/ (7 accepted pieces)"
+      - "Submissions/abstract-log.md (54-entry comprehensive abstract inventory)"
+      - "Submissions/cfp-matches.md (matched venues organized by deadline)"
       - "Submissions/funding.md (comprehensive funding tracker)"
       - "Submissions/2026-03-15_American-Philosophical-Quarterly/"
       - "Submissions/2026-03-01_Vie-des-arts/"
@@ -1779,6 +1824,10 @@ file_map:
       - "Submissions/2026-03-31_Synthese_Risk/"
       - "Submissions/2026-04-30_RIFP_Post-Cognitivism/"
       - "Submissions/2026-05-31_Phil-Psych_Imagination-Creativity-AI/"
+    presentations:
+      - "Presentations/2026-04_Hannover_Model-Transfer/ (notes.md — policy layer, cultural evolution cases)"
+      - "Presentations/2026-06_Konstanz_Forms-in-Dialogue/ (notes.md + old Synecdoche/Toni Erdmann notes)"
+      - "Presentations/2026-07_ENS-Paris_Derrida-Today/ (notes.md — T-failure, Derrida/Malabou)"
 
   symbolics_core:
     repo: "github.com/SymbolicsLab/symbolics-core"
@@ -1820,3 +1869,8 @@ flags:
   - "87K+ WORDS WRITTEN across 10+ disciplines (16 pieces)"
   - "ENS PARIS CONFIRMED — Derrida Today, Jul 13-17 2026"
   - "AFFILIATION: Symbolics Lab across all submissions"
+  - "ABSTRACT LOG CREATED — 54 entries, full submission history documented (Session 23)"
+  - "CFP MATCHES RESEARCHED — priority journal targets identified, organized by deadline (Session 23)"
+  - "PRESENTATION FOLDERS CREATED — Hannover, Konstanz, ENS Paris with detailed notes (Session 23)"
+  - "DO NOT RESUBMIT TO ESSE — rejection letter incoherent, confirmed by partner's similar experience"
+  - "BLACKFLASH APR 7 — CALQ-qualifying target for 'Tongue as Fold' (alternative to Esse)"
