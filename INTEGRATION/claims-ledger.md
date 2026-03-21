@@ -1,5 +1,5 @@
 # Claims Ledger
-**Last updated**: 2026-03-13 (post-Estudios + both Synthese integrations)
+**Last updated**: 2026-03-21 (triple integration: Synthese Risk + Open Phil Kant + Agda Phase 8)
 
 Maps every major theoretical claim to its status across vault, Agda, papers, book, and secrecy.
 Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does not edit this file directly.
@@ -15,6 +15,8 @@ Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does no
 | Distinction = representation | 01 | type-level (Symbolics.Primitive.Distinction) | Two-Body, Remainder (Synthese) | 1, Nature of Distinction | public (partial) |
 | Distinction is constitutively dyadic | 01 ✅ | structural (3 properties: SharedPressure, Aligned, Observable) | Self-Individuation (Synthese), Two-Body ch. | 2 | public |
 | Constitution/operation distinction | 01 | — | Two-Body (Synthese) | 2 | public |
+| Self-constitution = metabolism | 01 ✅ | — | Open Phil Kant (as "self-constitution is ongoing") | 2, 6 | public (civilian) |
+| Ongoing recognition as correction (not requirement) | 01 ✅ | — | Open Phil Kant (via Hegel/Pippin) | 2 | public (civilian) |
 | Entanglement is constitutive (default condition) | 01 ✅ | — | — | 1 | private |
 | Entanglement grounds two-body condition | 01 ✅ | — | — | 1, 2 | private |
 | Bodies and poles mutually constitutive at emergence | 01 ✅ | — | — | 1, 2 | private |
@@ -38,6 +40,7 @@ Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does no
 | Gap theorem | 05 | verified | — | 4 | private |
 | Distinction-preservation | 02 | type-level | Estudios (as "discrimination-preservation") | 4 | public (civilian) |
 | Three pathologies (explosion, crystallization, forced coherence) | 02 | — | Estudios (partial) | 4, 5 | partially public |
+| Commitment/entitlement gap = T-failure | 02 ✅ | — | Open Phil Kant (via Brandom) | 4 | public (civilian) |
 
 ## Policy Stratification
 
@@ -51,16 +54,19 @@ Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does no
 | Failed inference vs. fabrication | 02 ✅ | — | Estudios §6.3 | 4 | public |
 | Coupled-system argument (AI inference) | 02 ✅ | — | Estudios §7.2 | 4, 7 | public |
 | Different logics = different Level 3 policies | 02, 05 | verified (LP, FDE, classical) | EJPS §4.4, Estudios §2 | 4 | public (civilian) |
+| Remainder taxonomy by policy level (4 kinds) | 03 ✅ | — | Synthese Risk (as epistemic/methodological/ontological/structural) | 3, 5 | public (civilian) |
 
 ## Modality and Settlement
 
 | Claim | Vault | Agda | Papers (deployed) | Book Ch. | Secrecy |
 |-------|-------|------|-------------------|----------|---------|
-| One modality: settlement (□) | 05 | T-failure verified | — | 4 | private |
-| T-failure (□φ without φ) | 05 | verified | — | 4 | private |
+| One modality: settlement (□) | 05 | T-failure verified | Open Phil Kant (3 domains, 1 frame condition) | 4 | public (civilian) |
+| T-failure (□φ without φ) | 05 ✅ | verified | Synthese Risk (as "prospective necessity"), Open Phil Kant (as "prospective necessity") | 4 | public (civilian) |
+| Convergent vs permanent T-failure | 05 ✅ | — | Open Phil Kant (constitutive reading) | 4, 6 | public (civilian) |
+| Stale necessity (gap-absence in symbol-processing systems) | 05 ✅ | — | Open Phil Kant (as "stale necessity") | 4, 7 | public |
 | Doxastic, not alethic | 05 | — | — | 4 | private |
 | Resilience = measure of truth-tracking | 01, 04, 05 | bounded (finite) | Synthese Risk (partial) | 3 | partially public |
-| Maximal resilience → phenomenology of necessity | — | — | Estudios §4.3 | 4 | public |
+| Probability presupposes the commitment-realization gap | 05 | — | Synthese Risk §3.2 | 4 | public |
 
 ## Ecology
 
@@ -70,6 +76,7 @@ Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does no
 | Naturalization = constraint appearing as topology | 04 | type-level (Symbolics.Ecology.Naturalization) | Remainder (Synthese) | 3 | public |
 | Law/rule = fit/constraint gradient | 02, 04 | — | EJPS (implicit) | 3, 4 | partially public |
 | Remainder under feedback (social categories) | 03, 04 | — | Remainder (Synthese) | 3 | public |
+| Gap migration (domain-specific, not universal) | 04 ✅ | — | Synthese Risk §6.3 (risk regeneration), Open Phil Kant §9 (gap migrates) | 3, 7 | public (civilian) |
 
 ## Phenomenology
 
@@ -85,7 +92,18 @@ Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does no
 | Unfold = remainder pressing back | 03 | expansion + incorporation proven | — | 5 | private |
 | Shimmer = oscillation + trace | 03 | type-level (Symbolics.Metabolism.Shimmer) | ESPACE "Shimmer" | 5 | public (art context) |
 | Opacity = gradient of access to index | 03 | — | EasyNegative (Monitor Books) | 5 | public (art context) |
+| Opacity of index → remainder invisible → Level 4 blocked | 03 ✅ | — | Synthese Risk (opacity suppresses remainder) | 5 | public (civilian) |
 | Metabolic cycle (fold → remainder → unfold → refold) | 03 | type-level (Symbolics.Metabolism) | — | 5 | private |
+| Controlled non-closure (normative ideal of metabolic health) | 03 ✅ | — | Synthese Risk (3 conditions) | 5 | public (civilian) |
+| Domain-specific phenomenologies of the gap | 03 ✅ | — | Open Phil Kant (obligation), ESPACE (shimmer) | 5 | partially public |
+
+## Formalization
+
+| Claim | Vault | Agda | Papers (deployed) | Book Ch. | Secrecy |
+|-------|-------|------|-------------------|----------|---------|
+| Metabolic convergence is conditional (IsViableFold) | 05 ✅ | Lyapunov refuted + viability framework | — | 5 | private |
+| Potential = 0 iff equilibrium | 05 ✅ | verified (Tier 2, both directions) | — | — | private |
+| Resolution monotonicity (decay never weakens) | 05 ✅ | verified (Tier 2) | — | — | private |
 
 ## Post-Token / Applied
 
@@ -93,14 +111,23 @@ Maintained by Claude via `/integrate`, `/audit`, and `/claims`. The user does no
 |-------|-------|------|-------------------|----------|---------|
 | Post-token classification | — | uses DSL primitives | — | 7 (planned) | private |
 | Phase 1 benchmark (18/18 competitive) | — | — (Python, not Agda) | — | 7 (planned) | private |
-| SDK (SymbolicsClassifier) | — | — | — | 7 (planned) | private |
-| Typed uncertainty (CLASS/POSSIBILITIES/UNDETERMINED) | — | — | — | 7 (planned) | private |
+| Tercet SDK (SymbolicsClassifier) | — | — | — | 7 (planned) | private |
+| Typed uncertainty (CERTAIN / PARTIAL / UNCERTAIN) | — | — | — | 7 (planned) | private |
+| Metabolic iteration (remainder-driven refinement) | — | — | — | 7 (planned) | private |
+| Verdict-voting ensemble (n_seeds) | — | — | — | 7 (planned) | private |
+| Interaction thresholds + adaptive resolution | — | — | — | 7 (planned) | private |
+| Resilience-weighted ensemble + contradiction tracking | — | — | — | 7 (planned) | private |
+| Hierarchical policy correction (diagnose-then-act L4) | — | — | — | 7 (planned) | private |
+| Per-prediction explanations + feature importance | — | — | — | 7 (planned) | private |
+| Drift detection (rule churn across windows) | — | — | — | 7 (planned) | private |
+| Temporal settlement (crystallized/provisional/metabolizing) | — | — | — | 7 (planned) | private |
+| Active learning (uncertainty-driven sampling + settlement) | — | — | — | 7 (planned) | private |
 
 ---
 
 ## Notes
 
-- "public (civilian)" = the claim is deployed in a paper but using non-theory vocabulary (e.g., "consequence policy" instead of "Level 3 fold cluster")
+- "public (civilian)" = the claim is deployed in a paper but using non-theory vocabulary (e.g., "prospective necessity" instead of "T-failure", "consequence policy" instead of "Level 3 fold cluster")
 - "public (art context)" = deployed under the personal identity (Philipe Barsamian), not Symbolics Lab
 - "private" = not yet deployed in any submitted/published work
 - "type-level" in Agda = the concept has a type-level encoding but not deep structural proofs
