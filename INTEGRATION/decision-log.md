@@ -4,6 +4,60 @@
 
 ---
 
+## 2026-04-20: Remainder Refinement (Register Gradient + Actualization-Foreclosure)
+
+### Context
+
+Conceptual session stress-testing the user's intuitions about T-failure, commitment, actualization, and remainder. Two muddled moves surfaced:
+
+1. The opening of 03_Phenomenology asserted "remainder persists as pressure... exerting force on the system." But later passages in the same document (Interface remainder cannot register as pressure; law-end inert remainder; the field's infinite excess) already acknowledged silent remainder. The strong definition contradicted the nuanced articulations.
+2. No explicit mechanism for how unactualized possibilities relate to remainder. The user's initial intuition — "at actualization, all other potentials become remainder" — was too binary. Pushback produced a gradient and raised the sharper question: where is the line between remainder and the field's infinite excess?
+
+### Decisions
+
+**1. Remainder persistence is structural; pressure is conditional**
+
+*Old view*: "Remainder persists as pressure. It doesn't disappear just because the distinction refuses it. It's *there*, exerting force on the system."
+
+*New view*: Remainder persists structurally. Where the metabolic interface can register it and the classified entities can respond, it exerts pressure. Much remainder stays silent — permanently (field excess the system has no mechanism to sense) or contingently (awaiting conditions that activate it). The persistence is structural; the pressure is conditional.
+
+*Why*: The strong claim contradicted passages already in the document. The refinement preserves "remainder presses" as a normative-phenomenological claim about healthy metabolism while acknowledging that the structural fact of exclusion does not by itself generate pressure.
+
+**2. Three registers of remainder (phenomenological, not ontological)**
+
+*New distinction*: Within a given distinction's remainder, three registers differ by how (and whether) they press:
+- **Foreclosed**: live alternatives closed by actualization; press as counterfactual
+- **Adjacent**: aspects just outside the fold's edge; press as felt residue, heighten shimmer
+- **Field-excess**: the continuum's vast structure the distinction doesn't approach; usually silent
+
+All three are structurally remainder of the distinction. Register is relational, not intrinsic — the same content can be in different registers relative to different distinctions. Silent remainder is mostly field-excess; pressing remainder is mostly foreclosed or adjacent (a tendency, not a law).
+
+*Why*: Gives vocabulary for distinguishing excluded-and-pressing from excluded-and-silent without positing two kinds of remainder. Also resolves the "line between remainder and the field's infinite excess" question — there is no line; the field's excess relative to a distinction IS that distinction's (field-excess) remainder. The field considered absolutely is not remainder; remainder is a relational concept indexed to a distinction.
+
+**3. Actualization produces migration into foreclosed remainder (gradient mechanism)**
+
+*New claim*: Commitment opens a space of possibilities; actualization picks one trajectory. At actualization, a proportion of the *live* unchosen possibilities migrates into foreclosed remainder. The proportion tracks a gradient:
+- Resource consumption (how much of finite capacities the actualization consumes)
+- Temporal recovery (how long until conditions permit the alternative again)
+- Reversibility (whether the actualization can be undone)
+- Identity-entanglement (whether the actualization reshapes the subject such that alternatives stop fitting)
+
+The gradient corresponds to the law/rule spectrum. Law-end actualizations (physical, irreversible) foreclose all live alternatives; rule-end actualizations (revisable, lightweight) foreclose almost none. Most sit between, with partial migration along different dimensions.
+
+Possibilities that were never *within* commitment don't migrate; they stay in the field's infinite excess. Only live possibilities can become foreclosed remainder.
+
+*Why*: Previously, the theory had no explicit account of how commitment-internal possibilities feed the metabolic cycle. The T-failure gap was where the symbolic lives; this refinement adds that it is also where remainder is continuously generated as actualization forecloses what commitment allowed. Connects commitment/actualization (05_Formalism) to remainder dynamics (03_Phenomenology) via an explicit gradient mapped to the law/rule spectrum (02_Operations / 04_Ecology).
+
+### Implications
+
+- 03_Phenomenology: opening of "What remainder is" sharpened (persistence structural / pressure conditional); new subsection "Three registers of remainder" after "What remainder is"; new subsection "Remainder and actualization" after "Remainder by policy level"
+- 05_Formalism: cross-reference added in "□ — Settlement under policy" linking T-failure to the actualization→remainder mechanism
+- No new SPEC entries; no changes to claims ledger. Refinement, not reframe.
+- Theory Map's one-paragraph summary stands for now. Could be expanded later to name the three-register distinction explicitly if it earns more load.
+- Potential future vault work: the register distinction might sharpen the existing "remainder metabolism" section (what happens to remainder depends on the classified entities' law/rule position). Foreclosed and adjacent remainder are likely active-metabolism candidates; field-excess is likely inert. Not done in this pass.
+
+---
+
 ## 2026-02-02: The Emergence Reframe (Session 7)
 
 ### Context
