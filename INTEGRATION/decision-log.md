@@ -4,6 +4,76 @@
 
 ---
 
+## 2026-04-29: Uniform Stratification, Nine-Slot Architecture, Operation-Kinds
+
+### Context
+
+The Apr 28 vault session had flagged three CRITICAL pending integrations: L2 = form reframe (overturning the Apr 26 "Index and Form duality at L2"), abstraction gradient, and pathology typology (5 axes). The dependency chain recommended L2 + abstraction-gradient as a single substantive session. During that session the work amplified into a deeper structural finding subsuming both pending entries.
+
+### Decisions
+
+**1. L2 = form proper; index is cross-cutting**
+
+*Old view (Apr 26)*: L2 = "Index and Form" — two complementary faces. Index is L2's internal/parameter face; form is L2's external/transmissible face.
+
+*New view*: L2 is form proper (composition, recognizable shape, syntactic binding of indexed cuts). Index is cross-cutting parameter machinery operating wherever distinction is present (implicit at differentiation, at L1 making the cut's parameters operative, at L2 governing same-form criteria, at L3 governing validity, at L4 governing modal-pattern admissibility, at L5+ governing identity-criteria).
+
+*Why*: The Apr 26 framing self-undermined — "Index produces form; form is what crosses bodies" already implied index was the producer (cross-cutting machinery) and form was the produced (level-specific). The Apr 26 integration correctly identified form's importance but mis-attributed where index lives. User's correction: cut is a *relation* (distinction-to-field); the unit at L1 is distinction itself, indexed at origin. Naming L1 "indexed cut" carried the same confusion in miniature. Cleanest framing: distinction stratifies as the umbrella unit (atomic at L1, compositional at L2, relational at L3, variational at L4, reflexive at L5+); index is cross-cutting machinery applied at every slot.
+
+**2. Nine-slot architecture**
+
+*Old view*: 5-level hierarchy with ascension as a sub-axis within commitment.
+
+*New view*: 9 slots — 5 levels and 4 ascension-folds, each with full structure. L1 → A(L1→L2) → L2 → A(L2→L3) → L3 → A(L3→L4) → L4 → A(L4→L5+) → L5+.
+
+*Why*: The slot picture distinguishes the *generative* fold (the ascension whose content is L_n and whose effect is opening L_{n+1}) from in-level folds at L_{n+1} (which operate within the apparatus the ascension opened). The ascension-fold is constitutive of the higher level for the agent — different A(L_n→L_{n+1}) ascensions yield differently-shaped L_{n+1} apparatus. Treating ascension-folds as their own slots forces explicit treatment of every load-bearing concept at each ascension, not just at each level.
+
+**3. Uniform stratification — apparatus has one fundamental dynamic**
+
+*Old view*: Implicit assumption that some concepts (cut, fold, ascension, filtering) operate cross-level and don't stratify in the same way as level-specific concepts (index, commitment, etc.).
+
+*New view*: Every load-bearing concept stratifies across all 9 slots. The apparatus has **one fundamental dynamic — distinction-making** — and ascension-folds are themselves distinctions at the higher level (the constitutive ones). Cut, fold, ascension, filtering are descriptions of distinction-making at specific structural locations, not separate kinds of operation.
+
+*Why*: User's push-back on my "what doesn't stratify" framing. If ascension-folds are themselves distinctions, then every concept that applies to distinctions (index, opacity, commitment, becoming, remainder, pathologies, form, naturalization) applies to them too. The unification produces a structurally cleaner picture — one dynamic, multiple structural locations — rather than two kinds of operation (level-internal and cross-level).
+
+**4. Operation-kind sequence**
+
+*Old view*: Levels named by content; ascensions implicitly characterized as "the move to the next level."
+
+*New view*: Each ascension introduces a structurally new operation-kind: A(L1→L2) → composition; A(L2→L3) → relation; A(L3→L4) → variation (with two faces — comparative/synchronic and sequential/diachronic); A(L4→L5+) → reflexivity. Reflexivity is qualitatively different (self-applicative; the fold's content is the apparatus that performs it) and terminates the sequence. What looks like further levels is internal recursion within L5+ (kairos / plastic acts = epiphanies / Malabou plasticity).
+
+*Why*: Working through the slots surfaced this. Reflexivity's qualitative difference (self-applicative) explains why L5+ exhibits permanent T-failure (the apparatus folding over itself cannot fully close because closing would freeze it). The operation-kind sequence is the abstraction-gradient axis: each ascension abstracts from below by treating lower-level units as inputs to a new structural operation. This absorbs the Apr 28 abstraction-gradient pending entry as a special case of the operation-kind finding.
+
+**5. Index/opacity duality + parameter-vs-apparatus opacity**
+
+*New finding*: Index and opacity form a duality (parallel to distinction/representation, mattering/meaning). Index is parameter machinery; opacity is gradient of access. Implicit/explicit is opacity from articulation side; naturalization is opacity becoming systematic across bodies. **Two opacity types bear differently on ascension**: parameter-opacity (implicit index) doesn't block ascension; apparatus-opacity (naturalization — agent doesn't see L_n *as* apparatus) blocks ascension to L_{n+1}, because the ascension-fold requires L_n be available *as content*.
+
+*Why this matters*: Locates a structural mechanism behind politics-of-stratification. Sustained naturalization at L_n traps the agent at L_n; de-naturalization is dyadically scaffolded (the second body's de-naturalized access becomes a window). Pedagogy at the ascension level is scaffolding the constitutive move itself, not transmitting in-level content.
+
+**6. Sameness as structurally special**
+
+*New finding*: Among the five index parameters (scope, locus, resolution, measurement, sameness), sameness is structurally special — the only parameter that handles the dyadic dimension. The other four are internal-only machinery; sameness operates within-agent AND is the bridging parameter for cross-agent transmission and contestation. Agents can vary on the other four parameters and still share a distinction, but cannot vary on sameness convergence and still share. Sameness is what crosses first in the directionality of the shared cut, where naturalization concentrates, and where contestation occurs. Sameness inherits the level's operation-kind (partition-sameness at L1, composition-sameness at L2, relational-sameness at L3, variational-sameness at L4, reflexive-sameness at L5+).
+
+**7. Modal axiom systems are A(L3→L4) constitutive sameness rules**
+
+*Why*: K, T, S4, S5, B etc. are precisely articulations of what modal patterns count as the same kind. Choosing a modal logic IS a choice about modal sameness. Same applies for AGM postulates (revision-event sameness rules), preferential orderings (defeasibility-pattern sameness rules), Da Costa C-systems / LFIs (fine-grained sameness over consistency-status). Explains why modal logic feels distinctively formal: the discipline articulates constitutive sameness rules at the ascension level. Foundations debates are sameness-contestations.
+
+**8. Different logics = different A(L2→L3) ascensions**
+
+*Refines*: existing vault claim "different logics differ at L3 (consequence policy)." Sharper: the constitutive move (the ascension that opens consequence-as-such) is at A(L2→L3); different ascensions yield differently-shaped L3 in-level apparatus. The existing "consequence policies" are L3 apparatus *generated by* these ascensions.
+
+### Implications
+
+**Vault edits applied**: 02_Operations §Fold and the hierarchy (full restructure with 9-slot architecture and operation-kinds); 02_Operations §Stratified Commitment (uniform-stratification opener; new subsections on the five parameters across slots and on index/opacity duality and ascension; L2 in-level rewritten; ascension entries rewritten with operation-kinds, modal-axioms-as-sameness-rules, pedagogy-as-scaffolding-the-ascension-fold, epiphany/Malabou note in §Within L5+); 01_Ontology §Index and Form renamed to §Form and restructured; 01_Ontology §Index: The Organism's Orientation refined (cross-cutting framing, index/opacity duality, implicit/explicit as cross-cutting gradient); 03_Phenomenology §Opacity (parameter-vs-apparatus opacity); 03_Phenomenology §Remainder by policy level (L1/L2 split); 04_Ecology §Naturalization blocks ascension; 05_Formalism §Single Modality (slot-address language; modal-axioms-as-sameness-rules paragraph); 00_Theory_Map (summary update; 10-point Apr 29 Key Reframe; Apr 26 entry #7 marked superseded).
+
+**Pending integrations cleared**: L2-reframe + abstraction-gradient (both processed; absorbed into the larger uniform-stratification finding).
+
+**Still open**: pathology typology (5 axes — names need adjustment under L2 reframe; ascension-fold pathologies emerge as new candidate axis); systematic commitment walk-through across the 9 slots; level-specific transmissible faces at L3/L4/L5+. C-systems/sameness-rules and recognition-theories-at-A(L4→L5+) lines could each become a paper.
+
+**Full session record**: `INTEGRATION/records/20260429-uniform-stratification.md`.
+
+---
+
 ## 2026-04-20: Remainder Refinement (Register Gradient + Actualization-Foreclosure)
 
 ### Context
