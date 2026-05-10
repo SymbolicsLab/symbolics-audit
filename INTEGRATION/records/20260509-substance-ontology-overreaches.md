@@ -1,5 +1,21 @@
 # Session Record — 2026-05-09: Substance-Ontology Over-Reaches at the Active Row (Three Integrations)
 
+> **Vault cleanup applied 2026-05-10.** Review session identified that the May 9 evening work picked up paper-shape on its way into the vault: named-philosopher dissolution sections (Mele/van Inwagen in §Wake and firing; Pereboom in #### subsection) belonged in the Free Will paper, not the active notes; *processual libertarianism as a fifth position* was a paper-level coinage promoted prematurely to vault-level stance; *wake/firing* was paper-level metaphor surviving as if vault-stable vocabulary; the captured-side identity-criteria phrasing overclaimed; the recognition-required section's "claim is being made" framing tilted phenomenological where the structural reading was sufficient.
+>
+> **What stayed in the vault:** the two structural moves themselves — §Stipulability asymmetry in 01_Ontology (with translation-device flag, weakened identity-criteria phrasing, cross-refs to §Mattering as engine and §Becoming) and §Why recognition is structurally required at the self-applicative fold in 01_Ontology (with the structural-normative framing replacing the first-person formulation). These earned vault-status.
+>
+> **What returned to paper-territory:** §Wake and firing: dissolving the luck-argument and #### Pereboom's settling argument as the within-world version (full deletion from 02_Operations §Commitment); processual-libertarianism-as-fifth-position framing (removed from vault, lives in Free Will paper as paper-level coinage at descriptive register).
+>
+> **Canonical home for the Mele/van Inwagen/Pereboom dissolution prose:** `Submissions/2026-05-15_Synthese_Free-Will-Indeterminism/draft.md` §5–§6. This integration record retains historical session detail.
+>
+> **Vault edits applied 2026-05-10 (cleanup):** 01_Ontology (§Stipulability asymmetry rename + translation-device flag + weakened captured-row paragraph + cross-refs added + trailing pointer dropped + recognition-required structural reframing + identity-mismatch parenthetical dropped); 02_Operations (§Wake and firing + #### Pereboom subsection deleted; §Corollaries actualization-bullet wake-of-accumulated-bindings phrase dropped); 00_Theory_Map (2026-05-09 entries title, argument paragraph, vault-edit-pass note, held-threads paragraph all updated; "Positive position made explicit" coda removed); 00_Vault_Map (§Stipulability asymmetry digest tightened, recognition-required digest tightened, §Wake and firing + Pereboom digests removed, footer last-updated entry updated).
+>
+> **Banked for later:** future small integration consolidating the framework's stance toward possible-worlds machinery (threads from 05_Formalism §Single Modality, Apr 26 branching-time-as-L4-specific, May 3 *for-the-agent-the-present-is-the-only-time*).
+>
+> **Disciplinary lesson banked:** heavy-paper-drafting periods leak paper-shape into the vault under integration pressure. Discipline rule: *structural principles yes, dissolution-deployments and paper coinages no*. Active notes hold canonical structural content; named interlocutors only when there is durable structured engagement (Peirce, Friston, Brandom, Wittgenstein). Theory Map Key Reframes appropriately name the arguments-that-occasioned an integration as historical context. Integration records (this file) hold full session detail. Papers are where specific dissolutions of named philosophers' specific arguments live.
+
+---
+
 ## Summary
 
 Three vault-development integrations executed in one day, all triggered by the Synthese Free Will draft (deadline 2026-05-15) and all closing the same diagnostic frame: **substance-ontology over-reach via captured-row semantics applied to active-row phenomena**. The three integrations are distinct categories of error, not one. Each was developed in conversation with the user pressing on a specific weak point in the Free Will paper, and each landed in the vault with cross-references to the others.
