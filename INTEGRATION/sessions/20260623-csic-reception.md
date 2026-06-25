@@ -35,7 +35,14 @@ The room went **speechless but agreeing**. He had reorganized the whole conversa
 - **Dennett move = live deployment of the Second Body / self-individuation line** (Synthese paper). Tested against a hostile senior philosopher who then respected the rebuttal — banked deployment evidence.
 - **Clowes = the asymmetric payoff + the maintenance test.** A keynote with an MIT Press project sought *him* out for the optimistic/practical counterweight. PB read Clowes' Ersatz-Other chapter in full going in. Low capture risk (philosophy-of-mind academic, not a lab) but the values/control + identity (Symbolics Lab) scoping still applies when the collaboration takes shape. **Next contact = the drink, Jun 24 — PB owns it.**
 
+## Day 2 + Clowes drink (Jun 24) — addendum
+
+**Folding is the uptake vector.** The clearest pattern of the whole trip: PB's *folding* propagated into other people's vocabulary (same shape as Konstanz's verbatim re-use — a specific operation carried by other bodies).
+
+- **Day 2 went well.** PB's field read: most participants fixate on *how AI companies should design their products* — which he finds fairly irrelevant. The organizers (agreeing) argued the focus should be **practices/methods**, and **folding was the only one they could name.** They floated a vague future collaboration/publication.
+- **Clowes drink:** fine, others joined; **collaboration talk stayed vague** (vague with both organizers and Clowes — hold honestly; the real signal is the term spreading, not a deal). Clowes's own notes mentioned **folding several times** — one just said "remember folding." **Live action PB owns: email Clowes the Turin (VISION_E best-paper) paper — Jun 26.**
+- **Collab seed (PB's bridge to Clowes):** mastery of the tool in the tension between **transparency-in-use** (tool vanishing in skilled use; Andrada-Clowes extended cognition) and **reflexive transparency** (seeing the relation), which **folding** brings (re-entry).
+
 ## Open / next (PB owns)
-- Drink with Robert Clowes, Jun 24 eve. No prep artifact requested.
-- Day 2 of CSIC (Jun 24) still to come.
-- When the Clowes collaboration takes shape: scope through field-establishment gate + values/control + identity.
+- **Email Clowes the Turin paper — Jun 26.**
+- When the Clowes / organizer collaborations take shape (both currently vague): scope through field-establishment gate + values/control + identity.
