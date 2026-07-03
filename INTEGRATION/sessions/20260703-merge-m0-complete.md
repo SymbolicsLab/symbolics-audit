@@ -1,0 +1,17 @@
+# Session Handoff — 2026-07-03 — Merge Phase M0 Complete + M2.4 (session "Products", Fable 5, autonomous)
+
+**Scope:** symbolics-merge (primary), symbolics-rag (one pointer), developer-meta (log/OVERVIEW/worksheet), claude-memory. Execution mode (D-P3). No theory/vault changes.
+
+## What happened
+
+1. **M0.4 / HM4 ACCEPTED (5/5 cases; bar ≥4/5).** `symbolics-merge/docs/M0.4-contraction.md` (pre-registered before any run) is the **canonical shared three-leg criteria language for Merge HM4 + RAG HR4** — RAG-2.0-PLAN R0.6 binds to it (added 2026-07-03; HR4's locked criteria untouched). Operator D-M0.4a–d: declared segment key only; contract iff ≥1 adjudicated error AND segment-scoped smoothed accuracy < θ_auth; zero-error segments inherit; re-earn at the same θ; unknown segment conservative; contraction derived from the resolutions log (M2.5 needs a `segment_value` snapshot). Findings: **V1's stale-mirror cost is the real pathology** (10/10 wrong auto-settlements pre-contraction); segment-blind authority needs C ≥ 9E+8 prior corrects to survive E errors (at-scale phenomenon); contraction resolves authority standoffs toward the evidence-backed source (C4). **Gate asymmetry recorded:** Merge contraction re-scopes authority (content-free, ungated); RAG qualification rewrites claim content (human-gated). A joint HM4+HR4 pass claims the shared mechanical core, not the gates. **HR4 still owed before the joint structural claim** — PITCH.md may cite HM4 + the registered joint hypothesis only.
+2. **M0.5 / HM5 ACCEPTED (wake 100%, false-wake 0%) at D-M0.5a.** `docs/M0.5-wake-protocol.md` pre-registered two analytic findings; the **baseline annex measured the shipped M2.1 challenge semantics at 50% false-wake** (unchanged-dissent re-uploads + normalization-boundary mismatches). **D-M0.5a** = row-granular postdating + value novelty vs the `source_values` snapshot + normalization-aware comparison — no new state (the M2.3 credibility snapshot is exactly the needed evidence base).
+3. **M0.6 / HM6 ACCEPTED (4.09× vs random, 8.22× vs size-ordered; bar 1.5×).** Top-3 all connect actions (predicted a priori — STRUCTURALLY-INCAPABLE analogue wins). Estimator oracle-exact = corpus-kind; real-corpus run owed before quantitative product claims. M1.3's listing-not-ranking hook lifts for M2.6 (two-block report: acquire-new vs backfill-existing).
+4. **Phase M0 EXIT — HM2–HM6 all recorded, all ACCEPTED.**
+5. **M2.4 SHIPPED:** D-M0.5a live in `commitments.py` (clause 4b; historical rows keep old conservative behavior; 147 prior tests unchanged); new `merge/core/triggers.py`; `POST …/observe` (row-level upsert, affected-entities-only, unchanged rows = re-attestation, skipped); `field_events` + `triggers` tables (M1.1 §2/§4, additive); `status_since`; one diff-derived history path for merge+observe; `/merge` diff-reports; triggers/events endpoints. **166/166 tests**; M2.3 verify harness re-run clean (engine ≡ prototype, 0 false-AGREED).
+
+## Next session pickup
+
+- **Merge:** M2.5 (contraction operator — spec `docs/M0.4-contraction.md` §2, `segment_value` migration) + M2.6 (settlement report — `docs/M1.3-settlement-report.md`, ranked two-block recommendations) → Phase M2 exit lifecycle test. Corpus debt: `correlated_error` category (pre-θ-amendment gate) + real-corpus addendum.
+- **Standing gates unchanged:** RAG R0 on PB's DR4 corpus-scope decision; Tercet deploy on `flyctl auth login`; Stripe.
+- Source of truth: `~/Developer/PRODUCTS-2026-07.md` (2026-07-03 entry) + `MERGE-2.0-PLAN.md` status markers. Worksheet current.
