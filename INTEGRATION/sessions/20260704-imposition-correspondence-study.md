@@ -2,7 +2,7 @@
 title: Imposition — Correspondence Study (Phase 0–C) — session handoff
 date: 2026-07-04
 type: session handoff (theory / research; NO vault edits)
-repos-touched: symbolics-research (Imposition Studies/ new; Correspondence-Studies-Method.md updated), developer-meta (.pending-integrations.md, OVERVIEW.md §7/§11, logs/theory-log.md), claude-memory
+repos-touched: symbolics-research (Studies/Imposition Studies/ new; Correspondence-Studies-Method.md updated), developer-meta (.pending-integrations.md, OVERVIEW.md §7/§11, logs/theory-log.md), claude-memory
 ---
 
 # Imposition — Correspondence Study, session handoff (2026-07-03/04)
@@ -46,7 +46,7 @@ addiction + PP = BORROWABLE-FORMALISM; grammar = CITABLE-support; manipulation =
 sharpest value-add (his reflexive sociology presupposes the gate his ontology denies). **Citation-audit** flag
 on deepdive cites (several *probable*) before external use.
 
-**Where to pick up.** `symbolics-research/Imposition Studies/PLAN.md` (state) + `Development-Memo-0.2.md §11`
+**Where to pick up.** `symbolics-research/Studies/Imposition Studies/PLAN.md` (state) + `Development-Memo-0.2.md §11`
 (entailment setup) + `Correspondence-Survey-Consolidated.md`. **Phase D remaining: the Step-12 GAP is PB's
 injection point** (lead candidate: *what formally IS the owned gate?*; others: the gate as the unifying
 mechanism; the under-explored causal/material channel). Then integrate/ratify the NEW-COMMITMENT candidate via

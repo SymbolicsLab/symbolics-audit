@@ -1,7 +1,7 @@
 # Session Handoff — Value Studies (Correspondence Study), Phase 0 → Phase C complete
 
 **Dates:** worked 2026-07-05; handed off 2026-07-07. **No vault edits** (candidates only; ratification = separate fresh vault session).
-**Location:** `symbolics-research/Value Studies/` (7 files + 6 deepdive-*.md). **Method:** `symbolics-research/Correspondence-Studies-Method.md` (the fold/engine/imposition protocol), with an expanded Phase 0 (value walked in over-developed, unlike imposition).
+**Location:** `symbolics-research/Studies/Value Studies/` (7 files + 6 deepdive-*.md). **Method:** `symbolics-research/Correspondence-Studies-Method.md` (the fold/engine/imposition protocol), with an expanded Phase 0 (value walked in over-developed, unlike imposition).
 
 ## What this was
 The dedicated Correspondence Study for **value** (the driving face of distinction-making), the fourth after Fold / Engine / Imposition. Object confirmed by PB: **value = the driving face** (2026-07-05 primitive reframe, `.pending §1`); mattering = its active/now-firing instance, meaning = its captured face. Survey re-scoped **value-direct** (axiology/affect/care/teleology/economics-of-worth) so as NOT to re-run the ~85-domain Engine survey.
@@ -28,4 +28,4 @@ The Stern deep dive tested §1 adversarially: the report's **pre-registered** de
 5. **Citation-audit** (Crossref + source-fidelity) owed on every deepdive cite before external use; several flagged in-file (Smith pagination; Noddings page-refs; Fichte passage-span).
 
 ## Discipline note
-No vault edits this run. `Value Studies/` committed to symbolics-research; OVERVIEW + `.pending-integrations.md §3` (value-studies entry) + `logs/theory-log.md` updated in developer-meta; memory `project_correspondence_studies` updated. Parallel **Dependence Studies** (another session) left untouched.
+No vault edits this run. `Studies/Value Studies/` committed to symbolics-research; OVERVIEW + `.pending-integrations.md §3` (value-studies entry) + `logs/theory-log.md` updated in developer-meta; memory `project_correspondence_studies` updated. Parallel **Dependence Studies** (another session) left untouched.

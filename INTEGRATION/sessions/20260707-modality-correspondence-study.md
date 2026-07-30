@@ -1,7 +1,7 @@
 ---
 session: 2026-07-07 — Modality Correspondence Study (Phase 0 → C + deep dives + Step-12)
 type: handoff (research; NO vault edits — candidates only)
-repos touched: symbolics-research (new `Modality Studies/`), developer-meta (OVERVIEW, theory-log, pending-integrations), claude-memory
+repos touched: symbolics-research (new `Studies/Modality Studies/`), developer-meta (OVERVIEW, theory-log, pending-integrations), claude-memory
 companion thread: symbolics-agda (formal realization — machine-checked the axiom profile; carrying the L5+ "+")
 rides on: `tension` clearing its entailment bar in the Inference study (upstream gate for the whole weld)
 ---
@@ -9,7 +9,7 @@ rides on: `tension` clearing its entailment bar in the Inference study (upstream
 # Modality Correspondence Study — Session Handoff (2026-07-07)
 
 The seventh Correspondence Study. Object: **the theory's L4 modal apparatus.** Built directly on the Inference
-study. **NO vault edits** — research + candidates only. Deliverables in `symbolics-research/Modality Studies/`
+study. **NO vault edits** — research + candidates only. Deliverables in `symbolics-research/Studies/Modality Studies/`
 (PLAN · Modality-in-the-Theory · 0.2-development · Cluster-List-and-Contrast-Class · General-Surveys-Raw ·
 Correspondence-Survey-Consolidated · 6× deepdive-*). Companion formalization in `symbolics-agda`.
 
@@ -89,5 +89,5 @@ worlds-representation — the one place "no worlds" stops being a draw, at L5+).
   session. Citation-audit (Crossref) every deep-dive cite before external use (many flagged).
 - **Publication candidate** (with Inference): the "elective/graded L-level policy" pair (L3 inference + L4 modality);
   a modal-realism dissolution + inversion.
-- Full detail: `Modality Studies/Correspondence-Survey-Consolidated.md` (survey §0–10 + Step-12 §11); development in
+- Full detail: `Studies/Modality Studies/Correspondence-Survey-Consolidated.md` (survey §0–10 + Step-12 §11); development in
   `0.2-development.md`; the shared weld + Modality candidates in `.pending-integrations §3`.
