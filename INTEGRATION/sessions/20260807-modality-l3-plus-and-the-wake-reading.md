@@ -208,9 +208,37 @@ in-session and recorded** — the Synthese modal-dialogical paper is Blackburn's
 is different *and* completing.
 
 **Guard.** Fourth site in three days for one diagnosis; coverage is not confirmation. ⟢ But the commissioned test
-returned a **split and a narrowing**, which is the strongest evidence available that the diagnosis has content. Two
-discriminations remain unrun and cheap: the semantics should be **idle in practice**; and completion should **fail at
-re-typing**.
+returned a **split and a narrowing**, which is the strongest evidence available that the diagnosis has content.
+
+### 8.1 Both remaining discriminations run, same day (PB-commissioned)
+
+**A — *completion should fail exactly at re-typing*: VERIFIED, and sharper than the record.** Halpern's primary text
+read directly (*From Causal Models To Counterfactual Structures*, arXiv 1106.2647v2; prelim. **KR 2010**).
+"Feedback" is his own word for the boundary — "recursive (i.e., acyclic) models (**those without feedback**)". Two
+sharpenings, both correcting the 2026-07-07 Modality entry (banner applied): **(i) the break is earlier** than "at
+feedback" — the correspondence already fails for **nonrecursive-but-unique-solution** models, i.e. *feedback that
+still settles*, which fits **self-sustaining re-entry** far better than pathological feedback would; Halpern:
+such models are *"incomparable in expressive power to counterfactual structures"* and *"in general, the semantics of
+counterfactuals in causal structures cannot be understood in terms of closest worlds."* **(ii) The surviving
+equivalence is language-restricted** — Galles & Pearl cannot express disjunctive antecedents, and Halpern shows their
+argument incorrect and the drawable conclusion *"just the opposite of what they claim."* **⚠ Guard, hard:** this is a
+**found formal break-point**, and it does **not** license identifying nonrecursive causal models with the theory's
+re-typing — that bridge is ours to argue.
+
+**B — *the semantics should be idle in practice*: FAILS AS STATED, and the fault is in the prediction.**
+**Sahlqvist correspondence theory** reads axioms as first-order **frame conditions**, and logics are *defined* by
+frame conditions with axiomatizations built to match — the device is **generative of policy**, not idle. ⟢ The
+corrected form is what the three-layer picture actually implies: the direction of use is **axioms ↔ frame
+conditions**, so **the device articulates and checks the policy and is never a source of modal facts.** And that is a
+gain — **correspondence theory is the tradition's own way of doing what the theory says modal axioms *are*:
+sameness-rules at A(L3→L4).** ⟢ Second, independent formal limit: by **Chagrova's theorem** it is *undecidable*
+whether an arbitrary modal formula has a first-order correspondent, so the completed device **provably fails to cover
+the policy space**. **⚠ One counter-case unrun and it is the strongest — model checking**; Claude's unverified reading
+is that it confirms rather than refutes, because there the "worlds" are states of a **given finite artifact**, so
+completion is *appropriate* — which would give the diagnosis a positive boundary condition. Where to press next.
+
+**⟢ Net across three tests on this line: a split, a narrowing, and a refuted prediction. No clean confirmation** —
+the best available answer to the standing guard.
 
 ---
 
