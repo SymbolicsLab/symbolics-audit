@@ -242,6 +242,41 @@ the best available answer to the standing guard.
 
 ---
 
+## 8.2 — 2026-08-08: NO THIRD PLACEMENT (PB), and three Claude withdrawals
+
+Arose from PB asking for a plain-language walkthrough of modality, then pressing on the L4/L5+ contrast in it.
+
+**PB's settlement.** The self is a **form made of distinctions** — the L1–L4 stack looking at itself, a configuration of
+self-applicative distinctions defining how this self differs from others. Remainder or intrusion presses at one of
+them; the boundary is redrawn; **the form changes, and the other constituents are thereby differently organized
+without their own boundaries moving.** *"Change what the self is and you change how the distinctions within it
+organize."* **That is the whole of the re-typing.**
+
+**⚠ There is no third placement, and this revises PB's own 08-05 §8 confirmation.** Its genealogy: a **repair**
+invented to reconcile *"both apply"* with binary exclusion. Unnecessary — **"both apply" describes the TENSION** (both
+placements driven, neither governing), not the resolution. Two candidates from the two drivers, one governs.
+07-31's *"include both within a new whole"* survives unchanged: widening puts what was pressing **inside**, so the
+"new whole" is the redrawn form, i.e. the result.
+
+**⚠ Three Claude withdrawals**, each the same error — a new posit where the primitive sufficed: re-typing as a change
+of **"vocabulary"** (a second kind of thing the theory does not have); **no-elector as the mechanism** (demoted to
+phenomenology — why the "+" is undergone rather than performed); and the **election-vs-subsumption axis** logged
+08-07 together with its **ache-discriminator** (one operation, redraw, at two loads). Banners applied at both affected
+entries; the 08-07 block is struck, not deleted. → memory `feedback_explain_from_the_primitive`.
+
+**⚠⚠ The flag that outlives this entry.** The "ache" came from the **08-03 tragic-case ruling** — about two rival
+**actions**, decided **before** the 08-04 relocation to rival **placements** — and was carried across the relocation
+unchecked. **Owed for the consolidated vault session: audit every pre-08-04 result for the same unlicensed transfer.**
+Highest-value case first: **the expressive debt (Step-12 item 52)**, whose stated mechanism *is* that transfer
+(*"the paying is the continued press of the foreclosed side as remainder"*). Not refuted — flagged, and it must be
+re-checked before `§Tension` or any Phase-D-derived claim is written. Also on the list: the balanced-zero /
+degeneracy candidate.
+
+**Untouched:** the 08-07 self-applicativity settlement entire, the 08-04 relocation, the Phase-D clearance, the
+semiorder ruling.
+
+---
+
 ## 9. Files touched
 
 - `~/Developer/.pending-integrations.md` — **five** new §3 entries (2026-08-07), placed above the 08-05 stance-axis
