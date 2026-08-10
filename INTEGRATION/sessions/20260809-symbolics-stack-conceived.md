@@ -25,3 +25,10 @@ symbolics-emergence owns the science of running it (dyad experiment; alignment-a
 
 **Owed next:** supervised design session · PB rulings on escalation policy + constitutional-layer
 scope · relation to thesis/declaration arc (unruled).
+
+**Addendum (session close):** PB named **the two parses** — the theory parsed separately as design
+SPEC (→ kernel, frozen; the supervised design session) and as CONTENT (→ store, revisable; RAG
+ingestion). Notes §8b: the split is the constitutional-layer boundary; spec-parse size = parsimony
+test of the primitive-layer claim; store/kernel divergence = reflexive T-failure, kernel
+re-derivation = plastic act; bootstrap as horizon. OVERVIEW row, worksheet, and memory updated
+accordingly at close.
